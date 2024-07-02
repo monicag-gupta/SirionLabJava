@@ -93,6 +93,34 @@ public class OOPSMain {
 
 
 
+package first;
+
+public class Mammal{
+	private String bones="Vertebrates"; 
+	// bones is encapsulated (Hidden) : can be used only within the class
+	public void handbones() {
+		System.out.println("Publically available handbones");
+	}//handbones() is abstracted  : can be used as a library too
+	protected void print() { 
+		//print() is encapsulated(protected) : can be used within the package, sub classes in other packages
+		System.out.println(bones); //bones are accessible within the class
+	}
+	void display() {
+		//display() is encapsulated(default) : can be used within the package 
+		System.out.println("Displaying a mammal"); 
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
