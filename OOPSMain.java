@@ -1,24 +1,28 @@
 package first;
 import java.util.Scanner;
+import second.*;
 interface Animal{
 	void eat();
 }
 interface LivingBeings{
 	void breathe();
 }
-class Mammal{
-	private String bones="Vertebrates"; 
-	// bones is encapsulated (Hidden) : can be used only within the class
-	public void handbones() {
-		System.out.println("Publically available handbones");
-	}//handbones() is abstracted  : can be used as a library too
-	protected void print() { 
-		//print() is encapsulated(protected) : can be used within the package, sub classes in other packages
-		System.out.println(bones);
+
+class Abc{
+	public void getMammalFn() {
+		Mammal m=new Mammal();
+		m.display(); //default fn
+		m.print(); //protected fn
+		m.handbones(); //public fn
+//		String s= m.bones; //not visible as bones are private
 	}
-	void display() {
-		//display() is encapsulated(default) : can be used within the package 
-		System.out.println("Displaying a mammal"); 
+}
+class Dog extends Mammal{
+	public void getMammalFn() {
+		display(); //default fn
+		print(); //protected fn
+		handbones(); //public fn
+//		String s= m.bones; //not visible as bones are private
 	}
 }
 class Human extends Mammal implements Animal, LivingBeings{ //hybrid Inheritance : extension, implementation
@@ -69,11 +73,62 @@ public class OOPSMain {
 
 	public static void main(String[] args) {
 		Mammal m=new OOPSMain().ObjMammal();
-		m.handbones(); //overriding// we do not know if the handbones() are of human or bat until runtime
+		m.handbones(); 
+		//overriding// we do not know if the handbones() are of human or bat until runtime
 		FlyingAnimals ani=new FlyingAnimals();
 		ani.wings(new Bony()); //overloading
 		ani.wings(new Hairy()); //overloading
+		Abc abc=new Abc();
+		abc.getMammalFn();
+		Dog d=new Dog();
+		d.getMammalFn();
+		OOPsMain2.main12();
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+package second;
+import first.*;
+class Cat extends Mammal{
+	public void getMammalFn() {
+//		display(); //default fn
+		print(); //protected fn
+		handbones(); //public fn
+//		String s= m.bones; //not visible as bones are private
+	}
+}
+
+class Bcd{
+	public void getMammalFn() {
+		Mammal m=new Mammal();
+//		m.display(); //default fn
+//		m.print(); //protected fn
+		m.handbones(); //public fn
+//		String s= m.bones; //not visible as bones are private
+	}
+}
+
+
+public class OOPsMain2 {
+
+	public static void main12() {
+		Cat c=new Cat();
+		c.getMammalFn();
+		Bcd b=new Bcd();
+		b.getMammalFn();
 
 	}
 
 }
+
