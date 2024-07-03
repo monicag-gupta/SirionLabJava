@@ -1,0 +1,33 @@
+package day2;
+
+public class OverLoadingEg {
+	static void print() { //case 1
+		System.out.println("Print()");
+	}
+	static void print(int x) { //case 2: overload from case 1 with : diff number of param
+		System.out.println("Print(int)");
+	}
+	//case 3: overload from case 1 with : diff number of param
+	//case 3: overload from case 2 with : diff data type of param
+	static void print(String x) { 
+		System.out.println("Print(String)");
+	}
+	//case 4: overload from case 1,2,3 with : diff number of param
+	static void print(int x,String y) { 
+		System.out.println("Print(int, String)");
+	}
+	//case 5: overload from case 1,2,3 with : diff number of param
+	//Case 5: overload from case 4 with : diff series of param
+	static void print(String x,int y) { 
+		System.out.println("Print(String, int)");
+	}
+	public static void main(String[] args) {
+		print();
+		print(67);
+		print("");
+		print(8,"");
+		print("",7);
+
+	}
+
+}
