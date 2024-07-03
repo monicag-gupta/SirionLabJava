@@ -1,0 +1,29 @@
+package day2;
+
+public class Main {
+	public static void main(String[] args) {
+        printNumbers(1, 2, 3); // Calling the varargs method with multiple arguments : Numbers: 1 2 3 
+        printNumbers(10);      // Calling with a single argument : Numbers: 10 
+        printNumbers();        // Calling with zero arguments : Numbers: 
+        int[] a= {1,2,3};
+        printNumbers(a);
+        printNumbers2(a);
+        printNumbers2(new int[]{10,3});
+        
+    }
+    // Method using variable arguments
+    public static void printNumbers(int... numbers) {
+        System.out.print("Numbers: ");
+        for (int number : numbers) {
+            System.out.print(number + " ");
+        }
+        System.out.println();
+    }
+    public static void printNumbers2(int[] numbers) {
+        System.out.print("Numbers: ");
+        for (int number : numbers) {
+            System.out.print(number + " ");
+        }
+        System.out.println();
+    }
+}
