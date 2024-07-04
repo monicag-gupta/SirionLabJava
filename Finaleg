@@ -1,0 +1,51 @@
+package day3;
+//final class : Cannot be inherited
+final class Sys{
+	public void print() {
+		System.out.println("Print Sys");
+	}
+}
+// cannot be coded
+//class SubSys extends Sys{
+//	
+//}
+class Sys2{
+	//final method cannot be overridden
+	public final void print() {
+		System.out.println("Final Method : Sys2");
+	}
+	public void display() {
+		System.out.println("Non Final Method : Sys2");
+	}
+}
+class SubSys2 extends Sys2{
+//	Cannot be coded
+//	public final void print() {
+//		System.out.println("Final Method : Sys2");
+//	}
+	public void display() {
+		System.out.println("Non Final Method : Sys2");
+	}
+}
+class Sys3{
+	//final attributes: initialization has to be done here itself, or at the constructor
+	//final finalAttr1: initialized here:
+	public final int finalAttr1 = 100;
+	//final finalAttr2: initialized in Constructor:
+	public final int finalAttr2;
+	public Sys3() {finalAttr2=150;}
+	public Sys3(int a) {finalAttr2=a;}
+	@Override
+	public String toString() {
+		return "Sys3 [finalAttr1=" + finalAttr1 + ", finalAttr2=" + finalAttr2 + "]";
+	}
+	
+}
+public class Main {
+    public static void main(String[] args) {
+        Sys3 sys=new Sys3();
+        //cannot be coded
+//        sys.finalAttr1 = 90;
+        System.out.println(sys);
+    }
+}
