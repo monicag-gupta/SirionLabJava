@@ -1,0 +1,29 @@
+package day3;
+class MyEmployee{
+	public void print() {
+		System.out.println("This is MyEmployee");
+	}
+}
+class SalEmployee extends MyEmployee{
+	@Override
+	public void print() {
+		System.out.println("This is SalEmployee");
+	}
+	public void print(int x) {
+		System.out.println("This is SalEmployee with int");
+	}
+}
+
+public class PolyMorphEg {
+
+	public static void main(String[] args) {
+		MyEmployee e1=new MyEmployee();
+		e1.print(); // MyEmp.print
+		MyEmployee e2=new SalEmployee(); //Upcast
+		e2.print(); //SalEmp.print
+		SalEmployee e3=(SalEmployee)e2; //downcast
+		e3.print(23); //SalEmp.print(int)
+
+	}
+
+}
