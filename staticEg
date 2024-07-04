@@ -1,0 +1,40 @@
+package day3;
+class Sys{
+	public int id;
+	//static fields are created at class level
+	public static int count=0;
+	//static methods can use static fields only. It can have local objects also
+	public static void fn() {
+		System.out.println("Sys Count in the HDD: " + count);
+		//cannot be coded
+		//System.out.println("Sys Count in the HDD: " + id);
+	} 
+	public void instancefn() {
+		System.out.println("Sys Count in the HDD: " + count);
+		System.out.println("Sys Instance ID in the HDD: " + id);
+	} 
+	public Sys() {
+		count++;
+	}
+	public Sys(int id) {
+		this.id=id;
+		count++;
+	}
+	@Override
+	public String toString() {
+		return "Sys [id=" + id + "]; Count : " + count;
+	}
+	
+}
+public class Main {
+    public static void main(String[] args) {
+       for(int i=0;i<10;i++) {
+    	   System.out.println(new Sys(i));
+       }
+       System.out.println("Outside: Count Experiment:");
+       System.out.println(new Sys());
+       Sys s=new Sys();
+       s.fn(); //not appreciated// warning : Object used to call static fn/attr
+       Sys.fn();
+    }
+}
