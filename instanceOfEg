@@ -1,0 +1,26 @@
+package day3;
+interface I{}
+class GP{
+	
+}
+class Pa extends GP{
+	
+}
+class Child extends Pa implements I{
+	
+}
+class Beta extends Pa{
+	
+}
+public class PolyMorphEg {
+
+	public static void main(String[] args) {
+		Pa c=new Child();
+		System.out.println("c instanceof I " + (c instanceof I));
+		System.out.println("c instanceof Child " + (c instanceof Child));
+		System.out.println("c instanceof Beta "+ (c instanceof Beta));
+		System.out.println("c instanceof GP " + (c instanceof GP));
+		System.out.println("c instanceof Pa " + (c instanceof Pa));
+	}
+
+}
