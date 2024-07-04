@@ -1,0 +1,27 @@
+package day3;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+public class Main {
+    public static void main(String[] args) {
+        String[] emails = {"john@example.com", "jane.doe@gmail.com", "info@company", "invalid-email.com"};
+        String emailRegex = "\\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}\\b";
+        Pattern pattern = Pattern.compile(emailRegex);
+        for (String email : emails) {
+            Matcher matcher = pattern.matcher(email);
+            if (matcher.matches()) { System.out.println(email + " is a valid email."); } 
+            else { System.out.println(email + " is NOT a valid email."); }
+        }
+        String[] dates = { "28-06-2024", "31-09-2023", "15/12/2022"};
+        String dateRegex = "\\b(0?[1-9]|[12][0-9]|3[01])-(0?[1-9]|1[0-2])-(\\d{4})\\b";
+        Pattern pattern1 = Pattern.compile(dateRegex);
+        for (String date : dates) {
+            Matcher matcher = pattern1.matcher(date);
+            if (matcher.matches()) { System.out.println(date + " is a valid date."); } 
+            else { System.out.println(date + " is NOT a valid date."); }
+        }
+        String input = "   Remove   whitespace   ";
+        String whitespaceRegex = "\\s+"; // Remove whitespace using regex        
+        String cleaned = input.replaceAll(whitespaceRegex, "");
+        System.out.println("Original: \"" + input + "\"\nCleaned: \"" + cleaned + "\"");
+    }
+}
