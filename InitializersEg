@@ -1,0 +1,35 @@
+package day3;
+class MyClass{
+	static {
+		System.out.println("Static block in MyClass");
+	}
+	public static void mmm() {
+		System.out.println("Static fn of MyClass");
+	}
+	{
+		System.out.println("Initializer block MyClass");
+	}
+}
+public class Main {
+	static {
+		System.out.println("This is executed before Main()");
+	}
+	int abc;
+	{
+		System.out.println("This is an Initializer Block");
+		abc=10;
+	}
+	public Main() {
+		System.out.println("This is a Constructor of Main");
+		abc=20;
+	}
+    public static void main(String[] args) {
+    	System.out.println("Inside Main()");
+       Main m1=new Main();
+       Main m2=new Main();
+       System.out.println(m1.abc + "\n" + m2.abc);
+       MyClass.mmm();
+       MyClass m3=new MyClass();
+       MyClass m4=new MyClass();
+    }
+}
