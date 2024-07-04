@@ -1,0 +1,63 @@
+package day3;
+interface Animal{
+	void eat();
+}
+abstract class Mammals implements Animal{
+	public void eat() {
+		System.out.println("Mammals eat food");
+	}
+	public void move() {
+		System.out.println("Mammals move");
+	}
+	public void talk() {
+		System.out.println("Mammals talk");
+	}
+	
+}
+class Dog extends Mammals{
+	public void move() {
+		System.out.println("Dogs Walk");
+	}
+	public void bark() {
+		System.out.println("Dogs Bark");
+	}
+}
+class Cat extends Mammals{
+	public void meow() {
+		System.out.println("Cats Meow");
+	}
+	public void move() {
+		System.out.println("Does Cat-Walk");
+	}
+}
+class Whale extends Mammals{
+	public void move() {
+		System.out.println("Whale swims");
+	}
+}
+class AnimalTrainer{
+	public void train(Mammals m) {
+		m.eat();
+		m.move();
+		m.talk();
+		if(m instanceof Dog) {
+			Dog d=(Dog)m; //downcasting is never safe
+			d.bark();
+		}
+		if(m instanceof Cat) {
+			Cat c=(Cat)m;
+			c.meow();
+		}
+	}
+}
+public class PolyMorphEg {
+
+	public static void main(String[] args) {
+		AnimalTrainer trainer =new AnimalTrainer();
+		Mammals d=new Dog();  //upcasting
+		trainer.train(d);
+		trainer.train(new Cat());
+		trainer.train(new Whale());
+	}
+
+}
