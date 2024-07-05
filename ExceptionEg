@@ -153,3 +153,66 @@ public class MyExcept {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package day4;
+import java.io.*;
+
+class Abc2{
+	public void fn() throws IOException {
+//		try {
+		throw new IOException("Just to learn throws keyword");
+//		}
+//		catch(Exception e) {}
+	}
+}
+class Abc3{
+	void fnn() throws IOException {
+		new Abc2().fn();
+	}
+}
+
+
+public class MyExcept {
+	public static void main(String[] args) {
+		try {
+			new Abc3().fnn();
+		} catch (IOException e) {
+			System.err.println(e);
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+		}
+		System.out.println("This is the prog continuation..");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
