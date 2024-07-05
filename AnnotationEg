@@ -1,0 +1,32 @@
+package day4;
+
+import java.lang.annotation.*;
+import java.lang.reflect.*;
+
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.METHOD)
+@interface MyCustomAnnotation {
+	String value();
+}
+
+class CustomAnnotationExample {
+	@MyCustomAnnotation(value = "Custom Annotation Example")
+	public void myMethod() {
+		System.out.println("My method with a custom annotation.");
+	}
+}
+
+public class Main {
+	public static void main(String[] args) {
+		CustomAnnotationExample example = new CustomAnnotationExample();
+		example.myMethod(); // My method with a custom annotation.
+		try {// Accessing the annotation using reflection
+			Method method = example.getClass().getMethod("myMethod");
+			MyCustomAnnotation annotation = method.getAnnotation(MyCustomAnnotation.class);
+			System.out.println("Annotation value: " + annotation.value()); // Annotation value: Custom Annotation
+																			// Example
+		} catch (NoSuchMethodException e) {
+			e.printStackTrace();
+		}
+	}
+}
