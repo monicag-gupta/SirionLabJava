@@ -259,3 +259,44 @@ public class MyExcept {
 
 
 
+
+
+
+
+
+
+
+
+java -ea
+
+
+
+
+package day4;
+class Person{
+	public int setAge() {
+		System.out.println("Enter Age (0-150):");
+		java.util.Scanner sc=new java.util.Scanner(System.in);
+		int age = sc.nextInt();
+		return age;	
+	}	
+}
+class TestPerson{
+	public static void testSetAge() {
+		int age=new Person().setAge();
+		boolean test = age >=0 && age <= 150;
+		assert test : "Age Not in Range of 0 - 150";
+		System.out.println("Test succeeded");
+	}
+}
+
+public class AssertEg {
+
+	public static void main(String[] args) {
+		TestPerson.testSetAge();
+
+	}
+
+}
+
+
