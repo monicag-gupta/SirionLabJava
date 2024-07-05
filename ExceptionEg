@@ -29,3 +29,57 @@ public class MyExcept {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+package day4;
+class Resource implements AutoCloseable{
+	public void print(Object s) {
+		System.out.println(s);
+	}
+	public void close() {
+		System.out.println("Resource closed");
+	}
+}
+class Calc{
+	public int div(int x, int y) {
+		int z=0;
+		Resource r=new Resource();
+		try {
+			z=x/y;
+			r.print(z);
+		}
+		catch(ArithmeticException e) {
+			System.out.println(e);
+			return 0;
+		}
+		finally {
+		r.close();
+		}
+		return z;
+		
+	}
+}
+
+public class MyExcept {
+
+	public static void main(String[] args) {
+		Calc c=new Calc();
+		c.div(100,0);
+		System.out.println("This is the prog continuation..");
+	}
+
+}
+
+
+
+
+
