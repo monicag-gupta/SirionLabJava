@@ -83,3 +83,73 @@ public class MyExcept {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+package day4;
+
+import java.util.*;
+
+class Resource implements AutoCloseable {
+	public void print(Object s) {
+		System.out.println(s);
+	}
+
+	public void close() {
+		System.out.println("Resource closed");
+	}
+}
+
+class Calc {
+	public int div() {
+		java.util.Scanner sc=new java.util.Scanner(System.in);
+		int z=0;
+		Resource r=new Resource();
+		try {
+			int x=sc.nextInt();
+			int y=sc.nextInt();
+			try {
+				int[] a=new int[10];
+				a[10]=20;
+			}
+			catch(ArrayIndexOutOfBoundsException e) {
+				throw e;
+			}
+			z=x/y;
+			r.print(z);
+		}
+		catch(ArithmeticException e) {
+			System.out.println(e);
+			return 0;
+		}
+		catch(InputMismatchException e) {
+			System.out.println(e);
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+		finally {
+		r.close();
+		}
+		return z;
+		
+	}
+}
+
+public class MyExcept {
+	public static void main(String[] args) {
+		Calc c = new Calc();
+		c.div();
+		System.out.println("This is the prog continuation..");
+	}
+}
+
+
