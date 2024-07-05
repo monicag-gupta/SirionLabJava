@@ -1,0 +1,28 @@
+package day4;
+
+import java.util.Locale;
+class Eg{
+	@Deprecated
+	public int add(int x,int y) {
+		return x+y;
+	}
+	public int add(int... x) {
+		int s=0;
+		for(int i : x)
+			s+=i;
+		return s;
+	}
+}
+
+public class Main { // Main.class
+
+	@SuppressWarnings("deprecation")
+	public static void main(String[] args) {
+		@SuppressWarnings("unused")
+		Locale l=new Locale("en_IN");
+		
+		Eg e=new Eg();
+		e.add(5,6);
+	}
+
+}
