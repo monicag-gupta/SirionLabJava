@@ -37,6 +37,9 @@ class myList{
 	public void remove(int x) {
 		if(tos>0) tos--;
 	}
+	public myIter myItera() {
+		return new myListIter();
+	}
 	
 }
 	public class Main { // Main.class
@@ -47,7 +50,11 @@ class myList{
 			l.add(10);
 			l.add(200);
 			l.add(70);
-			myIter iter=l.new myListIter();
+			myIter iter=l.myItera();
+			while(iter.hasNext()) {
+				System.out.println(iter.next());
+			}
+			iter=l.new myListIter();
 			while(iter.hasNext()) {
 				System.out.println(iter.next());
 			}
