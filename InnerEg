@@ -1,0 +1,42 @@
+package day4;
+
+class Outer { // Outer.class
+	private int a;
+
+	Outer(int a) {
+		this.a = a;
+	}
+
+	Outer() {
+	}
+
+	public class Inner { // Outer$Inner.class
+		public void printA() {
+			System.out.println("a from the outer class is = " + a);
+		}
+	}
+
+	public class Inner2 { // Outer$Inner2.class
+		public static void printA2() {
+			System.out.println("static function from Inner2 class ");
+		}
+	}
+
+	public static class Inner3 { // Outer$Inner2.class
+		public static void printA3() {
+			System.out.println("static function from static Inner3 class ");
+		}
+	}
+}
+	public class Main { // Main.class
+
+		public static void main(String[] args) {
+			Outer o = new Outer(100);
+			Outer.Inner inner = o.new Inner();
+			inner.printA();
+			Outer.Inner3.printA3();
+			Outer.Inner2.printA2();
+
+		}
+
+	}
