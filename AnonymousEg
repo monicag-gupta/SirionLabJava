@@ -1,0 +1,44 @@
+package day4;
+interface Printer{
+	void scan();
+	void print();
+}
+class Scanner{
+	void scan() {}
+}
+
+
+public class Main { // Main.class
+
+	public static void main(String[] args) {
+		Printer hp=new Printer() { //Main$1 implements Printer
+			public void scan() {
+				System.out.println("hp Scanning...");
+			}
+			public void print() {
+				System.out.println("hp printing...");
+			}
+		};
+		Printer laser=new Printer() { //Main$2 implements Printer
+			public void scan() {
+				System.out.println("laser Scanning...");
+			}
+			public void print() {
+				System.out.println("laser printing...");
+			}
+		};
+		Scanner lg=new Scanner() {  //Main$3 extends Scanner
+			public void scan() {
+				System.out.println("laser Scanning...");
+				print();
+			}
+			public void print() {
+				System.out.println("laser printing...");
+			}
+		};
+		hp.scan();
+		hp.print();
+		lg.scan();
+	}
+
+}
