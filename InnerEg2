@@ -1,0 +1,56 @@
+package day4;
+
+interface myIter{
+	boolean hasNext();
+	Object next();
+}
+class myList{
+	public class myListIter implements myIter{
+		public myListIter() {
+			nav=0;
+		}
+		public boolean hasNext() {
+			//System.out.println("nav=" +nav + "tos=" + tos);
+			return nav != tos;
+		}
+		public Object next() {
+			Integer i=a[0];
+			if(tos>=0) {
+				i=a[nav];
+				nav++;
+			}
+			return i;
+		}
+	}
+	public myList(){
+		a[0]=0;
+	}
+	private int[] a=new int[2000];
+	private int tos=0;
+	private int nav=0;
+	public void add(int x) {
+		if(tos<2000) {
+			a[tos]=x;
+			tos++;
+		}
+	}
+	public void remove(int x) {
+		if(tos>0) tos--;
+	}
+	
+}
+	public class Main { // Main.class
+
+		public static void main(String[] args) {
+
+			myList l=new myList();
+			l.add(10);
+			l.add(200);
+			l.add(70);
+			myIter iter=l.new myListIter();
+			while(iter.hasNext()) {
+				System.out.println(iter.next());
+			}
+		}
+
+	}
