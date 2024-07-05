@@ -216,7 +216,6 @@ public class MyExcept {
 
 
 
-
 package day4;
 import java.io.*;
 import java.sql.*;
@@ -229,9 +228,9 @@ class AAAA{
 //Rules for overriding the functions that throws Exception:
 //1. If it is a runtime exception, we can throw the same or other runtime exception, or throw no exception
 //but we cannot throw any Compile time exception
-//2. If it is a compile time exception, we can throw only the same exception and Exception itself
-// We cannot throw runtime exception or no exception
-//3. All rules of Compile time is folled by Exception object
+//2. If it is a compile time exception, we can throw only the same exception and lower than the Exception itself
+// We cannot throw runtime exception or Exception
+//3. All rules of Compile time is followed by Exception object
 
 class BBBB extends AAAA{
 	public void fn3() throws ArithmeticException {}
@@ -245,7 +244,7 @@ class CCCC extends AAAA{
 class DDDD extends AAAA{
 //	public void fn3() throws IOException {}
 	public void fn2() {}
-//	public void fn1() throws IOException {}
+	public void fn1() throws IOException {}
 }
 class EEEE extends AAAA{
 	public void fn3() throws IndexOutOfBoundsException {}
