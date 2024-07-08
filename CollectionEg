@@ -81,8 +81,24 @@ public class CollEg1 {
 		familyFriends.add("Walt");
 		friends.addAll(familyFriends);
 		System.out.println("After addAll(familyFriends) : " + friends);
+		friends.remove(4); //removing Lisa
+        friends.removeFirst(); //remove first ele
+        friends.removeLast();   //remove last ele
+        System.out.println("After all the remove algorithms : " + friends);
+        
+
 	}
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
