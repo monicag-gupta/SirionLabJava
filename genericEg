@@ -1,0 +1,46 @@
+package day5;
+
+class Person<T>{
+	private T t;
+	public Person(){t=null;}
+	public Person(T t) {this.t=t;}
+	public void print() {System.out.println(t + " is sitting in front of you!");}
+}
+class Employee{
+	String name;
+	int sal;
+	public Employee(String name, int sal) {
+		this.name = name;
+		this.sal = sal;
+	}
+	public Employee() {}
+	public String toString() {
+		return "Employee [name=" + name + ", sal=" + sal + "]";
+	}
+}
+class Student{
+	String name;
+	String skills;
+	public Student(String name, String skills) {
+		super();
+		this.name = name;
+		this.skills = skills;
+	}
+	public Student() {}
+	public String toString() {
+		return "Student [name=" + name + ", skills=" + skills + "]";
+	}	
+}
+
+public class GenericEg {
+
+	public static void main(String[] args) {
+		Student[] s= {new Student("John","C"),new Student("Jane","Java")};
+		Employee[] e= {new Employee("Doe",10),new Employee("Smith",100),new Employee("Patrik",50)};
+		Person<Employee> p1=new Person<Employee>(e[0]);
+		p1.print();
+		Person<Student> c1=new Person<Student>(s[1]);
+		c1.print();
+	}
+
+}
