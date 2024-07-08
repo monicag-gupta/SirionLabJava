@@ -1,0 +1,19 @@
+package day5;
+class Kalaripayettu{
+	public String toString() { return "Kalaripayettu";}	
+}
+interface KingIndraverma{
+	Kalaripayettu chotabheem();  //SAM: Single Abstract Method
+}
+public class FIEg {
+	public static void main(String[] args) {
+		KingIndraverma heyIndraverma=new KingIndraverma() {
+			public Kalaripayettu chotabheem() {return new Kalaripayettu();}
+		};
+		System.out.println(heyIndraverma.chotabheem());
+		
+		KingIndraverma OyeIndraverma= () -> new Kalaripayettu();
+		System.out.println(OyeIndraverma.chotabheem());
+	}
+
+}
