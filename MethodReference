@@ -1,0 +1,56 @@
+package day5;
+import java.util.function.*;
+class A{
+	public A() {
+		System.out.println("Default A Constructor");
+	}
+	public A(String s) {
+		System.out.println("A Constructor with string parameter : " + s );
+	}
+	public void fn(String s) {
+		System.out.println("fn of A with string parameter : " + s );
+	}
+	public void fn2() {
+		System.out.println("fn2 of A " );
+	}
+	public static void fnStatic(String s) {
+		System.out.println("static fnstatic of A with string parameter : " + s );
+	}
+	public static int fnStatic22(String s) {
+		System.out.println("static fnstatic2 of A with string parameter : " + s );
+		return s.length(); 
+	}
+}
+interface Fi{
+	void voidFn();
+}
+interface Fi2{
+	void strFn(String s);
+}
+interface Fi3{
+	int strFn(String s);
+}
+public class FIEg {
+	public static void main(String[] args) {
+		//Fi o1=() -> new A();
+		Fi o1 = A :: new;  //Method reference to a constructor
+		Fi o2 = new A() :: fn2 ;  //instance functions
+		o2 = o1 :: voidFn ;
+		Fi2 o3 = A :: new ;
+		Fi2 o4 = new A() :: fn ;
+		Fi2 o5 = A :: fnStatic; //static function
+		Fi3 o6 = A :: fnStatic22;
+		String str="Hello";
+		int l=str.length();
+		Fi3 o7 = String :: length; //Arbitrary Object
+		o1.voidFn();
+		o2.voidFn();
+		o3.strFn("Hello");
+		int len =o7.strFn("Hello");
+		System.out.println(len);
+		
+		
+		
+	}
+
+}
