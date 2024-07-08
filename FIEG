@@ -151,6 +151,51 @@ public class FIEg {
 
 
 
+package day5;
+import java.util.function.*;
+
+public class FIEg {
+	public static void main(String[] args) {
+		Predicate<Integer> validEmpGr18 = (age) -> age>=18;
+		Predicate<Integer> validEmpLt60 = (age) -> age<=60;
+		Predicate<Integer> validEmp = validEmpGr18.and(validEmpLt60);
+		System.out.println("Valid Emp??? " + validEmp.test(20));
+		
+		
+		Consumer<String> firstNameConsumer = (x) -> System.out.print("First Name: " + x);
+		Consumer<String> lastNameConsumer = (x) -> System.out.println ("and Last Name: " + x);
+		Consumer<String> nameConsumer = firstNameConsumer.andThen(lastNameConsumer);
+		nameConsumer.accept("John Doe");
+		
+		
+		Function<Integer, Integer> fnSq= x -> {System.out.println("Square of " + x + " = " + (x*x));return x*x;};
+		Function<Integer, Integer> fnCub=x -> {System.out.println("Cube of " + x + " = " + (x*x*x));return x*x*x;};
+		Function<Integer, Integer> fnSqCub= fnSq.andThen(fnCub);
+		Function<Integer, Integer> fnCubSq= fnSq.compose(fnCub);
+		System.out.println(fnSqCub.apply(2));
+		System.out.println(fnCubSq.apply(3));
+		
+		
+		
+		Supplier<String> empName = () -> "JohnDoe";
+		System.out.println(empName.get());
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
