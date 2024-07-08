@@ -383,6 +383,38 @@ public class CollEg1 {
 
 
 
+package day5;
+
+import java.util.*;
+
+public class CollEg1 {
+	public static void main(String[] args) {
+		int[] a= {12,56,23,1,8,34,90};
+		PriorityQueue<Integer> p = new PriorityQueue<>();
+		for(int i : a)
+			p.add(i);
+		System.out.println("The priority queue is always sorted in ascending order of Priorities:");
+		System.out.println(p);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
