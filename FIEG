@@ -116,4 +116,44 @@ public class FIEg {
 
 
 
+package day5;
+interface myPredicate<T>{
+	Boolean test(T t);
+	public default myPredicate<T> and(myPredicate<T> o){
+		myPredicate<T> myPredicateobj = (T t) -> this.test(t) && o.test(t);
+		return myPredicateobj;
+	}
+	public default myPredicate<T> negate(){
+		myPredicate<T> myPredicateobj = (T t) -> ! this.test(t) ;
+		return myPredicateobj;
+	}
+	public default myPredicate<T> or(myPredicate<T> o){
+		myPredicate<T> myPredicateobj = (T t) -> this.test(t) || o.test(t);
+		return myPredicateobj;
+	}
+}
+public class FIEg {
+	public static void main(String[] args) {
+		myPredicate<Integer> validEmpGr18 = (age) -> age>=18;
+		myPredicate<Integer> validEmpLt60 = (age) -> age<=60;
+		myPredicate<Integer> validEmp = validEmpGr18.and(validEmpLt60);
+		System.out.println("Valid Emp??? " + validEmp.test(20));
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
