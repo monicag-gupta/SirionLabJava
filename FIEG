@@ -50,3 +50,70 @@ public class FIEg {
 
 
 
+
+
+
+
+package day5;
+interface FI1{
+	void fn1();
+}
+interface FI2{
+	void fn2(int x);
+}
+interface FI3{
+	void fn3(int x, int y);
+}
+interface FI4{
+	int fn4();
+}
+interface FI5{
+	int fn5(int x);
+}
+interface FI6{
+	int fn6(int x, int y);
+}
+public class FIEg {
+	public static void main(String[] args) {
+		FI1 f11= () -> System.out.println("I am f11 obj");
+		f11.fn1();
+		FI1 f12= () -> {
+			System.out.println("Line1: I am f12 obj");
+			System.out.println("Line 2: I am f12 obj");
+		};
+		f12.fn1();
+		
+		FI2 f21 = (int x) -> System.out.println("x in f21: " + x);
+		f21.fn2(10);
+		FI2 f22 = (x) -> System.out.println("x in f22: " + x);
+		f22.fn2(20);
+		FI2 f23 = x -> System.out.println("x in f23: " + x);
+		f23.fn2(30);
+		
+		
+		FI3 f31 = (int x, int y) -> System.out.println("x in f31: " + x + " y in f31: " + y);
+		f31.fn3(10,20);
+		FI3 f32 = (x, y) -> System.out.println("x in f32: " + x + " y in f32: " + y);
+		f32.fn3(10,20);
+		
+		
+		
+		FI4 f41 = () -> 100;
+		System.out.println(f41.fn4());
+		FI4 f42 = () -> {return 100;};
+		System.out.println(f42.fn4());
+		
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
