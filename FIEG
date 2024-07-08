@@ -192,6 +192,18 @@ public class FIEg {
 
 
 
+package day5;
+import java.util.function.*;
+import java.util.*;
+
+public class FIEg {
+	public static void main(String[] args) {
+		String s="Abc";
+		Supplier<String> ss=() -> s;
+		System.out.println(ss.get());
+	}
+
+}
 
 
 
