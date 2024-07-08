@@ -561,6 +561,90 @@ public class CollEg1 {
 
 
 
+package day5;
+
+import java.util.*;
+
+class Emp 
+//implements Comparable<Emp>
+{
+	
+	private String name;
+	private int sal;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getSal() {
+		return sal;
+	}
+	public void setSal(int sal) {
+		this.sal = sal;
+	}
+	public Emp(String name, int sal) {
+		this.name = name;
+		this.sal = sal;
+	}
+	public Emp() {	}
+	@Override
+	public String toString() {
+		return "\nEmp [name=" + name + ", sal=" + sal + "]";
+	}
+//	public int compareTo(Emp o) {
+//		return this.sal - o.sal;
+//	}
+
+	@Override
+	public int hashCode() {
+		return name.indexOf(name);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		Emp other = (Emp) obj;
+		return this.name.equals(other.name);
+	}
+	
+	
+	
+}
+class EmpComparatorSalDesc implements Comparator<Emp>{
+	public int compare(Emp current, Emp other) {
+		return other.getSal() - current.getSal();
+	}
+}
+class EmpComparatorName implements Comparator<Emp>{
+	public int compare(Emp current, Emp other) {
+		return current.getName().compareTo(other.getName());
+	}
+}
+
+public class CollEg1 {
+	public static void main(String[] args) {
+		Set<Emp> emps=new HashSet<Emp>();
+		emps.add(new Emp("John",10));
+		emps.add(new Emp("Jane",50));
+		emps.add(new Emp("Dave",100));
+		emps.add(new Emp("Peter",15));
+		emps.add(new Emp("Andrew",59));
+		emps.add(new Emp("Dave",15));
+		System.out.println(emps);
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
