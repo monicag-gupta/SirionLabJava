@@ -17,3 +17,36 @@ public class FIEg {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+package day5;
+
+interface myPredicate<T>
+{
+	Boolean test(T t); 
+}
+
+public class FIEg {
+	public static void main(String[] args) {
+		myPredicate<Integer> eligible2Vote = (Integer age) -> age >=18;
+		myPredicate<Integer> eligible2SeniorCitizenship = (age) -> age >=60;
+		System.out.println("Enter your age");
+		int age=new java.util.Scanner(System.in).nextInt();
+		System.out.println(eligible2Vote.test(age) ? "Eligible to vote" : "Not Eligible to vote");
+		System.out.println("Enter your Parent's age");
+		age=new java.util.Scanner(System.in).nextInt();
+		System.out.println(eligible2SeniorCitizenship.test(age) ? "You get Senior previledges" : "Not Senior");
+	}
+
+}
+
+
+
+
