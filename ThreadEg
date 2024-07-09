@@ -367,6 +367,53 @@ public class ThreadEg {
 
 
 
+package day6;
+
+public class ThreadPrg1 extends Thread {
+	String s;
+	ThreadPrg1(String ss){s=ss;}
+	public void run() {
+		System.out.println(s + ": Start.. ");
+		try {
+			Thread.sleep(300);
+		} catch (InterruptedException ie) {
+		}
+		System.out.println(s+ " : End.. ");
+	}
+	public static void main(String[] args) {
+		ThreadPrg1 c1 = new ThreadPrg1("c1");
+		ThreadPrg1 c2 = new ThreadPrg1("c2");
+		System.out.println("Main Start.. ");
+		c1.start();
+		try {
+			c1.join(); // Waiting for c1 to finish
+		} catch (InterruptedException ie) {	}
+		System.out.println("c1.join ended!");
+		c2.start();
+		System.out.println("Main Ends.. ");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
