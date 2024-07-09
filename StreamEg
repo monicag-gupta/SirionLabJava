@@ -1,0 +1,46 @@
+package day6;
+class A{
+	String str;
+	A(String str){this.str=str;}
+	public B fnA() {
+		str = str + " forwarded from A";
+		return new B(str);
+	}
+}
+class B{
+	String str;
+	B(String str){this.str=str;}
+	public C fnB() {
+		str = str + " forwarded from B";
+		return new C(str);
+	}
+}
+class C{
+	String str;
+	C(String str){this.str=str;}
+	public D fnC() {
+		str = str + " forwarded from C";
+		return new D(str);
+	}
+}
+class D{
+	String str;
+	D(String str){this.str=str;}
+	public void fnD() {
+		str = str + " terminated At D";
+		System.out.println(str);
+	}
+}
+
+public class MethodChainingEg {
+
+	public static void main(String[] args) {
+//		B b= new A("Hello ").fnA();
+//		C c= b.fnB();
+//		D d = c.fnC();
+//		d.fnD();
+		new A("Hello ").fnA().fnB().fnC().fnD();
+
+	}
+
+}
