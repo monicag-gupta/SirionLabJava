@@ -158,3 +158,57 @@ public class ThreadEg {
 
 
 
+
+
+
+package day6;
+
+class Resource{
+	String name;
+	public Resource(String n) {name=n;}
+	public synchronized void fn() {
+		System.out.println(Thread.currentThread().getName() + " : Hello from " + name);
+		try {
+			Thread.sleep(1000);
+		}catch(Exception e) {}
+		System.out.println(Thread.currentThread().getName() + " : World from " + name);
+	}
+}
+
+public class ThreadEg {
+
+	public static void main(String[] args) {
+		Resource r=new Resource("Printer1");
+		Thread t1=new Thread(r::fn, "Th1");
+		Thread t2=new Thread(r::fn, "Th2");
+		Thread t3=new Thread(new Resource("Printer2")::fn, "Th3");
+		t1.start();
+		t2.start();
+		t3.start();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
