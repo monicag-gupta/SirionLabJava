@@ -44,3 +44,43 @@ public class MethodChainingEg {
 	}
 
 }
+
+
+
+
+
+
+
+package day6;
+import java.util.*;
+interface myConsumer{
+	void accept(String t);
+}
+
+public class ForEachEg {
+//	public static String s;
+//	static void printEach(myConsumer c) {
+//		c.accept(s);
+//	}
+	public static void main(String[] args) {
+		List<String> names = Arrays.asList("John","Jane","Smith","Peter");
+//		myConsumer c = System.out :: println;
+//		for(String ss :  names) {
+//			s=ss;
+//			printEach(c);
+//		}
+		
+//		names.forEach(System.out::println);
+		names.forEach((s)->System.out.println(s));
+
+	}
+
+}
+
+
+
+
+
+
+
+
