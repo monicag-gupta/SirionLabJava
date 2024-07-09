@@ -1,0 +1,56 @@
+package day6;
+class Th1 extends Thread{
+	String name;
+	public Th1(String n) {name=n;}
+	public void run() {
+		for (int i=0;i<10;i++) {
+			System.out.println(name + ": with " + i +" th iteration" );
+		}
+	}
+}
+
+class Th2 implements Runnable{
+	String name;
+	public Th2(String n) {name=n;}
+	public void run() {
+		for (int i=0;i<10;i++) {
+			System.out.println(name + ": with " + i +" th iteration" );
+		}
+	}
+}
+
+public class ThreadEg {
+
+	public static void main(String[] args) {
+		Runnable rth3=()->{
+			for (int i=0;i<10;i++) {
+				System.out.println(Thread.currentThread().getName() + ": with " + i +" th iteration" );
+			}
+		};
+		
+		Th1 th1=new Th1("Thread 0");
+		Thread th2 = new Thread(new Th2("Thread 1"));
+		Thread th3 =new Thread(rth3,"Thread 2");
+		
+		th1.start();
+		th2.start();
+		th3.start();
+		
+//		th1.run();
+//		th2.run();
+//		th3.run();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
