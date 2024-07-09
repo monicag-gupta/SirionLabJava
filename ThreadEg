@@ -54,3 +54,107 @@ public class ThreadEg {
 
 
 
+
+
+
+
+
+package day6;
+
+class Account {
+	String AccountName;
+	int bal;
+
+	public Account(String name, int b) {
+		AccountName = name;
+		bal = b;
+	}
+
+	public synchronized void withdraw(int amt) {
+		if (bal > amt)
+			bal = bal - amt;
+		System.out.println(AccountName + " has withdrawn: " + amt + " Balance left: " + bal);
+		try {
+			Thread.sleep(100);
+		}catch(Exception e) {}
+	}
+
+	public synchronized void deposit(int amt) {
+		bal = bal + amt;
+		System.out.println(AccountName + " has deposited: " + amt + " Balance now is: " + bal);
+		try {
+			Thread.sleep(500);
+		}catch(Exception e) {}
+	}
+
+	public synchronized void chkBal() {
+		System.out.println(AccountName + " has Balance : " + bal);
+		try {
+			Thread.sleep(1000);
+		}catch(Exception e) {}
+	}
+}
+class DepoTh implements Runnable{
+	Account a;
+	int amt;
+	public DepoTh(Account aa, int am){a=aa;amt=am;}
+	public void run()
+	{
+		a.deposit(amt);
+	}
+}
+class DrawTh implements Runnable{
+	Account a;
+	int amt;
+	public DrawTh(Account aa, int am){a=aa;amt=am;}
+	public void run()
+	{
+		a.withdraw(amt);
+	}
+}
+class ChkTh implements Runnable{
+	Account a;
+	public ChkTh(Account aa){a=aa;}
+	public void run()
+	{
+		a.chkBal();
+	}
+}
+public class ThreadEg {
+
+	public static void main(String[] args) {
+		Account a1=new Account("John", 100);
+		Account a2=new Account("Jane", 200);
+		Account a3=new Account("Smith", 300);
+		Thread t11=new Thread(new DepoTh(a1,1000));
+		Thread t12=new Thread(new DepoTh(a2,2000));
+		Thread t13=new Thread(new DepoTh(a3,3000));
+		Thread t21=new Thread(new DrawTh(a1,900));
+		Thread t22=new Thread(new DrawTh(a2,800));
+		Thread t23=new Thread(new DrawTh(a3,900));
+		Thread t31=new Thread(new ChkTh(a1));
+		Thread t32=new Thread(new ChkTh(a2));
+		Thread t33=new Thread(new ChkTh(a3));
+		
+		t11.start();
+		t21.start();
+		t31.start();
+		
+		t12.start();
+		t22.start();
+		t32.start();
+		
+		t13.start();
+		t23.start();
+		t33.start();
+		
+	}
+}
+
+
+
+
+
+
+
+
