@@ -10,6 +10,96 @@ Features:
 7. Exception Handling: Handle various exceptions (e.g., file not found, invalid input).
 
 
+Yukta
+
+
+
+
+Contact Management System
+Create a console-based Contact Management System where users can add, view, update, and delete contacts. Each contact will have properties like name, phone number, and email. The application will use collections to manage contacts, file I/O to persist data, lambda expressions for sorting and searching, and exception handling for robust error management.
+Features:
+1. Add Contact: Allow users to add a new contact with a name, phone number, and email.
+2. View Contacts: Display all contacts or search for a contact by name.
+3. Update Contact: Modify an existing contact's details.
+4. Delete Contact: Remove a contact from the list.
+5. Persist Data: Save and load contacts to/from a file using file I/O.
+6. Sort Contacts: Sort contacts alphabetically by name using lambda expressions.
+7. Exception Handling: Handle basic exceptions such as file not found and invalid input.
+
+
+
+
+
+
+Simple Library System
+Create a console-based Simple Library System where users can add, view, and remove books. Each book will have properties like title, author, and ISBN. The application will use collections to manage books, file I/O to persist data, lambda expressions for sorting and searching, and exception handling for robust error management.
+Features:
+1. Add Book: Allow users to add a new book with a title, author, and ISBN.
+2. View Books: Display all books.
+3. Remove Book: Remove a book from the list by ISBN.
+4. Persist Data: Save and load books to/from a file using file I/O.
+5. Sort Books: Sort books by title using lambda expressions.
+6. Exception Handling: Handle basic exceptions such as file not found and invalid input.
+
+
+
+
+Expense Tracker
+Create a console-based Expense Tracker where users can add, view, and delete expenses. Each expense will have properties like description, amount, and date. The application will use collections to manage expenses, file I/O to persist data, lambda expressions for sorting and filtering, and exception handling for robust error management.
+Features:
+1. Add Expense: Allow users to add a new expense with a description, amount, and date.
+2. View Expenses: Display all expenses or filter by date range.
+3. Delete Expense: Remove an expense from the list by index.
+4. Persist Data: Save and load expenses to/from a file using file I/O.
+5. Sort Expenses: Sort expenses by amount using lambda expressions.
+6. Exception Handling: Handle basic exceptions such as file not found and invalid input.
+
+
+
+
+
+
+Student Grade Management System
+Create a console-based Student Grade Management System where users can add, view, update, and delete student grades. Each student will have properties like name, subject, and grade. The application will use collections to manage students, file I/O to persist data, lambda expressions for sorting and searching, and exception handling for robust error management.
+Features:
+1. Add Student: Allow users to add a new student with a name, subject, and grade.
+2. View Students: Display all students.
+3. Update Student: Modify an existing student's grade.
+4. Delete Student: Remove a student from the list.
+5. Persist Data: Save and load students to/from a file using file I/O.
+6. Sort Students: Sort students by grade using lambda expressions.
+7. Exception Handling: Handle basic exceptions such as file not found and invalid input.
+
+
+
+
+
+
+
+
+Hi Ishu Ma'am,
+
+PFA the presentation by Monica Gupta - Batch 1/2 on JavaDoc: Eclipse and command Line.
+
+Thanks and Regards
+Monica Gupta
+(Java, .Net, C/C++, PHP, ADA, Python, VBA, SQL Server, MySQL, Postgres, ... )
+OCJP
+
+Sub: JavaDoc by Monica Gupta
+
+No zip file required
+PDF/PPT/Word - 1 files
+Presentation + code + snapshot
+
+
+
+
+
+
+
+
+
 
 
 
