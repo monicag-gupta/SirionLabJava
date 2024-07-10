@@ -1,0 +1,15 @@
+Task Management System :
+Create a console-based Task Management System where users will be able to add, view, update, and delete tasks. Each task will have properties like a description, priority, due date, and status. The application will utilize collections to manage tasks, file I/O for data persistence, lambda expressions for sorting and filtering tasks, and exception handling for robust error management.
+Features:
+1. Add Task: Allow users to add a new task with a description, priority, due date, and status.
+2. View Tasks: Display all tasks or filter tasks based on criteria (e.g., status, priority).
+3. Update Task: Modify an existing task's details.
+4. Delete Task: Remove a task from the list.
+5. Persist Data: Save and load tasks to/from a file using file I/O.
+6. Sort Tasks: Sort tasks based on different criteria using lambda expressions.
+7. Exception Handling: Handle various exceptions (e.g., file not found, invalid input).
+
+
+
+
+
