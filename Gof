@@ -595,6 +595,57 @@ public class BridgeEg {
 
 
 
+package gof.structural;
+import java.util.*;
+class Furniture{
+	public String toString() {
+		return "Grade A Furniture []";
+	}	
+}
+class Emp1234{
+	public String toString() {
+		return "Tier 1 College : Selected Employees []";
+	}	
+}
+class Staff{
+	public String toString() {
+		return "Extra Staff []";
+	}	
+}
+class Comp1234{
+	List<Furniture> furnitures = new ArrayList<>();
+	List<Emp1234> emps = new ArrayList<>();
+	List<Staff> staffs = new ArrayList<>();
+	Comp1234(){
+		furnitures.add(new Furniture());
+		emps.add(new Emp1234());
+		staffs.add(new Staff());
+	}
+	@Override
+	public String toString() {
+		return "Comp1234 [furnitures=" + furnitures + ", emps=" + emps + ", staffs=" + staffs + "]";
+	}
+	
+}
+public class CompositeEg {
+
+	public static void main(String[] args) {
+		System.out.println(new Comp1234());
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
