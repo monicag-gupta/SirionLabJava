@@ -1060,6 +1060,50 @@ public class IteratorEg {
 
 
 
+package gof.behavioural;
+class Person123{
+	String name;
+	Person123(String n){name=n;}
+	@Override
+	public String toString() {
+		return "Person123 [name=" + name + "]";
+	}
+}
+
+class Phone123{
+	public void call(Person123 p1,Person123 p2) {
+		System.out.println(p1 + " is talking to " + p2);
+	}
+}
+
+public class MediatorEg {
+
+	public static void main(String[] args) {
+		Person123 p1=new Person123("John");
+		Person123 p2=new Person123("Jane");
+		Phone123 ph=new Phone123();
+		ph.call(p1, p2);
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
