@@ -1221,6 +1221,35 @@ public class ObserverVisitorEg {
 
 
 
+package gof.behavioural;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class StrategyEg {
+
+	public static void main(String[] args) {
+		List<Integer> ints = Arrays.asList(45,2,87,78,3);
+		Collections.sort(ints);
+		System.out.println(ints);
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
