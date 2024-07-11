@@ -1139,6 +1139,66 @@ public class StateMementoEg {
 
 
 
+package gof.behavioural;
+
+class Player{
+	public String name;
+	public int money=0;
+}
+class Visitor{
+	public void visit(Player p, int tkt) {
+		p.money += tkt;
+	}
+}
+class Observer{
+	public void infoPlayer(Player p) {
+		System.out.println(p.name + " has made " + p.money + " after this game!");
+	}
+}
+
+public class ObserverVisitorEg {
+
+	public static void main(String[] args) {
+		Player p=new Player();
+		p.name="John Doe";
+		p.money = 100;
+		new Visitor().visit(p, 1000);
+		new Observer().infoPlayer(p);
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
