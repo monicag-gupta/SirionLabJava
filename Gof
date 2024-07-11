@@ -706,6 +706,86 @@ public class DecoratorEg {
 
 
 
+package gof.structural;
+import java.util.*;
+import java.util.stream.Collectors;
+interface L{
+	void add(String s);
+	void remove();
+}
+class LL implements L{
+	LinkedList<String> nodes=new LinkedList<>();
+	public void add(String s) {
+		nodes.add(s);	
+	}
+	public void remove() {
+		nodes.removeLast();		
+	}
+	@Override
+	public String toString() {
+		return "LL [nodes=" + nodes + "]";
+	}
+}
+class Ary implements L{
+	String[] nodes=new String[5000];
+	int tos=0;
+	public void add(String s) {
+		if(tos<5000) nodes[tos]=s;
+		tos++;		
+	}
+	public void remove() {
+		tos--;		
+	}
+	@Override
+	public String toString() {
+		String aryy="[";
+		for(int i=0;i<tos;i++) {
+			String ss=nodes[i];
+			aryy += ss + ", ";
+		}
+		aryy += "]";
+		
+		return "Ary [nodes=" + Arrays.stream(nodes).filter((x)->x!=null).collect(Collectors.joining(",")) + "]";
+	}
+}
+
+public class FacadeEg {
+
+	public static void main(String[] args) {
+		L obj1=new Ary();
+		obj1.add("H1");
+		obj1.add("H2");
+		obj1.add("H3");
+		System.out.println(obj1);
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
