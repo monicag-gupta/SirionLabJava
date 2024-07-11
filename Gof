@@ -145,6 +145,8 @@ public class FactoryEg {
 
 
 
+package gof.creational;
+
 interface Shape { // public interface
 	String getShapeName();
 }
@@ -205,6 +207,51 @@ class ShapeFactory { // public class to create specific shape object
 		return s;
 	}
 }
+
+class AbstractFactoryPaint{ //public class
+	private ColorFactory cf=new ColorFactory();
+	private ShapeFactory sf= new ShapeFactory();
+	private Shape s;
+	private Color c;
+	private String color;
+	private String shape;
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public String getShape() {
+		return shape;
+	}
+	public void setShape(String shape) {
+		this.shape = shape;
+	}
+	public void draw() {
+		cf.setColor(color);
+		c = cf.getColorObj();
+		sf.setShape(shape);
+		s= sf.getShapeObj();
+		System.out.println(s.getShapeName() + " is drawn in " + c.getColorName() + " color!!");
+		
+	}
+	
+}
+public class AbstractFactoryEg {
+
+	public static void main(String[] args) {
+		AbstractFactoryPaint paint=new AbstractFactoryPaint();
+		paint.setColor("Green");
+		paint.setShape("Triangle");
+		paint.draw();
+	}
+
+}
+
+
+
+
+
 
 
 
