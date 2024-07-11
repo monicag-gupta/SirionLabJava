@@ -1247,6 +1247,53 @@ public class StrategyEg {
 
 
 
+package gof.behavioural;
+
+import java.util.ArrayList;
+import java.util.List;
+
+class Slide{
+	int n;
+	Slide(int n){this.n=n;}
+	@Override
+	public String toString() {
+		return "Slide [n=" + n + "]";
+	}
+	
+}
+class PPT{
+	List<Slide> slides=new ArrayList<>();
+	PPT(){
+		slides.add(new Slide(1));
+	}
+}
+
+public class TemplateEg {
+
+	public static void main(String[] args) {
+		PPT ppt = new PPT();
+		System.out.println(ppt.slides);
+		ppt.slides.add(new Slide(2));
+		System.out.println(ppt.slides);
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
