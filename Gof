@@ -544,6 +544,59 @@ public class AdapterEg {
 
 
 
+package gof.structural;
+interface Ludo{}
+class Ludov1 implements Ludo{
+	public String toString() {
+		return "Ludov1 is being played []";
+	}	
+}
+class Ludov2 implements Ludo{
+	public String toString() {
+		return "Ludov2 is being played []";
+	}	
+}
+class Mob{
+	Ludo l;
+	public void install(Ludo l) {
+		this.l=l;
+	}
+	public void play() {
+		System.out.println(l);
+	}
+	public void update(Ludo l) {
+		this.l=l;
+	}
+}
+
+public class BridgeEg {
+
+	public static void main(String[] args) {
+		Mob m=new Mob();
+		m.install(new Ludov1());
+		m.play();
+		m.update(new Ludov2());
+		m.play();
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
