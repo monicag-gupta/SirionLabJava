@@ -43,6 +43,112 @@ public class SingletonEg {
 
 
 
+package gof.creational;
+
+interface Color { // public interface
+	String getColorName();
+}
+
+class Red implements Color {
+	private String name;
+
+	Red() {
+		name = "Red";
+	}
+
+	public String getColorName() {
+		return name;
+	}
+}
+
+class Green implements Color {
+	private String name;
+
+	Green() {
+		name = "Green";
+	}
+
+	public String getColorName() {
+		return name;
+	}
+}
+
+class Blue implements Color {
+	private String name;
+
+	Blue() {
+		name = "Blue";
+	}
+
+	public String getColorName() {
+		return name;
+	}
+}
+
+class ColorFactory { // public class to create specific color object
+	private String color;
+
+	public String getColor() {
+		return color;
+	}
+
+	public void setColor(String color) {
+		this.color = color;
+	}
+
+	public Color getColorObj() {
+		Color c = new Red();
+		if (color.equals("Green")) {
+			c = new Green();
+		} else if (color.equals("Blue")) {
+			c = new Blue();
+		}
+		return c;
+	}
+}
+
+public class FactoryEg {
+
+	public static void main(String[] args) {
+		String s;
+		ColorFactory cf = new ColorFactory();
+		try (java.util.Scanner sc = new java.util.Scanner(System.in)) {
+			System.out.println("Which color do you choose: ");
+			s = sc.nextLine();
+
+			cf.setColor(s);
+			Color c = cf.getColorObj();
+			System.out.println("The Color Object based on selection is: " + c.getColorName());
+
+		}
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
