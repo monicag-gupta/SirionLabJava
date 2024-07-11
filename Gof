@@ -1036,6 +1036,34 @@ public class InterpretorEg {
 
 
 
+package gof.behavioural;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class IteratorEg {
+
+	public static void main(String[] args) {
+		List<String> strs=Arrays.asList("John","Jane","Smith");
+		strs.stream().forEach(System.out::println);
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
