@@ -646,6 +646,74 @@ public class CompositeEg {
 
 
 
+package gof.structural;
+interface GTA{}
+class ReadMob{
+	public void read(String s) {
+		System.out.println(s);
+	}
+}
+class GTAv1 implements GTA {
+	Mobile123 m;
+	GTAv1(Mobile123 m){
+		this.m=m;
+	}
+	public String toString() {
+		return "GTAv1 []";
+	}
+}
+class GTAv2 implements GTA {
+	Mobile123 m;
+	GTAv2(Mobile123 m){
+		this.m=m;
+	}
+	public String toString() {
+		ReadMob mm=new ReadMob();
+		mm.read(m.bankDetails);
+		return "GTAv2 []";
+	}
+}
+class Mobile123{
+	public String bankDetails;
+	public Mobile123(String bankDetails){this.bankDetails=bankDetails;}
+	GTA g;
+	public void install(GTA g) {
+		this.g=g;
+	}
+	public void play() {
+		System.out.println(g);
+	}
+}
+public class DecoratorEg {
+
+	public static void main(String[] args) {
+		Mobile123 mob=new Mobile123("1234SPasscode");
+//		mob.install(new GTAv1(mob));
+//		mob.play();
+		
+		mob.install(new GTAv2(mob));
+		mob.play();
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
