@@ -369,6 +369,11 @@ class Original{
 		}
 		return msg2.toString();
 	}
+	
+	public void appendMsg(String m) {
+		String s=msg + m;
+		msg = s;
+	}
 
 	public void setMsg(String msg) {
 		this.msg = msg;
@@ -428,6 +433,7 @@ public class PrototypeEg {
 	}
 
 }
+
 
 
 
