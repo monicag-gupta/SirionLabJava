@@ -772,6 +772,83 @@ public class FacadeEg {
 
 
 
+package gof.structural;
+interface StringSupplier{
+	 String getS();
+	 void setS(String s);
+}
+interface IntegerSupplier{
+	 Integer getI();
+	 void setI(Integer i);
+}
+
+class IntStringSupplier implements StringSupplier,IntegerSupplier{
+	private String s;
+	private Integer i;
+	public String getS() {
+		return s;
+	}
+	public void setS(String s) {
+		this.s = s;
+	}
+	public Integer getI() {
+		return i;
+	}
+	public void setI(Integer i) {
+		this.i = i;
+	}
+	
+	
+}
+
+public class FlyWeightEg {
+
+	public static void main(String[] args) {
+		StringSupplier s=new IntStringSupplier();
+		s.setS("Hello");
+		System.out.println(s.getS());
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
