@@ -999,6 +999,37 @@ public class CommandEg {
 
 
 
+package gof.behavioural;
+class Interpretor{
+	public String toHindi(String s) {
+		if(s.equals("Hello"))
+			return "Namaskar";
+		else 
+			return "Pata Nahi Kya convert kare";
+	}
+}
+public class InterpretorEg {
+
+	public static void main(String[] args) {
+		Interpretor i=new Interpretor();
+		System.out.println(i.toHindi("Hello"));
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
