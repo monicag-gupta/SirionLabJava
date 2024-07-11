@@ -1,0 +1,51 @@
+package gof.creational;
+class Singleton
+{
+	private String msg;
+	public String getMsg() {
+		return msg;
+	}
+	public void setMsg(String msg) {
+		this.msg = msg;
+	}
+	private static Singleton singleObj;
+	public static Singleton createSingletonObj() {
+		if(singleObj == null)
+			singleObj = new Singleton();
+		return singleObj;
+	}
+	private Singleton() {}
+}
+
+public class SingletonEg {
+
+	public static void main(String[] args) {
+		Singleton obj1= Singleton.createSingletonObj();
+		obj1.setMsg("Hello This is Obj1");
+		System.out.println("Obj1: " + obj1.getMsg());
+		Singleton obj2= Singleton.createSingletonObj();
+		obj1.setMsg("Hello This is Obj2");
+		System.out.println("Obj2: " + obj2.getMsg());
+		System.out.println("Obj1: " + obj1.getMsg());
+		System.out.println("Obj1 and Obj2 are the same? " + (obj1==obj2));
+	}
+
+}
+
+
+/*1. Create a single object of the class (static private same class object)
+2. Create a method accessible by the class name (public static method), the method is responsible for creating the single object, or returning the already created object.
+3. Remove the rights for the class to create a new object (make the constructor(s) private)
+*/
+
+
+
+
+
+
+
+
+
+
+
+
