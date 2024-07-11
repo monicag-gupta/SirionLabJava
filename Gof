@@ -975,6 +975,31 @@ public class ChainOfResponsibility {
 
 
 
+package gof.behavioural;
+
+import java.util.function.Consumer;
+
+public class CommandEg {
+
+	public static void main(String[] args) {
+		Consumer<String> printCommand=System.out::println;
+		printCommand.accept("Hello");
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
