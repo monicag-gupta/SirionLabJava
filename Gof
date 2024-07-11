@@ -921,6 +921,64 @@ public class ProxyEg {
 
 
 
+package gof.behavioural;
+class Step1{
+	public int len(String s) {
+		return s.length();
+	}
+}
+class Step2{
+	public Integer wrap(int i) {
+		return i;
+	}
+}
+class Step3{
+	public String toStr(Integer i) {
+		return i.toString();
+	}
+}
+class Chain{
+	void printlen(String s) {
+		Step1 s1=new Step1();
+		Step2 s2=new Step2();
+		Step3 s3=new Step3();
+//		int x = s1.len(s);
+//		Integer i=s2.wrap(x);
+//		String ss=s3.toStr(i);
+		String ss=s3.toStr(s2.wrap(s1.len(s)));
+		System.out.println(ss);
+	}
+}
+public class ChainOfResponsibility {
+
+	public static void main(String[] args) {
+		Chain c=new Chain();
+		c.printlen("Hello");
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
