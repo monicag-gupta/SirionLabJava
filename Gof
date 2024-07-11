@@ -462,6 +462,88 @@ public class PrototypeEg {
 
 
 
+package gof.structural;
+import java.util.*;
+class Prj123{
+	String pname;
+
+	public String getPname() {
+		return pname;
+	}
+
+	public void setPname(String pname) {
+		this.pname = pname;
+	}
+	
+}
+class Emp123{
+	String ename;
+
+	public Emp123(String ename) {
+		super();
+		this.ename = ename;
+	}
+	public Emp123() {}
+	public String getEname() {
+		return ename;
+	}
+
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+
+	@Override
+	public String toString() {
+		return "[ename=" + ename + "]";
+	}
+	
+}
+class PrjMngr123{
+	Prj123 p;
+	List<Emp123> team;
+	PrjMngr123(){
+		p=new Prj123();
+		team = new ArrayList<>();
+	}
+	void allocate (Prj123 p) {
+		this.p=p;
+	}
+	void add(Emp123... es) {
+		for(Emp123 e:es) team.add(e);
+	}
+	@Override
+	public String toString() {
+		return "PrjMngr123 [p=" + p.getPname() + ", team=" + team + "]";
+	}
+	
+}
+public class AdapterEg {
+
+	public static void main(String[] args) {
+	
+		PrjMngr123 adapter= new PrjMngr123();
+		Prj123 sales=new Prj123();
+		sales.setPname("ATM");
+		adapter.allocate(sales);
+		adapter.add(new Emp123("John"),new Emp123("Jane"));
+		System.out.println(adapter);
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
