@@ -145,6 +145,70 @@ public class FactoryEg {
 
 
 
+interface Shape { // public interface
+	String getShapeName();
+}
+
+class Triangle implements Shape {
+	private String name;
+
+	Triangle() {
+		name = "Triangle";
+	}
+
+	public String getShapeName() {
+		return name;
+	}
+}
+
+class Square implements Shape {
+	private String name;
+
+	Square() {
+		name = "Square";
+	}
+
+	public String getShapeName() {
+		return name;
+	}
+}
+class Circle implements Shape {
+	private String name;
+
+	Circle() {
+		name = "Circle";
+	}
+
+	public String getShapeName() {
+		return name;
+	}
+}
+
+class ShapeFactory { // public class to create specific shape object
+	private String shape;
+
+	public String getShape() {
+		return shape;
+	}
+
+	public void setShape(String shape) {
+		this.shape = shape;
+	}
+
+	public Shape getShapeObj() {
+		Shape s = new Triangle();
+		if (shape.equals("Square")) {
+			s = new Square();
+		} else if (shape.equals("Circle")) {
+			s = new Circle();
+		}
+		return s;
+	}
+}
+
+
+
+
 
 
 
