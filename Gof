@@ -257,6 +257,111 @@ public class AbstractFactoryEg {
 
 
 
+package gof.creational;
+class Roof{
+	String r;
+	Roof(String r){
+		this.r=r;
+	}
+	@Override
+	public String toString() {
+		return "\nRoof with material " + r + "!";
+	}
+}
+class Walls{
+	String r;
+	Walls(String r){
+		this.r=r;
+	}
+	@Override
+	public String toString() {
+		return "\nWalls with material " + r + "!";
+	}
+}
+class JoiningMaterial{
+	String r;
+	JoiningMaterial(String r){
+		this.r=r;
+	}
+	@Override
+	public String toString() {
+		return "\nJoiningMaterial used is " + r + "!";
+	}
+}
+
+interface House{
+	void HouseAsString();
+}
+abstract class FarmHouse implements House{
+	protected Roof r;
+	protected Walls w;
+	protected JoiningMaterial j;
+	public FarmHouse(String rf, String wa, String jm) {
+		r=new Roof(rf);
+		w=new Walls(wa);
+		j=new JoiningMaterial(jm);
+	}
+	public void HouseAsString() {
+		System.out.println(r + "" + w + "" + j);
+	}
+}
+class TipiHouse extends FarmHouse{
+	TipiHouse(){
+		super("Wooden","Bamboo","iron nails");		
+	}	
+}
+class ConcreteHouse extends FarmHouse{
+	ConcreteHouse(){
+		super("CementBlocks","Bricks","Cement");		
+	}	
+}
+class IglooHouse extends FarmHouse{
+	IglooHouse(){
+		super("IceBlocks","Ice","Salt");		
+	}	
+}
+
+class Builder{
+	public FarmHouse getHouse(String housetype) {
+		FarmHouse f = new ConcreteHouse();
+		if(housetype.equals("Wooden"))
+			f=new TipiHouse();
+		else if(housetype.equals("Ice"))
+			f=new IglooHouse();
+		
+		return f;
+		
+	}
+	
+}
+
+public class BuilderEg {
+
+	public static void main(String[] args) {
+		Builder B = new Builder();
+		FarmHouse f=B.getHouse("Ice");
+		f.HouseAsString();
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
