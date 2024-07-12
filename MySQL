@@ -325,8 +325,9 @@ select * from Employees where (jobTitle = 'Sales Rep' and officeCode = 1) or  of
 
 
 
+select * from Employees where jobTitle  in ('VP Sales','Sales Manager (APAC)','Sales Manager (NA)','Sales Employee (NA)');
 
-
+select * from Employees where officeCode between 2 and 4;
 
 
 
