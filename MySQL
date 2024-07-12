@@ -142,7 +142,10 @@ Products;
 
 
 
+create table Student(stdId int primary key, stdName varchar(255));
+insert into Student values(101,'John'),(102,'Jane'),(103,'Smith');
 
+select * from Student;
 
 
 
