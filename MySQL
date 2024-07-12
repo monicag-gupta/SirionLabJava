@@ -83,6 +83,7 @@ UPDATE `people` SET `age` = 23 WHERE `name` = 'Jane';
 
 
 
+update person set name='Jay';
 
 
 
