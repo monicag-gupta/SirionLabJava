@@ -345,6 +345,25 @@ select * from employees where firstName like '_n%';
 
 
 
+-- group by has where clause befor group and having clause post grouping 
+
+select count(*), country from customers  group by country;
+
+select count(*), country from customers where customerNumber>115 group by country;
+
+select count(*), country from customers where count(*) > 5 group by country; -- error as count(*) does not exist before group by 
+
+select count(*), country from customers group by country having  count(*) > 5 ;
+
+select count(*), country from customers group by country having  customerNumber>115 ; -- error as customerNumber does not exist post group by
+
+
+
+
+
+
+
+
 
 
 
