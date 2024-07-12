@@ -312,7 +312,15 @@ use classicmodels;
 
 select * from employees;
 
+select * from employees;
 
+select * from Employees where jobTitle = 'Sales Rep';
+
+select * from Employees where jobTitle = 'Sales Rep' and officeCode = 1;
+
+select * from Employees where jobTitle = 'Sales Rep' or  officeCode = 6;
+
+select * from Employees where (jobTitle = 'Sales Rep' and officeCode = 1) or  officeCode = 6;
 
 
 
