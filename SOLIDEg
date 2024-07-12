@@ -219,6 +219,46 @@ public class ISPEg {
 
 
 
+package SOLID;
+interface Ludo{
+	void game();
+}
+class LudoV1 implements Ludo{
+	public void game() {
+		System.out.println("LudoV1 loaded..");
+	}
+
+}
+class LudoV2 implements Ludo{
+	public void game() {
+		System.out.println("LudoV2 loaded..");
+	}
+}
+
+class Mob{
+	Ludo l;
+	void install(Ludo l) {
+		this.l=l;
+	}
+	void ply() {
+		l.game();
+	}
+}
+
+public class DIP {
+
+	public static void main(String[] args) {
+		Mob m=new Mob();
+		m.install(new LudoV2());
+		m.ply();
+
+	}
+
+}
+
+
+
+
 
 
 
