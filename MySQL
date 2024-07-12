@@ -133,6 +133,31 @@ Insert person select ID, name, age from people;
 
 
 
+DROP TABLE 
+ If Exists 
+Products;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
