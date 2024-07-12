@@ -155,6 +155,67 @@ public class LSREg {
 
 
 
+package SOLID;
+interface WeatherConvertor{
+//	int feet2Meter(int feet);
+//	int meter2Feet(int meter);
+	int kelvin2Celcius(int kelvin);
+	int celcius2Kelvin(int celcius);
+}
+interface LengthConvertor{
+	int feet2Meter(int feet);
+	int meter2Feet(int meter);
+//	int kelvin2Celcius(int kelvin);
+//	int celcius2Kelvin(int celcius);
+}
+class WeatherForeCast implements WeatherConvertor{
+
+	@Override
+	public int kelvin2Celcius(int kelvin) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int celcius2Kelvin(int celcius) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+}
+public class ISPEg {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
