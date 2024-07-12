@@ -363,6 +363,39 @@ select count(*), country from customers group by country having  customerNumber>
 
 
 
+use classicmodels;
+select reportsTo from employees where firstname = 'William';
+
+select email from employees where employeeNumber = 
+(select reportsTo from employees where firstname = 'William');
+
+select email from employees where employeeNumber in
+(select reportsTo from employees where lastname = 'Patterson');
+
+select customerName, creditlimit from customers where creditLimit > any
+(Select creditLimit from Customers where country = 'France');
+
+select customerName, creditlimit from customers where creditLimit > all
+(Select creditLimit from Customers where country = 'France');
+
+select customerName, creditlimit from customers where creditLimit > some
+(Select creditLimit from Customers where country = 'France');
+
+
+
+
+
+
+
+use world;
+
+select * from City;
+select * from Country;
+
+select name, CountryCode, (Select name from Country where code=countryCode) as CountryName from City;
+
+select 1 as a, (select 2+3) as b;
+
 
 
 
