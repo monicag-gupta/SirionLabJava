@@ -1,0 +1,15 @@
+Step 1 – Download MySQL:
+https://dev.mysql.com/downloads/installer/
+Step 2 –Install MySQL
+Step 3 - Download Workbench
+Open the official download site of MySQL Workbench. It shows the options to download Workbench.:
+https://dev.mysql.com/downloads/workbench/
+Step 4 - Install Workbench
+For Mac System:
+https://dev.mysql.com/downloads/mysql/
+
+If you’re at the MySQL command line mysql> you have to declare the SQL file as source.
+
+mysql> source \home\user\Desktop\test.sql;
+
+
