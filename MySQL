@@ -62,6 +62,16 @@ mysql> Insert person select * from people;
 
 
 
+Projection of Name and Age:
+SELECT `name`, `age` FROM `people`;
+
+Selection of specific records:
+SELECT `name`, `age` FROM `people` WHERE `age` > 22;
+
+SELECT * FROM `people`;
+
+
+
 
 
 
