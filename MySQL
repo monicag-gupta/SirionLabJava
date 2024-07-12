@@ -294,6 +294,27 @@ use classicmodels;
 
 
 
+create database world;
+
+use world;
+
+
+
+
+
+
+
+
+
+
+use classicmodels;
+
+
+select * from employees;
+
+
+
+
 
 
 
