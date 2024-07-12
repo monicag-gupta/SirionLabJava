@@ -246,6 +246,14 @@ ALTER TABLE Tbl1 add constraint pktbl1 primary key(a);
 
 
 
+describe StdDetails;
+
+
+select * from StdDetails;
+
+truncate table StdDetails;
+
+
 
 
 
