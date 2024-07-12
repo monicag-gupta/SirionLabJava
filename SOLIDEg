@@ -37,3 +37,62 @@ public class SRPEg {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+package SOLID;
+
+class Software {
+	public final String AuthorName = "Bob";
+
+	public void theme() {
+		System.out.println("Basic Theme");
+	}
+}
+
+class Update extends Software {
+	String AuthorName = "Bob Martin";
+
+	public void theme() {
+		System.out.println("Live Theme");
+	}
+}
+
+public class OCPEg {
+	public static void main(String[] args) {
+		Software s=new Update();
+		System.out.println(s.AuthorName);
+		s.theme();
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
