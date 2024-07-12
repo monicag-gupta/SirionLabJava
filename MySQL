@@ -149,6 +149,16 @@ select * from Student;
 
 
 
+insert into Student values(null,'Johnny'); -- Error PK cannot be null
+insert into Student values(101,'Johnny');  -- Error PK can not be duplicate
+
+
+
+
+
+
+
+
 
 
 
