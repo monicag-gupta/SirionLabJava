@@ -1,0 +1,39 @@
+package SOLID;
+class HPPrinterNotSRP{
+	void print(String s) {
+		System.out.println("Printing :" + s);
+	}
+	void loadDriver() {
+		System.out.println("Load the driver in OS");
+	}
+	void scan(String s) {
+		System.out.println("Scanning and loading in PC : " + s);
+	}
+}
+class HPPrinterInSRP{
+	void print(String s) {
+		loadDriver();
+		System.out.println("Printing :" + s);
+	}
+	void loadDriver() {
+		System.out.println("Load the driver in OS");
+	}
+}
+class HPScannerInSRP{
+	void loadDriver() {
+		System.out.println("Load the driver in OS");
+	}
+	void scan(String s) {
+		loadDriver();
+		System.out.println("Scanning and loading in PC : " + s);
+	}
+}
+public class SRPEg {
+
+	public static void main(String[] args) {
+		HPScannerInSRP hp = new HPScannerInSRP();
+		hp.scan("Hello");
+
+	}
+
+}
