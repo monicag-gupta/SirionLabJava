@@ -155,6 +155,37 @@ insert into Student values(101,'Johnny');  -- Error PK can not be duplicate
 
 
 
+create table College(CollegeId int primary key, CollegeName varchar(255) unique);
+insert into College values(10101,'DTU'),(10092,'IIT'),(10083,'BHU');
+
+insert into College values(10167,'DTU');  -- Duplicate not allowed for Unique key
+insert into College values(10167,null); -- null allowed
+insert into College values(10165,null); -- any null allowed
+
+select * from College;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
