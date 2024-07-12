@@ -191,6 +191,15 @@ drop table StdDetails;
 create table StdDetails (studId int not null, ph char(10) not null, address varchar(500), constraint fkDetailStd foreign key(studId) references Student(stdId));
 
 
+insert into StdDetails values(101, null, null); -- ph can not be null
+insert into StdDetails values(101, '66677778', null);
+
+
+
+
+
+
+
 
 
 
