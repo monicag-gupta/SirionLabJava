@@ -75,6 +75,16 @@ SELECT * FROM `people`;
 
 
 
+SET SQL_SAFE_UPDATES = 0;
+
+
+
+UPDATE `people` SET `age` = 23 WHERE `name` = 'Jane';
+
+
+
+
+
 
 
 
