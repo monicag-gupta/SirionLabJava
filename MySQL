@@ -287,7 +287,9 @@ truncate table StdDetails;
 
 
 
+create database classicmodels;
 
+use classicmodels;
 
 
 
