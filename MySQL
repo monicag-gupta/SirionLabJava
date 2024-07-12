@@ -177,7 +177,12 @@ create table Course(CourseId int, CourseName varchar(255), fees int, studId int,
 
 
 
+insert into Course values(5001,'Java',10, 300);  -- error as 300 stdid does not exist
+insert into Course values(5001,'Java',10, 104);
+insert into Course values(5002,'Servlet',20, 104);
+insert into Course values(5003,'JSP',5, null);
 
+select * from Course;
 
 
 
