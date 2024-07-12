@@ -48,6 +48,14 @@ INSERT INTO `people` (`name`, `age`) VALUES
 
 
 
+Duplicating a MySQL Table, Indexes and Data
+
+CREATE TABLE newtable LIKE oldtable;
+INSERT newtable SELECT * FROM oldtable;
+
+
+mysql> create table person like people;
+mysql> Insert person select * from people;
 
 
 
