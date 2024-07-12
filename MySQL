@@ -359,6 +359,23 @@ select count(*), country from customers group by country having  customerNumber>
 
 
 
+Subqueries:
+1. put the subqueries in () 
+2. 
+Co-related (do not run on their own)
+Non-Corelated (run and chk the values)
+3. 
+Where to put:
+as Column
+in from 
+in where
+
+In where if result of subquery:
+scalar (single value) :  use =, >, <, >=, <=, between
+Column (many values) : use In, (=, >, <, >=, <=) with any, some, all
+Row / table : use alias name and query as if its a table
+
+
 
 
 
@@ -380,6 +397,11 @@ select customerName, creditlimit from customers where creditLimit > all
 
 select customerName, creditlimit from customers where creditLimit > some
 (Select creditLimit from Customers where country = 'France');
+
+select customerName as name, floor((creditLimit /100)) as percentCL, state, country from customers where country in ('France','USA');
+
+Select sum(percentCL) from
+(select customerName as name, floor((creditLimit /100)) as percentCL, state, country from customers where country in ('France','USA')) as t;
 
 
 
