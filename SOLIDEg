@@ -88,6 +88,72 @@ public class OCPEg {
 
 
 
+package SOLID;
+
+import java.util.Arrays;
+import java.util.List;
+interface Bird{
+	void eat();
+}
+interface FlightBird extends Bird { void fly();}
+interface NonFlightBird extends Bird {}
+//class Bird{
+//	public void fly() {
+//		System.out.println("Birds fly");
+//	}
+//}
+class Parrot implements FlightBird{
+	public void fly() {
+		System.out.println("Parrot flies");
+	}
+	public void eat() {
+		System.out.println("Parrot eats");
+	}
+}
+class Crow implements FlightBird{
+	public void fly() {
+		System.out.println("Crow flies");
+	}
+	public void eat() {
+		System.out.println("Crow eats");
+	}
+}
+class Ostrich implements NonFlightBird{
+	public void eat() {
+		System.out.println("Ostrich eats");
+	}
+}
+
+public class LSREg {
+	static void callBirdFn(Bird b) {
+		b.eat();
+		if(b instanceof FlightBird)
+			{
+			FlightBird bb=(FlightBird)b;
+			bb.fly();
+			}
+	}
+
+	public static void main(String[] args) {
+		List<Bird> birds = Arrays.asList(new Parrot(),new Parrot(), new Crow(), new Ostrich(),new Crow(), new Parrot());
+		birds.forEach(LSREg::callBirdFn);
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
