@@ -170,6 +170,30 @@ select * from College;
 
 
 
+insert into Student values(104,'Johnny'),(105,'Peter'),(106,'Martin');
+
+create table Course(CourseId int, CourseName varchar(255), fees int, studId int, constraint fkCrseStd foreign key(studId) references Student(stdId));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
