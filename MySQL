@@ -210,6 +210,24 @@ select * from StdDetails;
 
 
 
+Adding a constraint:
+ALTER TABLE Customers
+add CONSTRAINT pk_id PRIMARY KEY (Customer_ID);
+Adding a column:
+ALTER TABLE Products 
+ADD COLUMN Category VARCHAR(20);
+Modifying a Column
+ALTER TABLE Products 
+ALTER COLUMN Category SET DEFAULT 'Silk Carpets';
+Removing a column:
+ALTER TABLE Products
+DROP COLUMN Category;
+Renaming a Table
+ALTER TABLE Products RENAME TO Items;
+ALTER TABLE Items  RENAME TO Products;
+
+
+
 
 
 
