@@ -88,6 +88,15 @@ update person set name='Jay';
 
 
 
+DELETE FROM `person` WHERE `name` = 'Jane';
+
+DELETE FROM `person`;
+
+select * from person;
+
+Insert person select ID, name, age from people;
+
+
 
 
 
