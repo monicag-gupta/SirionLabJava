@@ -229,6 +229,27 @@ ALTER TABLE Items  RENAME TO Products;
 
 
 
+select * from StdDetails;
+
+
+ALTER TABLE  StdDetails DROP COLUMN address;
+
+ALTER TABLE StdDetails Add COLUMN address varchar(500) default 'Delhi';
+
+drop table tbl1;
+Create table Tbl1(a int);
+
+insert into tbl1 values (100),(null),(100);
+
+ALTER TABLE Tbl1 add constraint pktbl1 primary key(a);
+
+
+
+
+
+
+
+
 
 
 
