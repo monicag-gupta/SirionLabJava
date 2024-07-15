@@ -430,6 +430,33 @@ public class JdbcDeleteDemo {
 
 
 
+Open MySQL Workbench
+
+Use javadb;
+
+
+-- First, let's create a stored procedure in MySQL. 
+-- This procedure will simply take two input parameters, add them, and return the result.
+
+DELIMITER //
+
+CREATE PROCEDURE addNumbers(IN num1 INT, IN num2 INT, OUT result INT)
+BEGIN
+    SET result = num1 + num2;
+END //
+
+DELIMITER ;
+
+
+
+
+
+
+
+
+
+
+
 
 
 
