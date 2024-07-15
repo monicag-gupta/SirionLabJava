@@ -55,9 +55,9 @@ con.close();
 
 In MySQL:
 
-create database javadb;  
-use javadb;  
-create table emp(id int, name varchar(40), age int);   
+create database javadb;
+use javadb;
+create table emp(id int, name varchar(40), age int);
 Insert into emp values(101, 'Emp1', 30); 
 Insert into emp values(102, 'Emp2', 35); 
 
@@ -70,6 +70,7 @@ CREATE TABLE users (
 	email varchar(45) NOT NULL,
 	PRIMARY KEY (user_id)
 );
+
 
 
 
