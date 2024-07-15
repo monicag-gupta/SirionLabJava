@@ -402,6 +402,36 @@ public class JdbcUpdateDemo {
 
 
 
+package crudPkg;
+
+import java.sql.*;
+
+public class JdbcDeleteDemo {
+	public static void main(String[] args) {
+		String dbURL = "jdbc:mysql://localhost:3306/javadb";
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(dbURL, "root", "root");
+			String sql = "DELETE FROM users WHERE username=?";
+			PreparedStatement statement = conn.prepareStatement(sql);
+			statement.setString(1, "bill2");
+			int rowsDeleted = statement.executeUpdate();
+			if (rowsDeleted > 0) {
+				System.out.println("A user was deleted successfully!");
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+}
+
+
+
+
+
+
+
+
 
 
 
