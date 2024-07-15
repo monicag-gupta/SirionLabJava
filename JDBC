@@ -12,3 +12,69 @@ jdbc:db2:hostname:port Number/databaseName
 Sybase 
 com.sybase.jdbc.SybDriver 
 jdbc:sybase:Tds:hostname: port Number/databaseName 
+
+
+
+
+
+
+The commonly used classes and interfaces in the JDBC API are:
+DriverManager class: Loads the driver for a database. 
+Driver interface: Represents a database driver. All JDBC driver classes must implement the Driver interface. 
+Connection interface: Enables you to establish a connection between a Java application and a database.  
+Statement interface: Enables you to execute SQL statements. DML, DDL, DCL, Query 
+ResultSet interface: Represents the information retrieved from a database.  
+SQLException class: Provides information about the exceptions that occur while interacting with databases.
+
+
+
+
+
+There are 5 steps to connect any java application with the database in java using JDBC. They are as follows:
+Register the driver class
+Class.forName("oracle.jdbc.driver.OracleDriver"); 
+Creating connection
+Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","password"); 
+Creating statement
+Statement stmt=con.createStatement(); 
+Executing queries
+ResultSet rs=stmt.executeQuery("select * from emp");  
+while(rs.next()){  
+System.out.println(rs.getInt(1)+" "+rs.getString(2));  
+} 
+Closing connection
+con.close(); 
+
+
+
+
+
+
+
+
+
+In MySQL:
+
+create database javadb;  
+use javadb;  
+create table emp(id int, name varchar(40), age int);   
+Insert into emp values(101, 'Emp1', 30); 
+Insert into emp values(102, 'Emp2', 35); 
+
+
+CREATE TABLE users (
+	user_id int NOT NULL AUTO_INCREMENT,
+	username varchar(45) NOT NULL,
+	password varchar(45) NOT NULL,
+	fullname varchar(45) NOT NULL,
+	email varchar(45) NOT NULL,
+	PRIMARY KEY (user_id)
+);
+
+
+
+
+
+
+
+
