@@ -222,7 +222,7 @@ public class MysqlConUpdate {
 	public static void main(String args[]) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/javadb", "root", "");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/javadb", "root", "root");
 			Statement stmt = con.createStatement();
 			int s = stmt.executeUpdate("Update emp set age=24 where id>=104");
 			System.out.println(s + " Records updated");
@@ -236,6 +236,28 @@ public class MysqlConUpdate {
 
 
 
+
+
+
+
+package crudPkg;
+
+import java.sql.*;
+
+public class MysqlConDelete {
+	public static void main(String args[]) {
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/javadb", "root", "root");
+			Statement stmt = con.createStatement();
+			int s = stmt.executeUpdate("Delete from emp where id=102");
+			System.out.println(s + " Records deleted");
+			con.close();
+		} catch (Exception e) {
+			System.out.println(e);
+		}
+	}
+}
 
 
 
