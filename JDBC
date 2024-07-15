@@ -333,6 +333,50 @@ public class JdbcInsertDemo {
 
 
 
+package crudPkg;
+
+import java.sql.*;
+
+public class JdbcReadDemo {
+	public static void main(String[] args) {
+		String dbURL = "jdbc:mysql://localhost:3306/javadb";
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			Connection conn = DriverManager.getConnection(dbURL, "root", "root");
+			String sql = "SELECT * FROM users";
+			Statement statement = conn.createStatement();
+			ResultSet result = statement.executeQuery(sql);
+			int count = 0;
+			while (result.next()) {
+				String name = result.getString(2);
+				String pass = result.getString(3);
+				String fullname = result.getString("fullname");
+				String email = result.getString("email");
+				String output = "User #%d: %s - %s - %s - %s";
+				System.out.println(String.format(output, ++count, name, pass, fullname, email));
+			}
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
