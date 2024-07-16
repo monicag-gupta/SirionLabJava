@@ -238,3 +238,72 @@ TestSpringProject.java
 for IOC ApplicationContext, and BeanFactory in src
 SpringConfig.xml
 
+
+
+
+package com.springcore;
+
+public interface IHotDrink {
+
+	public void prepareHotDrink();
+
+}
+
+
+
+
+
+
+
+
+package com.springcore;
+
+public class Tea implements IHotDrink {
+
+	@Override
+	public void prepareHotDrink() {
+
+		System.out.println("Dear customer, we are preparing tea for you!!");
+	}
+
+}
+
+
+
+
+
+
+
+
+
+package com.springcore;
+
+public class Coffee implements IHotDrink {
+
+	@Override
+	public void prepareHotDrink() {
+
+		System.out.println("Dear customer, we are preparing Coffee for you!!");
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
