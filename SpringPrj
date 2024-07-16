@@ -68,4 +68,33 @@ public class MainApp {
 
 
 
+@Component :       
+It is generic  stereotype for any spring managed component.
+@Repository :
+Specialized form of @Component. This annotation work as marker for any class which fulfills the role of repository or Data Access  Object(Persistent Layer).
+@Controller :
+Specialized form of @Component and applied to Presentation Layer.
+@Service :
+Specialized form of @Component and applied to Service Layer.
+@Configuration :
+@Configuration annotated class is used to define beans.  Have methods with annotation @Bean
+@Bean
+It is a method level annotation which work with @Configuration
+@Scope
+Every bean defined in IoC container needs to have a scope, default scope is Singleton.
+@DependsOn
+@Primary
+@Lazy
+@Import
+@ImportResource
+@Value
+
+
+
+
+
+
+
+
+
 
