@@ -497,5 +497,92 @@ public class TestSpringProject {
 
 
 
+package com.springcore;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+//@Component("restaurantBean")
+public class Restaurant {
+	public Restaurant() {
+		System.out.println("2. Restaurant Bean created");
+	}
+	public void greetCustomers() {
+		System.out.println("7. This is the business method");
+	}
+	public void finalize() {
+		System.out.println("11. Restaurant Bean is finalized");
+	}
+	public void inititializer() {
+		System.out.println("3. This is the init method");
+	}
+	public void destroyBean() {
+		System.out.println("9. This is the Bean Destroyer");
+	}
+}
+
+
+
+
+
+package com.springcore;
+
+import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class TestSpringProject {
+	public static void main(String[] args) {
+		System.out.println("1. Main starts..");
+		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
+		System.out.println("4. We register to shutdown in main..");
+		((AbstractApplicationContext)context).registerShutdownHook();
+		System.out.println("5. We get the Beans in main..");
+		Restaurant restaurantObj = (Restaurant) context.getBean("restaurantBean");
+		System.out.println("6. We call business method in main..");
+		restaurantObj.greetCustomers();
+		System.out.println("8. We destroy all beans in main..");
+		context.close();
+		restaurantObj=null;
+		System.out.println("10. We nullify all references(finalize the heap obj) in main..");
+		System.gc();
+		System.out.println("12. We end main..");
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+ 		<bean id="restaurantBean" class="com.springcore.Restaurant" init-method="inititializer" 
+ 		destroy-method="destroyBean">
+ 		</bean>
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
