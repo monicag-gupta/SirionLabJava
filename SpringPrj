@@ -593,5 +593,64 @@ https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api/1.3.2
 
 
 
+package com.springcore;
+import org.springframework.stereotype.Component;
+import javax.annotation.PostConstruct; 
+import javax.annotation.PreDestroy; 
+
+
+@Component("restaurantBean")
+public class Restaurant {
+	public Restaurant() {
+		System.out.println("2. Restaurant Bean created");
+	}
+	public void greetCustomers() {
+		System.out.println("7. This is the business method");
+	}
+	public void finalize() {
+		System.out.println("11. Restaurant Bean is finalized");
+	}
+	@PostConstruct
+	public void inititializer() {
+		System.out.println("3. This is the init method");
+	}
+	@PreDestroy
+	public void destroyBean() {
+		System.out.println("9. This is the Bean Destroyer");
+	}
+}
+
+
+
+
+
+
+package com.springcore;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
+
+public class TestSpringProject {
+	public static void main(String[] args) {
+		System.out.println("1. Main starts..");
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+		context.scan("com.springcore");
+		context.refresh();
+		System.out.println("4. We register to shutdown in main..");
+		((AbstractApplicationContext)context).registerShutdownHook();
+		System.out.println("5. We get the Beans in main..");
+		Restaurant restaurantObj = (Restaurant) context.getBean("restaurantBean");
+		System.out.println("6. We call business method in main..");
+		restaurantObj.greetCustomers();
+		System.out.println("8. We destroy all beans in main..");
+		context.close();
+		restaurantObj=null;
+		System.out.println("10. We nullify all references(finalize the heap obj) in main..");
+		System.gc();
+		System.out.println("12. We end main..");
+	}
+}
+
+
 
 
