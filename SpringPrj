@@ -97,6 +97,41 @@ Every bean defined in IoC container needs to have a scope, default scope is Sing
 
 create the class file to provide the annotation : MyAppConfiguration.java
 
+package com.springcore;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class MyAppConfiguration {
+	@Bean(name = "idhello")
+	public HelloWorld getHelloWorld() {
+		HelloWorld h=new HelloWorld();
+		h.setMessage("Hello World!!!!");
+		return h;
+	}
+}
+
+
+
+
+
+
+
+
+
+package com.springcore;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class MainApp {
+	public static void main(String[] args) {
+		ApplicationContext context = (ApplicationContext) new AnnotationConfigApplicationContext(MyAppConfiguration.class);
+		HelloWorld obj = (HelloWorld) context.getBean("idhello");
+		obj.getMessage();
+	}
+}
 
 
 
