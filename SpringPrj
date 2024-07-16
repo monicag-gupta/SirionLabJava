@@ -397,6 +397,98 @@ public class TestSpringProject {
 
 
 
+package com.springcore;
+
+public interface IHotDrink {
+
+	public void prepareHotDrink();
+
+}
+
+
+
+
+package com.springcore;
+
+import org.springframework.stereotype.Component;
+
+@Component("restaurantBean")
+public class Restaurant {
+	IHotDrink hotDrink;
+	public void setHotDrink(IHotDrink hotDrink) {
+		this.hotDrink=hotDrink;
+	}
+
+	public void prepareHotDrink() {
+		hotDrink.prepareHotDrink();
+	}
+}
+
+
+
+
+
+
+
+package com.springcore;
+
+import org.springframework.stereotype.Component;
+
+@Component("teaBean")
+public class Tea implements IHotDrink {
+
+	@Override
+	public void prepareHotDrink() {
+
+		System.out.println("Dear customer, we are preparing tea for you!!");
+	}
+
+}
+
+
+
+
+
+package com.springcore;
+
+import org.springframework.stereotype.Component;
+
+@Component("coffeeBean")
+public class Coffee implements IHotDrink {
+
+	@Override
+	public void prepareHotDrink() {
+
+		System.out.println("Dear customer, we are preparing Coffee for you!!");
+	}
+
+}
+
+
+
+
+
+
+
+package com.springcore;
+
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class TestSpringProject {
+	public static void main(String[] args) {
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
+		context.scan("com.springcore");
+		context.refresh();
+		Coffee coffee = (Coffee)context.getBean("coffeeBean");
+		Restaurant restaurantObj = (Restaurant) context.getBean("restaurantBean");
+		restaurantObj.setHotDrink(coffee);
+		restaurantObj.prepareHotDrink();
+	}
+}
+
+
+
+
 
 
 
