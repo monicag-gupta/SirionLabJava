@@ -1,0 +1,7 @@
+Here, we are going to learn the simple steps to create the first spring application. To run this application, we do not need any IDE. Steps:
+Create a package : com.springcore
+create the class : HelloWorld.java
+create the test class : MainApp.java
+create the xml file directly in src folder to provide the values : Beans.xml
+Load the spring jar files : Core, Beans, Context, Logging
+Run the test class
