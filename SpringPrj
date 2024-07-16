@@ -386,11 +386,12 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class TestSpringProject {
 	public static void main(String[] args) {
-		ApplicationContext context = (ApplicationContext)new AnnotationConfigApplicationContext("SpringConfig.xml");
+		ApplicationContext context = (ApplicationContext)new AnnotationConfigApplicationContext(MyAppConfiguration.class);
 		Restaurant restaurantObj = (Restaurant) context.getBean("restaurantBean");
 		restaurantObj.prepareHotDrink();
 	}
 }
+
 
 
 
