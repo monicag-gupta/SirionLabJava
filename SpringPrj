@@ -479,12 +479,13 @@ public class TestSpringProject {
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
 		context.scan("com.springcore");
 		context.refresh();
-		Coffee coffee = (Coffee)context.getBean("coffeeBean");
+		IHotDrink coffee = (IHotDrink)context.getBean("coffeeBean");
 		Restaurant restaurantObj = (Restaurant) context.getBean("restaurantBean");
 		restaurantObj.setHotDrink(coffee);
 		restaurantObj.prepareHotDrink();
 	}
 }
+
 
 
 
