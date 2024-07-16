@@ -353,6 +353,26 @@ http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
 
 
 
+package com.springcore;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class MyAppConfiguration {
+	@Bean(name="teaBean")
+	public IHotDrink getTea() {
+		return new Tea();
+	}
+	@Bean(name="coffeeBean")
+	public IHotDrink getCoffee() {
+		return new Coffee();
+	}
+	@Bean(name="restaurantBean")
+	public Restaurant getRestaurant() {
+		return new Restaurant(getCoffee());
+	}
+}
 
 
 
