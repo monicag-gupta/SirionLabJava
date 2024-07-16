@@ -218,3 +218,23 @@ public class MainApp {
 
 
 
+
+
+
+
+
+
+
+
+IOC Prj
+
+package com.springcore;
+
+IHotDrink.java
+Restaurant.java
+Tea.java
+Coffee.java
+TestSpringProject.java 
+for IOC ApplicationContext, and BeanFactory in src
+SpringConfig.xml
+
