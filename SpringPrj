@@ -379,6 +379,18 @@ public class MyAppConfiguration {
 
 
 
+package com.springcore;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class TestSpringProject {
+	public static void main(String[] args) {
+		ApplicationContext context = (ApplicationContext)new AnnotationConfigApplicationContext("SpringConfig.xml");
+		Restaurant restaurantObj = (Restaurant) context.getBean("restaurantBean");
+		restaurantObj.prepareHotDrink();
+	}
+}
 
 
 
