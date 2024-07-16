@@ -95,6 +95,14 @@ Every bean defined in IoC container needs to have a scope, default scope is Sing
 
 
 
+create the class file to provide the annotation : MyAppConfiguration.java
+
+
+
+
+
+
+
 
 
 
