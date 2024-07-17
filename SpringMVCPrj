@@ -138,6 +138,18 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
 
 
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<a href="welcome.html">Welcome page</a>
+</body>
+</html>
+
+
 
 
 
