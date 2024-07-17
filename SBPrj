@@ -116,6 +116,29 @@ In webapp: <h1>Welcome to Spring Boot from Webapp</h1>
 
 
 
+MvcConfig
+
+
+package com.sbpkg1;
+
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class MvcConfig implements WebMvcConfigurer {
+    @Override
+    public void configureViewResolvers(ViewResolverRegistry registry) {
+        registry.jsp("/WEB-INF/jsp/", ".jsp");
+//        registry.jsp: This method is used to configure JSP view resolver settings.
+//        The first argument /WEB-INF/jsp/ specifies the prefix for JSP files. This means that all JSP files will be looked for under the /WEB-INF/jsp/ directory.
+//        The second argument .jsp specifies the suffix for JSP files. This means that the view name will have .jsp appended to it to form the complete file name.
+    }
+}
+
+
+
+
 
 
 
