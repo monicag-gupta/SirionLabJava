@@ -141,6 +141,10 @@ public class MvcConfig implements WebMvcConfigurer {
 
 
 
+In classpath (resources) : <h1>Welcome to Spring Boot</h1>
+
+
+
 
 
 
