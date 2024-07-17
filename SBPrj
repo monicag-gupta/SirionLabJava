@@ -74,6 +74,15 @@ C:\Users\monica\eclipse-workspace-Sirion\demo>
 
 
 
+spring.application.name=SBPrj1
+spring.mvc.view.prefix:/WEB-INF/jsp/ 
+# spring.mvc.view.prefix:classpath:/jsp/ 
+spring.mvc.view.suffix:.jsp
+
+
+
+
+
 
 
 
