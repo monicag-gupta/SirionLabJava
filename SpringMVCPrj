@@ -158,6 +158,18 @@ http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
 
 
 
+Request: index.html
+-> 2nd request -> welcome.html
+-> web.xml -> binds welcome.html with spring-despatcher-servlet.xml ->
+-> spring-despatcher 
+-> welcome.html request is the bean for HelloController -> 
+So HelloController is called 
+-> sends the response to spring-despatcher as raw view named HelloPage with object welcomeMessage 
+-> spring-despatcher calls view resolver -> view resolver provides the final view as -> /WEB-INF/HelloPage.jsp with welcomeMessage used 
+-> this response is sent back to spring-despatcher -> spring-despatcher sends the response to the browser.
+
+
+
 
 
 
