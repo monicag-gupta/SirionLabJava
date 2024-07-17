@@ -1,0 +1,43 @@
+SpringWebMVCPrj1 : dynamic web prj
+Download commons-logging.jar And Spring all jars
+Copy the jar files from the SpringLib into the web-inf->lib  folder
+Also design the following files:
+com.hellocontroller.HelloController.java under src folder
+Under Web-inf folder put:
+HelloPage.jsp
+spring-dispatcher-servlet.xml
+Edit:
+Web.xml
+
+
+
+
+
+ <dependencies>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>jstl</artifactId>
+      <version>1.2</version>
+    </dependency>
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>5.2.23.RELEASE</version>
+      </dependency>
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>javax.servlet-api</artifactId>
+      <version>4.0.1</version>
+    </dependency>
+    
+  </dependencies>
+
+
+
+
+
+
+
+
+
