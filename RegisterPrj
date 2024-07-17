@@ -4,3 +4,15 @@ create table login(uname varchar(40), passwd varchar(20));
 insert into login values('arun','password'),('gaurav','p@ssw0rd'),('admin','admin');
 
 select * from login;
+
+
+
+Dynamic Web Project: RegisterPrj
+
+Servlet:
+Register
+Success
+Error
+
+HTML:
+index.html
