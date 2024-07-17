@@ -16,3 +16,25 @@ public class HelloWorldController {
 		return "Hello Spring Boot World !!!";
 	}
 }
+
+
+
+
+
+@RestController is a convenience annotation that does nothing more than adds the @Controller and @ResponseBody annotations in single statement.
+
+
+
+Here in this example the URI path is /hello.
+@Controller - This is used to specify the controller.
+@EnableAutoConfiguration - This enables auto configuration for the Application Context. 
+@RequestMapping - This is used to map to the Spring MVC controller method. 
+@ResponseBody - Used to bind the HTTP response body with a domain object in the return type. This annotation works behind the scenes. 
+
+
+
+
+
+
+
+
