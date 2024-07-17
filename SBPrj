@@ -106,6 +106,15 @@ public class TestController {
 
 
 
+In webapp: <h1>Welcome to Spring Boot from Webapp</h1>
+
+
+
+
+
+
+
+
 
 
 
