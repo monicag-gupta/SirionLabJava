@@ -33,6 +33,14 @@ Here in this example the URI path is /hello.
 
 
 
+Save Pom.xml and wait till it downloads all resources, then close it
+Right click prj -> Run as -> Mvn build.. (Set the goal : clean install ) -> Apply : close
+Whenever the project is to be executed -> Run as-> MVn build at the end
+Run the main application as a java application
+
+Now open the web browser and type:
+http://localhost:8080/hello
+
 
 
 
