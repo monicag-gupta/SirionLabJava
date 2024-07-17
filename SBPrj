@@ -46,3 +46,34 @@ http://localhost:8080/hello
 
 
 
+
+
+C:\Users\monica\eclipse-workspace-Sirion\demo>tree /F
+│   ├───src/main/java
+│   │   │   │   └───com/example/demo                 
+│   │   │                   HelloWorldController.java
+│   │   │                   MvcConfig.java
+│   │   │                   SpringBootHelloWorldApplication.java
+│   │   │                   TestController.java
+│   │   ├───resources
+│   │   │   │   application.properties
+│   │   │   │
+│   │   │   └───jsp
+│   │   │           welcome.jsp
+│   │   └───webapp
+│   │       └───WEB-INF
+│   │           └───jsp
+│   │                   welcome.jsp
+│   └───test/java
+│           └───com/example/demo
+│                           DemoApplicationTests.java
+C:\Users\monica\eclipse-workspace-Sirion\demo>
+
+
+
+
+
+
+
+
+
