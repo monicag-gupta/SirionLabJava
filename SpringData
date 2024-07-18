@@ -138,23 +138,40 @@ public class EmployeeDao {
 		return jdbcTemplate.update(query);
 	}
 
-	public List<Employee> getAllEmployees() {
+	public List<Employee> getAllEmployees1() {
 		return jdbcTemplate.query("select * from employee", new ResultSetExtractor<List<Employee>>() {
 			@Override
 			public List<Employee> extractData(ResultSet rs) throws SQLException, DataAccessException {
 				List<Employee> list = new ArrayList<Employee>();
 				while (rs.next()) {
-					Employee e = new Employee();
-					e.setId(rs.getInt(1));
-					e.setName(rs.getString(2));
-					e.setSalary(rs.getInt(3));
+					Employee e = new Employee(rs.getInt(1),rs.getString(2),rs.getInt(3));
 					list.add(e);
 				}
 				return list;
 			}
 		});
+		
+	}
+		public List<Employee> getAllEmployees() {
+			return jdbcTemplate.query("select * from employee", (ResultSet rs)-> {
+					List<Employee> list = new ArrayList<Employee>();
+					while (rs.next()) {
+						Employee e = new Employee(rs.getInt(1),rs.getString(2),rs.getInt(3));
+						list.add(e);
+					}
+					return list;
+			}
+			);
 	}
 }
+
+
+
+
+
+
+
+
 
 
 
