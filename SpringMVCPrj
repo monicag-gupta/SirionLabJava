@@ -223,7 +223,7 @@ public class StudentAdmissionController {
 
 
 
-
+AdmissionForm.jsp in web-inf
 
 <html>
 <body>
@@ -289,7 +289,7 @@ public class StudentAdmissionController {
 
 
 
-
+AdmissionSuccess.jsp in web-inf
 
 
 <html>
