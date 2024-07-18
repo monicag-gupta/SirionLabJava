@@ -5,3 +5,19 @@ id int,name varchar(100),salary int);
 
 
 
+
+
+Project: SpringJDBCPrj:
+Package: com.jdbc
+Employee
+EmployeeDao
+MainApp
+Src -> applicationContext.xml
+
+Add Libraries
+SpringLib
+MySQLConnector
+
+
+
+
