@@ -1,0 +1,11 @@
+Emailer Mock System
+
+Users(userid. Password, emailAddress)
+Data(id, to, from, Message)
+
+
+Login form:
+Inbox: Stream.filter (to->emailAddress)
+Compose: To (select Lists all Users->emailAddress), From: Current emailAddress, Message-> one liner string
+
+
