@@ -2,3 +2,20 @@ Add Dependency:
 MySQL Driver
 Spring Web
 Spring Data JPA
+
+
+
+
+create database if not exists javadb;
+
+use javadb;
+
+drop table if exists emp;
+
+create table emp(id int primary key, name varchar(40));
+Insert into emp values(101, 'Emp1'); 
+Insert into emp values(102, 'Emp2'); 
+Insert into emp values(103, 'Emp3'); 
+Insert into emp values(104, 'Emp4'); 
+select * from emp;
+
