@@ -119,6 +119,24 @@ Use JpaRepository when you need more advanced database operations and want to ta
 
 
 
+package com.SbOrmPrj.model;
+
+import org.springframework.stereotype.Repository;
+
+//import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
+
+@Repository
+public interface EmpDAO extends CrudRepository<Emp, Integer> {
+
+}
+
+
+
+
+
+
+
 
 
 
