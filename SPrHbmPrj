@@ -129,7 +129,7 @@ class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 </bean>
 <tx:annotation-driven
 transaction-manager="transactionManager" />
-<bean id="d" class="com.hibernate.EmployeeDao">
+<bean id="d" class="com.jpa.EmployeeDao">
 <property name="template" ref="mytemplate"></property>
 </bean>
 </beans>
@@ -181,10 +181,12 @@ transaction-manager="transactionManager" />
 	</bean>
 	<tx:annotation-driven
 		transaction-manager="transactionManager" />
-	<bean id="d" class="com.hibernate.EmployeeDao">
+	<bean id="d" class="com.jpa.EmployeeDao">
 		<property name="template" ref="mytemplate"></property>
 	</bean>
 </beans>
+
+
 
 
 
