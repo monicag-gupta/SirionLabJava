@@ -19,3 +19,23 @@ Insert into emp values(103, 'Emp3');
 Insert into emp values(104, 'Emp4'); 
 select * from emp;
 
+
+
+
+
+
+
+
+
+spring.datasource.url=jdbc:mysql://localhost:3306/javadb
+spring.datasource.username=root
+spring.datasource.password=root
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+
+
+
+
+
+
+
