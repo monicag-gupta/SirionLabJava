@@ -1,3 +1,23 @@
+Login Project
+Login page: Authenticate / Register
+  Login
+  Password
+LoginToSystem
+Register
+
+Register-:
+  Enter login, password, get Email address(login@monica.com) -> save in DB
+Authenticate-:
+  Welcome EmailAddress
+
+
+
+
+
+
+
+
+
 Emailer Mock System
 
 Users(userid. Password, emailAddress)
