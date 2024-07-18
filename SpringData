@@ -35,11 +35,11 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
        <property name="username" value="root" />
        <property name="password" value="" />
    </bean>
-  <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+  <bean id="jdbcTemp" class="org.springframework.jdbc.core.JdbcTemplate">
        <property name="dataSource" ref="ds"></property>
    </bean>
    <bean id="edao" class="com.jdbc.EmployeeDao">
-       <property name="jdbcTemplate" ref="jdbcTemplate"></property>
+       <property name="jdbcTemplate" ref="jdbcTemp"></property>
    </bean>
 </beans>
 
