@@ -79,3 +79,34 @@ public class Emp {
 
 
 
+CrudRepository is the base interface for generic CRUD operations. It provides basic CRUD functionalities such as saving, deleting, and finding entities.
+ Key Methods:
+save(S entity): Saves a given entity.
+findById(ID id): Retrieves an entity by its id.
+findAll(): Returns all entities.
+deleteById(ID id): Deletes the entity with the given id.
+count(): Returns the number of entities.
+existsById(ID id): Checks whether an entity with the given id exists.
+
+
+
+
+
+
+JpaRepository extends CrudRepository and adds additional JPA-specific operations and methods. It includes methods for pagination and sorting, as well as some additional features that make it more convenient to use with JPA.
+ Additional Key Methods:
+findAll(Sort sort): Returns all entities sorted by the given options.
+findAll(Pageable pageable): Returns a Page of entities meeting the paging restriction provided in the Pageable object.
+saveAndFlush(S entity): Saves an entity and flushes changes instantly.
+deleteInBatch(Iterable<T> entities): Deletes the given entities in a batch.
+findOne(Example<S> example): Returns a single entity matching the given Example.
+
+
+
+
+
+
+
+
+
+
