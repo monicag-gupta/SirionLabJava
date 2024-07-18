@@ -1,0 +1,5 @@
+Drop table EMPLOYEE;
+Create table Employee(id int not null, name varchar(255), salary int, Primary Key(id));
+
+
+
