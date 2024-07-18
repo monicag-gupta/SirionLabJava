@@ -292,5 +292,34 @@ public class UpdateStudent {
 
 
 
+package com.hibernate;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+
+public class UpdateStudent {
+	public static void main(String[] args) {
+		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+		Session session = sessionFactory.openSession();
+		Session session2 = sessionFactory.openSession();
+		session.beginTransaction();
+		session2.beginTransaction();
+		Student student = (Student) session.get(Student.class, 2);
+		session2.save(new Student("Johnny Johnny",20,"BE"));
+		student.setStudentName("Janny Smith"); // update where id=2
+		System.out.println("Updated Successfully");
+		session.getTransaction().commit();
+		session2.getTransaction().commit();
+		sessionFactory.close();
+		student.setStudentName("Ishu72"); // update where id=2
+	}
+}
+
+
+
+
+
+
+
 
 
