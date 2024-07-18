@@ -171,6 +171,43 @@ public class EmployeeDao {
 
 
 
+package com.jdbc;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class MainApp {
+	public static void main(String[] args) {
+
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
+		EmployeeDao dao = (EmployeeDao) ctx.getBean("edao");
+		int status = dao.saveEmployee(new Employee(101, "John Doe", 50000));
+		// int status=dao.saveEmployee(new Employee(102,"Jane Doe",5000));
+		System.out.println(status);
+		/*
+		 * int status=dao.updateEmployee(new Employee(102,"Johnny",35000));
+		 * System.out.println(status);
+		 */
+		/*
+		 * int status=dao.saveEmployee(new Employee(103,"Smith",50000));
+		 * System.out.println(status);
+		 */
+		/*
+		 * Employee e=new Employee(); 
+		 * e.setId(103); 
+		 * int status=dao.deleteEmployee(e);
+		 * System.out.println(status);
+		 */
+		/*
+		 * List<Employee> list=dao.getAllEmployees(); for(Employee e:list)
+		 * System.out.println(e);
+		 */
+	}
+
+}
+
+
+
 
 
 
