@@ -45,6 +45,57 @@ logging.level.org.springframework.data.mongodb.core.MongoDbUtils=DEBUG
 
 
 
+package com.SbMongoPrj.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.SbMongoPrj.model.Employee;
+import com.SbMongoPrj.repository.EmployeeRepository;
+
+@RestController
+@RequestMapping("/test")
+public class TestController {
+
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
+    @GetMapping("/checkConnection")
+    public String checkConnection() {
+        try {
+            long count = employeeRepository.count();
+            return "Connected to MongoDB! Total employees: " + count;
+        } catch (Exception e) {
+            return "Failed to connect to MongoDB: " + e.getMessage();
+        }
+    }
+
+    @PostMapping("/addEmployee")
+    public Employee addEmployee(@RequestBody Employee employee) {
+        return employeeRepository.save(employee);
+    }
+
+    @GetMapping("/getAllEmployees")
+    public List<Employee> getAllEmployees() {
+        return employeeRepository.findAll();
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
