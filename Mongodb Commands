@@ -57,6 +57,18 @@ Regular Expression: Regular Expression datatype is used to store regular express
 
 
 
+Read:
+db.COLLECTION_NAME.find()
+
+
+db.Employee.find()
+
+
+db.Employee.find().forEach(printjson)
+
+
+
+
 
 
 
