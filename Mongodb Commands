@@ -100,6 +100,51 @@ db.Employee.remove({Employeeid:22})
 
 
 
+In MongoDB, db.collection.drop() method is used to drop a collection from a database. It completely removes a collection from the database and does not leave any indexes associated with the dropped collections.
+The db.collection.drop() method does not take any argument and produce an error when it is called with an argument. This method removes all the indexes associated with the dropped collection.
+db.COLLECTION_NAME.drop()  
+MongoDB Drop collection example
+First check the already existing collections in your database.
+>use EmployeeDB
+> show collections  
+Emp
+Employee
+>db.Emp.drop()  
+True
+Now check the collections in the database:
+>show collections  
+Employee
+Now, there are no existing collections in your database.
+Note: The drop command returns true if it successfully drops a collection. It returns false when there is no existing collection to drop.
+
+
+
+
+
+use Testdb
+db.movie.insert({"name":"Justice League"})
+MongoDB db.dropDatabase() command is used to drop a existing database.
+Basic syntax of dropDatabase() command is as follows −
+db.dropDatabase()
+This will delete the selected database. If you have not selected any database, then it will delete default 'test' database.
+check the list of available databases by using the command, show dbs.
+show dbs
+Check current db:
+db
+Testdb
+use javadb
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
