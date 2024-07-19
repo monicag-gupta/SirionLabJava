@@ -1,0 +1,19 @@
+Maven Project : SBMongo
+groupId: com.SBMongoGr
+artifactId: SBMongo
+
+In src/main/resources:
+application.properties
+In src/main/java
+package com.example.demo.model
+class Employee
+package com.example.demo.repository
+interface EmployeeRepository
+package com.example.demo.service
+class EmployeeService
+package com.example.demo.controller
+class EmployeeController
+package com.example.demo.controller
+class TestController
+package com.example.demo
+SbMongoApplication
