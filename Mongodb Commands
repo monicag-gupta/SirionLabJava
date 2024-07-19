@@ -76,6 +76,13 @@ db.Employee.find({"Employeeid" : 1})
 
 
 
+db.COLLECTION_NAME.update(SELECTION_CRITERIA, UPDATED_DATA)
+
+
+db.Employee.update(
+{"Employeeid" : 2},
+{$set: { "EmployeeName" : "NewMartin"}});
+
 
 
 
