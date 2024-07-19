@@ -142,6 +142,157 @@ use javadb
 
 
 
+Operation
+Syntax
+Example
+RDBMS Equivalent
+Equality
+{<key>:{$eg;<value>}}
+db.Employee.find({"EmployeeName":"Joe"}).pretty()
+where EmployeeName = 'Joe'
+Less Than
+{<key>:{$lt:<value>}}
+db.Employee.find({"Employeeid":{$lt:5}}).pretty()
+where Employeeid < 5
+Less Than Equals
+{<key>:{$lte:<value>}}
+db.Employee.find({"Employeeid":{$lte:5}}).pretty()
+where Employeeid <= 5
+Greater Than
+{<key>:{$gt:<value>}}
+db.Employee.find({"Employeeid":{$gt:5}}).pretty()
+where Employeeid > 5
+Greater Than Equals
+{<key>:{$gte:<value>}}
+db.Employee.find({"Employeeid":{$gte:5}}).pretty()
+where Employeeid >= 5
+Not Equals
+{<key>:{$ne:<value>}}
+db.Employee.find({"Employeeid":{$ne:5}}).pretty()
+where Employeeid != 5
+Values in an array
+{<key>:{$in:[<value1>, <value2>,……<valueN>]}}
+db.Employee.find({“EmployeeName":{$in:["Raj", "Ram", "Raghu"]}}).pretty()
+Where EmployeeName matches any of the value in :["Raj", "Ram", "Raghu"]
+Values not in an array
+{<key>:{$nin:<value>}}
+db.Employee.find({“EmployeeName":{$nin:["Raj", "Ram", "Raghu"]}}).pretty()
+Where EmployeeName values is not in the array :["Ramu", "Raghav"] or, doesn’t exist at all
+
+
+
+
+
+
+
+
+SQL SELECT Statement
+MongoDB find() Statement
+SELECT * FROM Employee
+db.Employee.find()
+SELECT id, Employeeid, EmployeeName FROM Employee
+db.Employee.find( { }, { Employeeid: 1, EmployeeName: 1 } )
+SELECT Employeeid, EmployeeName FROM Employee
+db.Employee.find( { }, { Employeeid: 1, EmployeeName: 1, _id: 0 } )
+SELECT * FROM Employee WHERE EmployeeName = "B"
+db.Employee.find( { EmployeeName: "A" } )
+SELECT Employeeid, EmployeeName FROM Employee WHERE EmployeeName = "A"
+db.Employee.find( { EmployeeName: "A" }, { Employeeid: 1, EmployeeName: 1, _id: 0 } )
+SELECT * FROM Employee WHERE EmployeeName != "A"
+db.Employee.find( { EmployeeName: { $ne: "A" } } )
+SELECT * FROM Employee WHERE EmployeeName = "A" AND Employeeid = 50
+db.Employee.find( { EmployeeName: "A", Employeeid: 50 } )
+SELECT * FROM Employee WHERE EmployeeName = "A" OR Employeeid = 50
+db.Employee.find( { $or: [ { EmployeeName: "A" } , { Employeeid: 50 } ] } )
+SELECT * FROM Employee WHERE Employeeid > 25
+db.Employee.find( { Employeeid: { $gt: 25 } } )
+SELECT * FROM Employee WHERE Employeeid < 25
+Db.Employee.find( { Employeeid: { $lt: 25 } } )
+SELECT * FROM Employee WHERE Employeeid > 25 AND Employeeid <= 50
+db.Employee.find( { Employeeid: { $gt: 25, $lte: 50 } } )
+SELECT * FROM Employee WHERE Employeeid like "%bc%"
+db.Employee.find( { Employeeid: /bc/ } ) -or- db.Employee.find( { Employeeid: { $regex: /bc/ } } )
+SELECT * FROM Employee WHERE Employeeid like "bc%"
+db.Employee.find( { Employeeid: /^bc/ } ) -or- db.Employee.find( { Employeeid: { $regex: /^bc/ } } )
+SELECT * FROM Employee WHERE EmployeeName = "A" ORDER BY Employeeid ASC
+db. Employee. find( { EmployeeName: "A" } ). sort( { Employeeid: 1 } )
+SELECT * FROM Employee WHERE EmployeeName = "A" ORDER BY Employeeid ASC
+db. Employee. find( { EmployeeName: "A" } ). sort( { Employeeid: 1 } )
+SELECT * FROM Employee WHERE EmployeeName = "A" ORDER BY Employeeid ASC
+db. Employee. find( { EmployeeName: "A" } ). sort( { Employeeid: 1 } )
+SELECT * FROM Employee WHERE EmployeeName = "A" ORDER BY Employeeid DESC
+db. Employee. find( { EmployeeName: "A" } ). sort( { Employeeid: -1 } )
+SELECT * FROM Employee WHERE EmployeeName = "A" ORDER BY Employeeid DESC
+db. Employee. find( { EmployeeName: "A" } ). sort( { Employeeid: -1 } )
+SELECT COUNT(*) FROM Employee
+db. Employee. count() or db. Employee. find(). count()
+SELECT COUNT(Employeeid) FROM Employee 
+db. Employee.count( { Employeeid: { $exists: true } } ) or db. Employee.find( { Employeeid: { $exists: true } } ).count()
+SELECT COUNT(*) FROM Employee WHERE Employeeid > 30
+db. Employee.count( { Employeeid: { $gt: 30 } } ) or db. Employee.find( { Employeeid: { $gt: 30 } } ).count()
+SELECT DISTINCT(EmployeeName) FROM Employee
+db. Employee.aggregate( [ { $group : { _id : "$EmployeeName" } } ] ) or, for distinct value sets that do not exceed the BSON size limit db. Employee.distinct( "EmployeeName" )
+SELECT * FROM Employee LIMIT 1
+db. Employee.findOne() or db. Employee.find(). limit(1)
+SELECT * FROM Employee LIMIT 5 SKIP 10
+db. Employee.find(). limit(5). skip(10)
+EXPLAIN SELECT * FROM Employee WHERE EmployeeName = "A"
+db. Employee. find( { EmployeeName: "A" } ). explain()
+
+
+
+
+db.collection.createIndex() 
+
+
+db.Employee.createIndex ( { Employeeid: 1 } )
+db.Employee.getIndexes()
+
+db.collection.dropIndex(index)
+
+db.Employee.dropIndex("index for Emp" );
+{ nIndexesWas: 2, ok: 1 }
+db.Employee.dropIndex("Employeeid_1" );
+or 
+db.Employee.dropIndex( { "Employeeid": 1 } );
+
+
+
+Aggregation expressions use EmployeeDB
+
+Expression
+Description
+Example
+$sum
+Sums up the defined value from all documents in the collection.
+db.Employee.aggregate([{$group : {_id : "$EmployeeName", sum_empid : {$sum : "$Employeeid"}}}])
+$avg
+Calculates the average of all given values from all documents in the collection.
+db.Employee.aggregate([{$group : {_id : "$EmployeeName", avg_empid : {$avg : "$Employeeid"}}}])
+$min
+Gets the minimum of the corresponding values from all documents in the collection.
+db.Employee.aggregate([{$group : {_id : "$EmployeeName", min_empid : {$min : "$Employeeid"}}}])
+$max
+Gets the maximum of the corresponding values from all documents in the collection.
+db.Employee.aggregate([{$group : {_id : "$EmployeeName", max_empid : {$max : "$Employeeid"}}}])
+$first
+Gets the first document from the source documents according to the grouping. Typically this makes only sense together with some previously applied “$sort”-stage.
+db.Employee.aggregate([{$group : {_id : "$EmployeeName", first_empid : {$first : "$Employeeid"}}}])
+$last
+Gets the last document from the source documents according to the grouping. Typically this makes only sense together with some previously applied “$sort”-stage.
+db.Employee.aggregate([{$group : {_id : "$EmployeeName", last_empid : {$last : "$Employeeid"}}}])
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
