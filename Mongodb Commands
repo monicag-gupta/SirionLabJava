@@ -1,9 +1,69 @@
+To create a database:
 use javadb
+The db does not get created till we insert a collection into it
 
-db.Employee.insert ({	"Employeeid" : 1,	"EmployeeName" : "Martin"	})
+To create collection:
+Directly by inserting documents:
+	db.Employee.insert ({	"Employeeid" : 1,	"EmployeeName" : "Martin"	})
+	
+	db.Employee.insert (	{
+			"Employeeid" : 2,
+			"EmployeeName" : "Mart"
+		}
+	)
 
-db.Employee.insert (	{
-		"Employeeid" : 2,
-		"EmployeeName" : "Mart"
-	}
-)
+
+By Command:
+db.createCollection(name, options) 
+name is the db name
+Options:
+Capped:
+Boolean
+(Optional) If it is set to true, enables a capped collection. Capped collection is a fixed size collection that automatically overwrites its oldest entries when it reaches its maximum size. If you specify true, you need to specify size parameter also.
+AutoIndexID:
+Boolean
+(Optional) If it is set to true, automatically create index on ID field. Its default value is false.
+Size:
+Number
+(Optional) It specifies a maximum size in bytes for a capped collection. If capped is true, then you need to specify this field also.
+Max:
+Number
+(Optional) It specifies the maximum number of documents allowed in the capped collection.
+
+
+
+Insert a document:
+db.myColl.insert({"name" : "seomount"})  
+
+
+
+
+Data Types in MongoDB:
+Integer: Integer type is used to store a numerical value. Depending upon your server. An integer can be 32 bit or 64 bit
+String: String is the most commonly used datatype to store the data. In MongoDB ,the string must be UTF-8 valid
+Boolean: Boolean type is used to store a boolean(true/ false) value
+Double: Double is used to store floating point values
+Min & Max key: The min/max keys are used to compare a value against the lowest and highest BSON elements
+Array: Arrays type is used to store arrays or list or multiple values into one key
+Timestamp: Timestamp can be handy for recording when a document has been modified or added
+Object: Object is used for embedded documents
+Null: Null type which is used to store a Null value
+Date: Date is used to store the current date or time in UNIX time format
+Symbol: Symbol is generally reserved for languages that use a specific symbol type, it is also used identically to a string
+Object ID: The Object ID datatype is used to store the document’s ID
+Binary Data: Binary data is used to store binary data
+Code: Code is used to store JavaScript code into the document
+Regular Expression: Regular Expression datatype is used to store regular expression
+
+
+
+
+
+
+
+
+
+
+
+
+
