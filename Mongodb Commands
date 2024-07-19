@@ -66,6 +66,15 @@ db.Employee.find()
 
 db.Employee.find().forEach(printjson)
 
+db.Employee.find().pretty()
+
+
+
+db.Employee.insert ({	"Employeeid" : 1,	"EmployeeName" : "John Doe"	})
+db.Employee.find({"Employeeid" : 1})
+
+
+
 
 
 
