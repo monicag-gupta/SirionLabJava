@@ -86,6 +86,17 @@ db.Employee.update(
 
 
 
+Deleting Data
+
+db.COLLECTION_NAME.remove(DELETION_CRITERIA)
+
+db.Employee.insert ({	"Employeeid" : 22,	"EmployeeName" : "Jane Doe"	})
+
+db.Employee.find()
+
+db.Employee.remove({Employeeid:22})
+
+
 
 
 
