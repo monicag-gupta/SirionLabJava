@@ -1,0 +1,9 @@
+use javadb
+
+db.Employee.insert ({	"Employeeid" : 1,	"EmployeeName" : "Martin"	})
+
+db.Employee.insert (	{
+		"Employeeid" : 2,
+		"EmployeeName" : "Mart"
+	}
+)
