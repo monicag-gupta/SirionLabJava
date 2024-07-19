@@ -17,3 +17,35 @@ package com.example.demo.controller
 class TestController
 package com.example.demo
 SbMongoApplication
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+spring.data.mongodb.host=localhost
+spring.data.mongodb.port=27017
+spring.data.mongodb.database=javadb
+# mongodb://localhost:27017/
+logging.level.org.springframework.data.mongodb.core.MongoTemplate=DEBUG
+logging.level.org.springframework.data.mongodb.core.MongoDbUtils=DEBUG
+
+
+
+
+
+
+
+
+
+
+
