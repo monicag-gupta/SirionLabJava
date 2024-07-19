@@ -153,3 +153,110 @@ public class Employee {
 
 
 
+
+
+
+package com.SbMongoPrj.controller;
+
+
+import com.SbMongoPrj.model.Employee;
+import com.SbMongoPrj.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+@RequestMapping("/api/employees")
+public class EmployeeController {
+    @Autowired
+    private EmployeeService employeeService;
+
+    @GetMapping
+    public List<Employee> getAllEmployees() {
+        return employeeService.getAllEmployees();
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Employee> getEmployeeById(@PathVariable String id) {
+        Optional<Employee> employee = employeeService.getEmployeeById(id);
+        return employee.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @PostMapping
+    public Employee createEmployee(@RequestBody Employee employee) {
+        return employeeService.createEmployee(employee);
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Employee> updateEmployee(@PathVariable String id, @RequestBody Employee employee) {
+        if (employeeService.getEmployeeById(id).isPresent()) {
+            return ResponseEntity.ok(employeeService.updateEmployee(id, employee));
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteEmployee(@PathVariable String id) {
+        if (employeeService.getEmployeeById(id).isPresent()) {
+            employeeService.deleteEmployee(id);
+            return ResponseEntity.noContent().build();
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+package com.SbMongoPrj.service;
+
+
+import com.SbMongoPrj.model.Employee;
+import com.SbMongoPrj.repository.EmployeeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class EmployeeService {
+    @Autowired
+    private EmployeeRepository employeeRepository;
+
+    public List<Employee> getAllEmployees() {
+        return employeeRepository.findAll();
+    }
+
+    public Optional<Employee> getEmployeeById(String id) {
+        return employeeRepository.findById(id);
+    }
+
+    public Employee createEmployee(Employee employee) {
+        return employeeRepository.save(employee);
+    }
+
+    public Employee updateEmployee(String id, Employee employee) {
+        employee.set_id(id);
+        return employeeRepository.save(employee);
+    }
+
+    public void deleteEmployee(String id) {
+        employeeRepository.deleteById(id);
+    }
+}
+
+
+
+
