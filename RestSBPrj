@@ -270,6 +270,25 @@ public class EmpCRUDService {
 
 
 
+Controller URL:
+ http://localhost:8080/getEmp
+
+@PathVariable
+  http://localhost:8080/getEmp/101
+
+@RequestParam : @GetMapping and @PostMapping even @PutMapping, @DeleteMapping
+ http://localhost:8080/getEmp 
+Body->Form submits to  http://localhost:8080/getEmp with form parameter as 101
+
+@QueryParam / @RequestParam + @GetMapping
+ http://localhost:8080/getEmp?eid=101
+
+
+
+
+
+
+
 
 
 
