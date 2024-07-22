@@ -1,0 +1,274 @@
+1. 
+WAP in java to design the following class:
+class Person{
+Name as a write once property
+Age as a conditional property (0-150)
+Country_name as a read only property
+}
+Use the class in 
+Class Main{
+Create an object of person 
+Call the properties and show the usage.
+Like try to set two different names to person.name
+Try to give invalid age
+Try to change the country name.
+
+
+
+
+
+
+
+2. Create a class Emp which counts the number of objects created, giving a count of total emps in the company.
+
+
+
+3. WAP in Java to check whether a String is Palindrome or not.
+Eg: Malayalam, nUN…
+Hint: Use String, StringBuilder and StringBuffer library functions.
+
+
+
+
+
+4. WAP in Java to print the following triangle (5 min)
+0
+1	1
+2	2	2
+3	3	3	3
+
+1
+1	2
+1	2	3
+1	2	3	4
+
+
+
+
+
+5. WAP in Java to print the pascal triangle: Use multidimensional array 
+     1
+   1    1
+1     2    1
+
+
+
+
+6. Employee { empId, empName}
+SalariedEmployee : Employee {monthlyTakeAway}
+WagesEmployee : Employee {DailyTakeAway}
+
+AccountDept(Employee e){Every month-> calculate the payment and pay}->DailyWages*30, MonthlySal*1
+
+
+
+
+
+7. Menu driven program to count the no of emp in a company.
+Emp is a class:
+Every time an emp obj is added, count should update itself.
+NO_EMP() -> count
+Menu:
+1. Add Employee
+2. Display count of Employee
+3. Exit
+
+
+
+
+
+
+
+8. WAP in Java – Generics to design a class called myCol which can store data in int, double or string format.
+Use arrays/ArrayList to store data and show the entire array/List.
+Eg:
+Step1: design a class myCol{ Integer[] arr; addtoArr(), printArr();}
+Step2: Then add the generics T to myCol
+Show the usage in main()
+
+TOA max size of array; static TOA=0
+addToArr(Ele)-> arr[TOA]=Ele;
+
+ArrLst instead use ArrayList
+
+
+
+
+
+
+
+
+9. Create a generic Class Employee which takes name to be of generic type. Empid should always be Integer. Add required functionalities to add, show employees.
+Show the working structure for the class.
+
+
+
+
+
+10. Create a list(Vector, ArrayList) of Employees. Add employees to the list. Print the list of employees every time a new employee is added.
+Employee is a class
+List<Employee> emps …
+Hint: override toString() in Employees
+
+
+
+
+
+
+
+
+11. Exercise : 15 min : google String functions
+
+String str=“import java.util.*;  
+class JavaExample{  
+  public static void main(String args[]){  
+     ArrayList<String> alist=new ArrayList<String>();  
+     alist.add("Gregor Clegane");  
+     alist.add("Khal Drogo");  
+    //iterating ArrayList
+     for(String str:alist)  
+        System.out.println(str);  
+     }  
+}”
+Stack1: {, {
+Stack2: }, } 
+Stack3: (, (
+Stack4: ),),) …
+Scan the str, and prepare six stack for the brackets
+Create stacks for {, }, (, ), [, ]
+Compare the size of the stacks bracket pair-wise.
+If they do not match: display an error message else say: Compiled successfully.
+
+
+
+
+
+
+
+
+12. WAP to create anonymous class for mathematical operation such as add, subtract, multiply, divide based on an interface for operation.
+Eg:
+Interface MathOp{
+Int operation(int x, int y);
+}
+MathOp add= new MathOp(){
+Int operation(int x, int y){
+Return x+y;
+}
+Add.operation(1,8) -> 9
+
+
+
+
+
+
+
+
+13. Prepare a class with all the add(), sub(), mul(), divide()
+Prepare a FI for calculating according to the functions referred.
+Use Method Reference
+
+
+
+
+
+
+
+
+14. How will you print unique squares of numbers in java 8?
+How will you print count of empty strings in java 8?
+How will you get the highest number present in a list using Java 8?
+How will you get the lowest number present in a list using Java 8?
+How will you get the sum of all numbers present in a list using Java 8?
+How will you get the average of all numbers present in a list using Java 8?
+
+
+
+
+
+
+
+
+15. Take inputs from a user/ give a value to a variable and run exception handling on the input in case the input number is 0.
+Do not use throw statement.
+
+
+
+
+
+
+
+16. Create a class called Employee that asks the user to input the name and the age of an employee. Raise a custom defined exception when the user enters an employee name that has already been entered in the array/collection of employees and raise another exception if the age is negative or less than 18 or greater than 60. If there is any occurrence of any other exception, throw those also as user defined exceptions. It is a menu driven program to 
+1. Enter New Employee
+2. List the Employees
+3. Exit.
+Exceptions: AgeInvalidException, DuplicateNameException
+If age <18: “Children are not allowed as Employees”
+If Age<0 : “Ghosts are not allowed as Employees”
+If Age>60 : “Seniors are not Allowed as Employees”
+If age> 100 : “Purvaj are not allowed as Employees”
+If name is duplicate: “Duplicate names are not allowed as Employees”
+
+
+
+
+
+
+
+
+
+17. Take two numbers from cmd line and print its summation.
+Please check if the number of args is 2 only or not.
+
+
+
+
+
+18. Design a Menu driven Program to Perform the following:
+Note file name is : EmpRecord.txt
+1. Add an Emp object as String to a new line in the file.
+2. List all Emp
+3. Over write the file and add a single object of Emp
+4. Exit
+
+
+
+
+
+
+19. Run the previous program by copying a .java file and pasting it to same named .clas file(pl note it’s not .class)
+Only one arg will be passed with extension .java as the cmd line arg
+Save the entire content of the file in another file with the same name and extension .clas
+>java FileCopy2 C:\\Monica\\aa.java
+Output: aa.clas  with the same content as aa.java
+Validations: The cmd arg should be 1. The cmd arg should have ext of .java
+Steps: 1. get the file names : both file name from the args[0], use string functions: x.java => x.clas
+2. use the same copy function with these filenames
+
+
+
+
+
+
+20. Write a Java program to prompt a user to input his/her name and then the output be shown as an example below:
+Hello <Name>! 
+Append the Content + Login time(System time when the Name was entered) to a file: Name_Collection.txt
+Hint:Second parameter in FileWriter is to be true to append.
+FileWriter fileWritter = new FileWriter(data,true);
+
+Eg:
+Run1: Hello Monica!
+Run2: Hello Ishu!
+Name_Collection.txt
+Monica  Login time: 11:47 AM 25-08-2018
+Ishu  Login time: 11:49 AM 25-08-2018
+
+
+
+
+
+21. List contents of all directories-subdirectories-file from a folder specified in cmd agrs.
+
+
+
+     
