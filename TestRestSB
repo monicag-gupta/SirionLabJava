@@ -1,0 +1,14 @@
+Few points to help us out optimize our build time as well as some pitfalls that might impact its speed:
+Using profiles wisely – how profiles impact performance
+Reconsidering @MockBean – how mocking hits performance
+Refactoring @MockBean – alternatives to improve performance
+Thinking carefully about @DirtiesContext – a useful but dangerous annotation and how not to use it
+Using test slices – a cool tool that can help or get on our way
+Using class inheritance – a way to organize tests in a safe manner
+State management – good practices to avoid flakey tests
+Refactoring into unit tests – the best way to get a solid and snappy build
+
+
+
+
+
