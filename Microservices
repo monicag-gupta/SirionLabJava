@@ -51,6 +51,17 @@ These patterns help address common challenges in building and deploying microser
 
 
 
+SB Project:
+limits-service
+
+Group: com.example
+Package:
+com.example.demo
+
+
+Add Dependencies:
+Spring Web, Spring Boot DevTools, Spring Boot Actuator, Config Client
+
 
 
 
