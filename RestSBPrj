@@ -196,6 +196,79 @@ public class EmpDAO {
 
 
 
+package com.RestSBPrj.controller;
+
+
+
+import com.RestSBPrj.entity.*;
+import java.util.List;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/rest/empCRUD")
+public class EmpCRUDService {
+	@GetMapping("/")
+	public ResponseEntity<String> getMsg() {
+		return new ResponseEntity<String>("<h1>Emp CRUD works</h1>", HttpStatus.OK);
+	}
+
+	@GetMapping("/getAll")
+	public ResponseEntity<List<Emp>> ListEmps() {
+		EmpDAO edao = new EmpDAO();
+		return new ResponseEntity<>(edao.getAllEmps(), HttpStatus.OK);
+	}
+
+	@GetMapping("/getEmp")
+	public ResponseEntity<Emp> getEmp(@RequestParam("eid") int eid) {
+		EmpDAO edao = new EmpDAO();
+		return new ResponseEntity<>(edao.getEmp(eid), HttpStatus.OK);
+	}
+
+	@GetMapping("/updateEmp")
+	public String upEmp(@RequestParam("eid") int eid, @RequestParam("ename") String ename) {
+		Emp e = new Emp(eid, ename);
+		EmpDAO edao = new EmpDAO();
+		String r = edao.updateEmp(e);
+		return r;
+
+	}
+
+	@GetMapping("/delEmp")
+	public ResponseEntity<List<Emp>> delEmp(@RequestParam("eid") int eid) {
+		EmpDAO edao = new EmpDAO();
+		return new ResponseEntity<>(edao.delEmp(eid), HttpStatus.OK);
+
+	}
+
+	@PostMapping("/addPost")
+	public String addEmpPost(@RequestParam("eid") int eid, @RequestParam("ename") String ename) {
+		Emp e = new Emp(eid, ename);
+		EmpDAO edao = new EmpDAO();
+		edao.addEmp(e);
+		return "success by post";
+	}
+
+	@GetMapping("/add")
+	public String addEmp(@RequestParam("eid") int eid, @RequestParam("ename") String ename) {
+		Emp e = new Emp(eid, ename);
+		EmpDAO edao = new EmpDAO();
+		edao.addEmp(e);
+		return "success";
+
+	}
+
+}
+
+
+
+
+
+
+
+
 
 
 
