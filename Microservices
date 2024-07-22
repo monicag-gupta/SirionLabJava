@@ -146,7 +146,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties("limitMinMax")
+@ConfigurationProperties("limit-min-max")
 public class Configuration {
 	private int maximum;
 	private int minimum;
@@ -202,10 +202,10 @@ public class LimitsConfigurationController {
 
 
 spring.application.name=limits-service
-limitMinMax.minimum=99  
-limitMinMax.maximum=9999 
-#spring.cloud.config.enabled=false
-spring.config.import=optional:configserver:
+limit-min-max.minimum=99  
+limit-min-max.maximum=9999 
+spring.cloud.config.enabled=false
+#spring.config.import=optional:configserver:
 
 
 
