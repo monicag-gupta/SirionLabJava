@@ -12,3 +12,24 @@ Refactoring into unit tests – the best way to get a solid and snappy build
 
 
 
+
+
+Create a Maven Project: SpringBootTestPrj
+Edit pom.xml
+Create SpringBootHelloWorldApplication.java in package com.SpringBootTestPrj
+Create the model class as Employee.java in package com.SpringBootTestPrj.model
+Create the Controller class as TestController.java in com.SpringBootTestPrj.controllers
+Code, Run and Check the Output
+Create the Test class in src/test/java as SpringBootHelloWorldTests.java in com.SpringBootTestPrj.test
+Next extend the SpringBootHelloWorldTests.java and write the test case for the TestController as: TestWebApp.java
+Run this TestWebApp class as a JUnit test case.
+
+
+
+
+
+
+
+
+
+
