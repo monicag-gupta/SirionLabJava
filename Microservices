@@ -128,8 +128,12 @@ spring.cloud.config.enabled=false
 
 
 spring.application.name=limits-service
+limit-min-max.minimum=99  
+limit-min-max.maximum=9999 
 #spring.cloud.config.enabled=false
-spring.config.import=optional:configserver:
+#spring.config.import=optional:configserver:
+# spring.config.import=configserver:
+
 
 
 
@@ -204,8 +208,10 @@ public class LimitsConfigurationController {
 spring.application.name=limits-service
 limit-min-max.minimum=99  
 limit-min-max.maximum=9999 
-spring.cloud.config.enabled=false
+#spring.cloud.config.enabled=false
 #spring.config.import=optional:configserver:
+# spring.config.import=configserver:
+
 
 
 
