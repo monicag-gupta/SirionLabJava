@@ -1,0 +1,11 @@
+package com.RestSBPrj.controller;
+EmpCRUDService
+
+package com.RestSBPrj.entity;
+EmpDAO
+
+package com.RestSBPrj.entity;
+Emp
+
+Src->main-> webapp
+index.jsp
