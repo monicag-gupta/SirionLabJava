@@ -74,6 +74,54 @@ Spring Web, Spring Boot DevTools, Spring Boot Actuator, Config Client
 
 
 
+package com.limitsService;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.limitsService.bean.LimitConfiguration;
+@RestController
+public class LimitsConfigurationController {
+	@GetMapping("/limits")
+	public LimitConfiguration retriveLimitsFromConfigurations() {
+		return new LimitConfiguration(1000, 1);
+	}
+}
+
+
+
+
+
+
+
+
+package com.limitsService.bean;
+
+public class LimitConfiguration {
+	private int maximum;
+	private int minimum;
+//no-argument constructor  
+	protected LimitConfiguration() {
+	}
+//generating getters  
+	public int getMaximum() {
+		return maximum;
+	}
+	public int getMinimum() {
+		return minimum;
+	}
+//genetrating constructor using fields  
+	public LimitConfiguration(int maximum, int minimum) {
+		super();
+		this.maximum = maximum;
+		this.minimum = minimum;
+	}
+}
+
+
+
+
+
+
 
 
 
