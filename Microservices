@@ -65,6 +65,19 @@ Spring Web, Spring Boot DevTools, Spring Boot Actuator, Config Client
 
 
 
+<dependency>
+<groupId>org.springframework.cloud</groupId>
+<artifactId>spring-cloud-starter-bootstrap</artifactId>
+</dependency>
+
+
+
+
+
+
+
+
+
 
 
 
