@@ -120,6 +120,13 @@ public class LimitConfiguration {
 
 
 
+spring.application.name=limits-service
+spring.cloud.config.enabled=false
+
+
+
+
+
 
 
 
