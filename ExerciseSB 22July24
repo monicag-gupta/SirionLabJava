@@ -1,0 +1,21 @@
+MySQL:
+Projects:Table (Pid, Pname, Pdesc)
+Emp:Table (Eid, Ename, Esal)
+PrjEmpTbl : Table (PEID, Eid, Pid)
+
+SpringBoot
+Controllers
+/projects
+All Projects with all the Emps working per project 
+Eg:
+Project: P111, “CLM1”,”Contract LifeCycle Management”, [ (103, “John Doe”, 10000),(109,”Jane Smith”,3000)]
+/Emps
+JSON of Emps
+/addEmp
+Add Emp
+/addProject
+If Emp is not in the table, then raise error msg
+If Emp is not in Project, and project exists, then update project, add the emp to the list of emps working for the project
+If project does not exists, then add project
+
+
