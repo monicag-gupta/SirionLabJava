@@ -238,6 +238,11 @@ Dependencies: Eureka Discovery, Web, JPA, H2
 
 Create Employee  under model package
 create EmployeeRepository under repository package
+create EmployeeService under service package
+
+
+
+
 
 
 package com.microserviceThree.model;
@@ -296,6 +301,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 }
+
+
+
+
+
 
 
 
