@@ -1,0 +1,80 @@
+Create a Server Spring Boot Project
+
+Create a Spring Starter Project : SBMicroserviceEurekaServer
+Add Code to com.example.demo. SbMicroserviceEurekaServerApplication java file
+Add code to application.properties
+
+Dependencies:
+Eureka Server
+
+
+
+
+
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+
+@EnableEurekaServer
+@SpringBootApplication
+public class SbMicroserviceEurekaServerApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SbMicroserviceEurekaServerApplication.class, args);
+	}
+
+}
+
+
+
+
+
+
+
+
+server.port=8761
+eureka.client.register-with-eureka=false
+eureka.client.fetch-registry=false
+
+
+
+
+
+
+Project -> Run As-> Maven Clean, Maven install
+Run application as Java Application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create a spring starter project : CART-SERVICE
+Add dependencies :
+SB Actuator: features to help you monitor and manage your application
+Eureka Discovery client: for service registration
+Spring Web: Spring MVC and embedded Tomcat
+SB DevTools: to auto-reload the application when files change
+Click on Finish.
+
+
+Add Code to com.example.demo. CartServiceApplication java file
+Add Controller: com.example.demo.CartRestController
+Add code to application.properties
+
+
+
+
+
+
+
+
