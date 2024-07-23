@@ -42,3 +42,21 @@ public class EurekaServerApplication {
 }
 
 
+
+
+
+Maven clean
+Maven install
+Run the project as Java Application
+
+Open browser: 
+http://localhost:8761
+
+No service is registered for now.
+
+
+
+
+
+
+
