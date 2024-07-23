@@ -78,3 +78,211 @@ Add code to application.properties
 
 
 
+
+
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
+
+@EnableDiscoveryClient
+@SpringBootApplication
+public class CartServiceApplication {
+
+         public static void main(String[] args) {
+                 SpringApplication.run(CartServiceApplication.class, args);
+         }
+}
+
+
+
+
+
+
+
+
+
+package com.example.demo;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/cart")
+public class CartRestController {
+
+      @GetMapping("/getData")
+      public String getCartData() {
+                 return "Returning data from CART-SERVICE";
+      }
+}
+
+
+
+
+
+
+
+
+
+
+server.port=9009
+spring.application.name=CART-SERVICE
+eureka.client.service-url.default-zone=http://localhost:8761/eureka
+#Register with Eureka
+
+
+
+
+
+
+Project -> Run As-> Maven Clean, Maven install
+Run application as Java Application.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Create a Spring Starter project : PAYMENT-SERVICE
+Add dependencies :
+SB Actuator: features to help you monitor and manage your application
+Eureka Discovery client: for service registration
+Spring Web: Spring MVC and embedded Tomcat
+SB DevTools: to auto-reload the application when files change
+Click on Finish.
+
+
+Add Code to com.example.demo. PaymentServiceApplication java file
+Add Component : service Consumer class as CartRestConsumer : com.example.demo. CartRestConsumer
+Add Controller: service Rest Controller as PaymentRestController : com.example.demo. PaymentRestController 
+Add code to application.properties
+
+
+
+
+
+
+
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+
+@EnableDiscoveryClient
+@SpringBootApplication
+public class PaymentServiceApplication {
+
+         public static void main(String[] args) {
+                 SpringApplication.run(PaymentServiceApplication.class, args);
+         }
+}
+
+
+
+
+
+
+
+package com.example.demo;
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.stereotype.Component;
+import org.springframework.web.client.RestTemplate;
+
+@Component
+public class CartRestConsumer {
+       @Autowired   // autowire DisocveryClient
+       private DiscoveryClient client;
+       public String getCartInfo() { // get ServiceInstance list using serviceId          
+            List<ServiceInstance> siList = client.getInstances("CART-SERVICE");
+            ServiceInstance si = siList.get(0);  // read manually one instance from index#0 
+            String url = si.getUri() +"/cart/getData";  // read URI and Add path that returns url
+            RestTemplate rt = new RestTemplate();   // create object for RestTemplate
+            String response = rt.getForObject(url, String.class);   // make HTTP call and get Reponse data
+            return response;  // return response back to Consumer
+       }
+}
+
+
+
+
+
+
+package com.example.demo;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/payment")
+public class PaymentRestController {
+         @Autowired
+         private CartRestConsumer consumer;  // HAS-A
+
+         @GetMapping("/data")
+         public String getPaymentData() {
+                return "FROM PAYMENT-SERVICE : " + consumer.getCartInfo();
+         }
+}
+
+
+
+
+
+
+
+server.port=8909
+spring.application.name=PAYMENT-SERVICE
+eureka.client.service-url.default-zone=http://localhost:8761/eureka
+
+
+
+
+
+
+Please follow below steps to test the whole application :
+Run -> Maven clean and install all the apps.
+
+1) Start the Eureka Server
+2) Start the Provider Application (CartService)
+3) Start the Consumer Application (PaymentService)
+4) Click on Payment Service link on Eureka screen
+It will be like : http://192.168.0.7:8989/actuator/info
+5) Modify URL path as: ‘/payment/data’ in place of ‘/actuator/info’ and hit Enter.
+http://192.168.0.7:8989/payment/data
+
+Finally, you will be able to see the expected output. Now you have successfully implemented the solution of ‘How to register and discover Microservices using Netflix Eureka’.
+
+
+
+
+
+
+
+
+
