@@ -1,6 +1,7 @@
 Microservices:
   HR
     Payroll
+      H2 DB
     Employee Hiring and Firing
       H2 DB
   Sales
