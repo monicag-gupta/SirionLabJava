@@ -355,11 +355,7 @@ public class EmployeeService {
 
 
 
-{"id":1,"name":"John Doe","position":"SE"}
 
-
-
-http://localhost:8083/employees
 
 
 
@@ -457,6 +453,13 @@ public class MicroserviceThreeApplication {
 
 
 
+
+
+{"id":1,"name":"John Doe","position":"SE"}
+
+
+
+http://localhost:8083/employees
 
 
 
