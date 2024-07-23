@@ -7,7 +7,7 @@ Microservices:
   Sales
     Sales and Purchase
       MySQL
-    Customer Management
+    Customer Management : Complains, Feedback, Suggestions, Coupans, Discounts, Advertisements
       Mongo
   FICO
     Finance and Commercials
