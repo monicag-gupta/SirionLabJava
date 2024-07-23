@@ -1,0 +1,18 @@
+Microservices:
+  HR
+    Payroll
+    Employee Hiring and Firing
+      H2 DB
+  Sales
+    Sales and Purchase
+      MySQL
+    Customer Management
+      Mongo
+  FICO
+    Finance and Commercials
+      MySQL
+  Projects Management System
+    Mongo
+  Employee Management System
+    MySQL
+
