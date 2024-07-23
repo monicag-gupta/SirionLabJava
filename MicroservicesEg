@@ -237,6 +237,8 @@ Dependencies: Eureka Discovery, Web, JPA, H2
 
 
 Create Employee  under model package
+create EmployeeRepository under repository package
+
 
 package com.microserviceThree.model;
 
