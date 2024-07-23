@@ -1,0 +1,9 @@
+Create a spring starter project: eureka-server
+Add Eureka server as dependency
+
+Edit application.properties
+Main class: EurekaServerApplication
+
+
+
+
