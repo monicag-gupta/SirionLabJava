@@ -228,6 +228,12 @@ eureka.client.service-url.defaultZone=http://localhost:8761/eureka
 
 
 
+Create a new Spring Boot project for the third microservice:
+Project name: microservice-three
+Dependencies: Eureka Discovery, Web, JPA, H2
+
+
+
 
 
 
