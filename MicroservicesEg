@@ -7,3 +7,17 @@ Main class: EurekaServerApplication
 
 
 
+spring.application.name=eureka-server
+server.port=8761
+eureka.client.register-with-eureka=false
+eureka.client.fetch-registry=false
+eureka.instance.hostname=localhost
+
+
+
+
+server.port=8761 : This line sets the port number on which the application will run. In this case, the application will be running on port 8761. This is typically the default port for Eureka Server.
+eureka.client.register-with-eureka=false : This line indicates that the current application will not register itself with a Eureka server. This setting is often used when configuring a standalone Eureka server, meaning this instance is responsible for service registry but does not act as a client that registers itself as a service.
+eureka.client.fetch-registry=false : This line specifies that the current application will not fetch the registry information from the Eureka server. Similar to the previous setting, this is often used for a standalone Eureka server configuration. It means that this instance will not query other Eureka servers for registry information, as it is the primary registry itself.
+
+
