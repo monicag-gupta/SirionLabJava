@@ -21,3 +21,24 @@ eureka.client.register-with-eureka=false : This line indicates that the current 
 eureka.client.fetch-registry=false : This line specifies that the current application will not fetch the registry information from the Eureka server. Similar to the previous setting, this is often used for a standalone Eureka server configuration. It means that this instance will not query other Eureka servers for registry information, as it is the primary registry itself.
 
 
+
+
+
+
+package com.eureka_server;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+
+@SpringBootApplication
+@EnableEurekaServer
+public class EurekaServerApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(EurekaServerApplication.class, args);
+	}
+
+}
+
+
