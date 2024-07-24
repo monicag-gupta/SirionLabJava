@@ -92,7 +92,7 @@ spring.pulsar.client.service-url=pulsar://localhost:6650
 
 
 
-package com.SbPrjMs12345;
+package com.SBPulsarPrj;
 
 
 import org.apache.pulsar.client.api.PulsarClient;
@@ -137,6 +137,130 @@ public class PulsarConfig {
 
 
 
+
+
+package com.SBPulsarPrj;
+
+
+import org.apache.pulsar.client.api.Consumer;
+import org.apache.pulsar.client.api.Message;
+import org.apache.pulsar.client.api.PulsarClient;
+import org.apache.pulsar.client.api.PulsarClientException;
+import org.apache.pulsar.client.api.SubscriptionType;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+import jakarta.annotation.PostConstruct;
+
+@Component
+public class PulsarConsumer {
+
+	@Value("${spring.pulsar.client.service-url}")
+//	@Autowired
+	private String serviceUrl;
+
+    @Value("${pulsar.topic}")
+    private String topic;
+
+    @PostConstruct
+    public void init() throws PulsarClientException {
+        PulsarClient client = PulsarClient.builder()
+                .serviceUrl(serviceUrl)
+                .build();
+
+        Consumer<byte[]> consumer = client.newConsumer()
+                .topic(topic)
+                .subscriptionName("my-subscription")
+                .subscriptionType(SubscriptionType.Exclusive)
+                .subscribe();
+
+        while (true) {
+            try {
+                Message<byte[]> msg = consumer.receive();
+                System.out.printf("Message received: %s%n", new String(msg.getData()));
+                consumer.acknowledge(msg);
+            } catch (PulsarClientException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+package com.SBPulsarPrj;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class PulsarController {
+
+    @Autowired
+    private PulsarProducer pulsarProducer;
+
+    @GetMapping("/send")
+    public String sendMessage(@RequestParam String message) {
+        pulsarProducer.sendMessage(message);
+        return "Message sent: " + message;
+    }
+}
+
+
+
+
+
+
+
+
+package com.SBPulsarPrj;
+
+import org.apache.pulsar.client.api.PulsarClient;
+import org.apache.pulsar.client.api.Producer;
+import org.apache.pulsar.client.api.PulsarClientException;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+import jakarta.annotation.PostConstruct;
+
+@Component
+public class PulsarProducer {
+
+    @Value("${spring.pulsar.client.service-url}")
+    private String serviceUrl;
+
+    @Value("${pulsar.topic}")
+    private String topic;
+
+    private Producer<byte[]> producer;
+
+    @PostConstruct
+    public void init() throws PulsarClientException {
+        PulsarClient client = PulsarClient.builder()
+                .serviceUrl(serviceUrl)
+                .build();
+
+        producer = client.newProducer()
+                .topic(topic)
+                .create();
+    }
+
+    public void sendMessage(String message) {
+        try {
+            producer.send(message.getBytes());
+        } catch (PulsarClientException e) {
+            e.printStackTrace();
+        }
+    }
+}
 
 
 
