@@ -172,6 +172,45 @@ sendMessage: Method to send a message to a specified topic. It uses the KafkaTem
 
 
 
+package com.SbPrjKf12345;
+
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Service;
+
+@Service
+public class KafkaConsumerService {
+
+    @KafkaListener(topics = "test-topic", groupId = "my-group")
+    public void listen(String message) {
+        System.out.println("Received message: " + message);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+The KafkaConsumerService class listens for messages from Kafka topics:
+
+@KafkaListener: Annotation used to define a method that listens to messages from a Kafka topic. Here, it listens to the topic named test-topic and processes messages with a group ID of my-group.
+
+listen: Method that receives and processes messages. In this example, it simply prints the received message.
+
+
+
+
+
+
+
+
+
 
 
 
