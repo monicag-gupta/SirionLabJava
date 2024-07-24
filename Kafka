@@ -23,4 +23,23 @@ kafka-console-consumer.sh --topic <topic_name> --bootstrap-server <kafka_broker>
 
 
 
+Zookeeper: Starts first and manages Kafka’s distributed coordination.
+Kafka Broker: Starts after Zookeeper and manages message storage and retrieval.
+
+Start terminal as sudo / powershell as administrator:
+> cd C:\kafka 
+> .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+Minimize it.
+
+Start another terminal as sudo / powershell as administrator:
+> cd C:\kafka 
+> .\bin\windows\kafka-server-start.bat .\config\server.properties
+Minimize it
+
+
+
+
+
+
+
 
