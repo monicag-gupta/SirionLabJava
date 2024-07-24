@@ -68,6 +68,25 @@ Package: com.SBKafkaPrj
 
 
 
+Components of the project:
+
+Dependencies: Required libraries for Kafka and web functionalities.
+Configuration: Kafka settings for producers and consumers.
+Producer Service: Sends messages to Kafka.
+Consumer Service: Listens and processes messages from Kafka.
+Controller: Exposes an API endpoint for sending messages.
+Topic Creation: Sets up Kafka topics for message handling.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
