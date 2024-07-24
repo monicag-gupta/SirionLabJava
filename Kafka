@@ -35,6 +35,9 @@ Minimize it.
 Start another terminal as sudo / powershell as administrator:
 > cd C:\kafka 
 > .\bin\windows\kafka-server-start.bat .\config\server.properties
+
+$ sudo .\bin\kafka-server-start.sh .\config\server.properties
+
 Minimize it
 
 
