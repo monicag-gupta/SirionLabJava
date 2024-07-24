@@ -279,9 +279,7 @@ Send a message:
 Use a tool like Postman to send a POST request to 
 http://localhost:8080/send
 with a message parameter in the form data in body.
-Receive a message:
-Send a GET request to 
-http://localhost:8080/receive
+Check the console for received messages
 Verify Pulsar Setup
 Ensure Apache Pulsar is running locally and configured correctly. 
 The Pulsar service URL (pulsar://localhost:6650) should match your Pulsar instance configuration.
