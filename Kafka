@@ -215,6 +215,26 @@ listen: Method that receives and processes messages. In this example, it simply 
 
 
 
+package com.SbPrjKf12345;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class KafkaController {
+    private final KafkaProducerService kafkaProducerService;
+    @Autowired
+    public KafkaController(KafkaProducerService kafkaProducerService) {
+        this.kafkaProducerService = kafkaProducerService;
+    }
+    @GetMapping("/send")
+    public String sendMessage(@RequestParam("message") String message) {
+        kafkaProducerService.sendMessage("test-topic", message);
+        return "Message sent to Kafka topic";
+    }
+}
 
 
 
