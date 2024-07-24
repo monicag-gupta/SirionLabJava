@@ -92,6 +92,55 @@ spring.pulsar.client.service-url=pulsar://localhost:6650
 
 
 
+package com.SbPrjMs12345;
+
+
+import org.apache.pulsar.client.api.PulsarClient;
+import org.apache.pulsar.client.api.Producer;
+import org.apache.pulsar.client.api.Schema;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class PulsarConfig {
+
+    @Value("${spring.pulsar.client.service-url}")
+    private String serviceUrl;
+
+    @Bean
+    public PulsarClient pulsarClient() throws Exception {
+        return PulsarClient.builder()
+                .serviceUrl(serviceUrl)
+                .build();
+    }
+
+    @Bean
+    public Producer<User> userProducer(PulsarClient pulsarClient) throws Exception {
+        return pulsarClient.newProducer(Schema.JSON(User.class))
+                .topic("my-topic")
+                .create();
+    }
+
+    public static class User {
+        private String name;
+        private int age;
+        // getters and setters
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
