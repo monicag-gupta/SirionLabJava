@@ -8,7 +8,7 @@ Extract the tar folder downloaded
 Open Terminal at the bin folder of the downloaded tar folder
 Run in terminal:
 $ sudo vi ~/.bash_profile
-$ sudo vi ~/.profile
+$ sudo vi ./.profile
 ecs + :q!
 $ sudo chmod 777 pulsar
 $ sudo ./pulsar standalone
