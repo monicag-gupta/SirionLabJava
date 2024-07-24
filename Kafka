@@ -224,11 +224,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class KafkaController {
+    // @Autowired
     private final KafkaProducerService kafkaProducerService;
     @Autowired
     public KafkaController(KafkaProducerService kafkaProducerService) {
         this.kafkaProducerService = kafkaProducerService;
-    }
+    } 
     @GetMapping("/send")
     public String sendMessage(@RequestParam("message") String message) {
         kafkaProducerService.sendMessage("test-topic", message);
@@ -238,6 +239,37 @@ public class KafkaController {
 
 
 
+
+
+
+
+The KafkaController exposes an endpoint to send messages to Kafka:
+
+@RestController: Indicates that this class is a REST controller and handles HTTP requests.
+
+@GetMapping("/send"): Maps HTTP GET requests to the /send endpoint.
+
+sendMessage: Method that takes a message parameter from the request and uses KafkaProducerService to send it to the test-topic Kafka topic.
+
+
+
+
+
+
+
+Run as -> Maven clean
+Run as -> Maven install
+Main class -> Run as -> Java Application
+
+Open postman/browser:
+
+http://localhost:8080/send?message=HelloKafka
+
+Output:
+Message sent to Kafka topic
+
+
+Check the console to get the message received by consumer
 
 
 
