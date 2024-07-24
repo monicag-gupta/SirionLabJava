@@ -207,10 +207,18 @@ public class PulsarController {
     @Autowired
     private PulsarProducer pulsarProducer;
 
-    @GetMapping("/send")
+@Autowired
+PulsarConsumer pulsarConsumer;
+
+    @PostMapping("/send")
     public String sendMessage(@RequestParam String message) {
         pulsarProducer.sendMessage(message);
         return "Message sent: " + message;
+    }
+
+ @GetMapping("/receive")
+    public String receiveMessage() {
+        return "Message received";
     }
 }
 
