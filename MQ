@@ -19,8 +19,11 @@ esc :wq
 
 
 
-export JAVA_HOME=/usr/java/jdk1.5.0_07/bin/java     ?????
+export JAVA_HOME=/usr/java/jdk1.5.0_07    ?????
 export PATH=$PATH:/usr/java/jdk1.5.0_07/bin       ????
+
+
+set CLASSPATH=/usr/java/jdk1.5.0_07/lib;    ??
 
 
 echo $JAVA_Home
@@ -47,5 +50,27 @@ It will output logs to the console.
 You should see messages indicating that Pulsar is starting up. 
 Once it's running, you can access it at 
 pulsar://localhost:6650.
+
+
+
+
+
+
+Project: SBPulsarPrj
+
+Dependencies: 
+Spring Web
+Spring Pulsar
+
+Classes:
+PulsarConfig
+PulsarConsumer
+PulsarController
+PulsarProducer
+
+
+
+
+
 
 
