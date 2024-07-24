@@ -7,7 +7,9 @@ We can start Pulsar locally using the Pulsar binaries:
 Extract the tar folder downloaded 
 Open Terminal at the bin folder of the downloaded tar folder
 Run in terminal:
+$ sudo chmod 777 pulsar
 $ sudo ./pulsar standalone
+
 
 This command starts Pulsar in standalone mode, which includes the Pulsar broker, BookKeeper, and ZooKeeper all in a single process. 
 It will output logs to the console.
