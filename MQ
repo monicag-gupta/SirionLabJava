@@ -87,7 +87,7 @@ Add in the POM.xml:
 
 spring.application.name=SBPulsarPrj
 pulsar.topic=my-topic
-spring.pulsar.client.service-url=pulsar://localhost:6651
+spring.pulsar.client.service-url=pulsar://localhost:6650
 
 
 
