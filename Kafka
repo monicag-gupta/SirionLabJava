@@ -179,11 +179,16 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class KafkaConsumerService {
-
+    private String msg;
     @KafkaListener(topics = "test-topic", groupId = "my-group")
     public void listen(String message) {
+        msg=message;
         System.out.println("Received message: " + message);
     }
+public String listenMsg() {
+        return msg;
+    }
+
 }
 
 
@@ -234,6 +239,11 @@ public class KafkaController {
     public String sendMessage(@RequestParam("message") String message) {
         kafkaProducerService.sendMessage("test-topic", message);
         return "Message sent to Kafka topic";
+    }
+@GetMapping("/receive")
+    public String receiveMessage() {
+        
+        return kafkaConsumerService.listenMsg();
     }
 }
 
