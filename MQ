@@ -10,6 +10,34 @@ Run in terminal:
 $ sudo vi ~/.bash_profile
 $ sudo vi ./.profile
 ecs + :q!
+vi /etc/profile
+
+
+esc :wq
+
+
+
+
+
+export JAVA_HOME=/usr/java/jdk1.5.0_07/bin/java     ?????
+export PATH=$PATH:/usr/java/jdk1.5.0_07/bin       ????
+
+
+echo $JAVA_Home
+echo $PATH
+echo $CLASSPATH
+
+
+
+set CLASSPATH=/usr/java/jdk1.5.0_07/lib;              ????
+
+
+
+
+
+
+
+
 $ sudo chmod 777 pulsar
 $ sudo ./pulsar standalone
 
