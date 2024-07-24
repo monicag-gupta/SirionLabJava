@@ -29,14 +29,14 @@ Kafka Broker: Starts after Zookeeper and manages message storage and retrieval.
 Start terminal as sudo / powershell as administrator:
 > cd C:\kafka 
 > .\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
-$ sudo .\bin\zookeeper-server-start.sh .\config\zookeeper.properties
+$ sudo ./bin/zookeeper-server-start.sh ./config/zookeeper.properties
 Minimize it.
 
 Start another terminal as sudo / powershell as administrator:
 > cd C:\kafka 
 > .\bin\windows\kafka-server-start.bat .\config\server.properties
 
-$ sudo .\bin\kafka-server-start.sh .\config\server.properties
+$ sudo ./bin/kafka-server-start.sh ./config/server.properties
 
 Minimize it
 
