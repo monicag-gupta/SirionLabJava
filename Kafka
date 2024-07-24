@@ -134,6 +134,53 @@ value-deserializer: Defines how the value of the messages will be deserialized.
 
 
 
+package com.SbPrjKf12345;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.stereotype.Service;
+
+@Service
+public class KafkaProducerService {
+    private final KafkaTemplate<String, String> kafkaTemplate;
+
+    @Autowired
+    public KafkaProducerService(KafkaTemplate<String, String> kafkaTemplate) {
+        this.kafkaTemplate = kafkaTemplate;
+    }
+
+    public void sendMessage(String topic, String message) {
+        kafkaTemplate.send(topic, message);
+    }
+}
+
+
+
+
+
+
+The KafkaProducerService class is responsible for sending messages to Kafka topics:
+
+KafkaTemplate<String, String>: Provides methods to send messages to Kafka topics. The type parameters (String, String) denote that both the key and value of the messages are strings.
+
+sendMessage: Method to send a message to a specified topic. It uses the KafkaTemplate to publish messages.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
