@@ -342,3 +342,33 @@ print (sys.argv[2])
 
 
 
+
+
+import sys
+# Getting size using getsizeof() method 
+a = sys.getsizeof(12)
+print("sys.getsizeof(12):", a)
+b = sys.getsizeof('John')
+print("sys.getsizeof('John'):", b)
+b = sys.getsizeof('J')
+print("sys.getsizeof('J'):", b)
+b = sys.getsizeof('')
+print("sys.getsizeof(''):", b)
+c = sys.getsizeof(('J', 'O', 'H', 'N', 'S'))
+print("sys.getsizeof(('J', 'O', 'H', 'N', 'S')):", c)
+c = sys.getsizeof(())
+print("sys.getsizeof(()):", c)
+d = sys.getsizeof(['J', 'O', 'H', 'N', 'S'])
+print("sys.getsizeof(['J', 'O', 'H', 'N', 'S']):", d)
+d = sys.getsizeof([])
+print("sys.getsizeof([]):", d)
+e = sys.getsizeof({1, 2, 3, 4})
+print("sys.getsizeof({1, 2, 3, 4}):", e)
+e = sys.getsizeof({})
+print("sys.getsizeof({}):", e)
+f = sys.getsizeof({1: 'a', 2: 'b', 3: 'c', 4: 'd'})
+print("sys.getsizeof({1: 'a', 2: 'b', 3: 'c', 4: 'd'}):", f)
+
+
+
+
