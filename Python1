@@ -815,7 +815,7 @@ Parameters :
 obj : Object which has to be converted to iterable ( usually an iterator ).
 sentinel : value used to represent end of sequence.
 Returns : Iterator object
-Properties of Iterators
+Properties of Iterators 
 The iteration object remembers the iteration count via the internal count variable.
 Once the iteration is complete, it raises a StopIteration exception and the iteration count cannot be reassigned to 0.
 Therefore, it can be used to traverse the container just once.
