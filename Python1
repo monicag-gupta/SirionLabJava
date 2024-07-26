@@ -808,6 +808,45 @@ for n in range (1, 3):
 
 
 
+python iter() method returns the iterator object, it is used to convert an iterable to the iterator.
+Syntax : 
+iter(obj, sentinel)
+Parameters : 
+obj : Object which has to be converted to iterable ( usually an iterator ).
+sentinel : value used to represent end of sequence.
+Returns : Iterator object
+Properties of Iterators
+The iteration object remembers the iteration count via the internal count variable.
+Once the iteration is complete, it raises a StopIteration exception and the iteration count cannot be reassigned to 0.
+Therefore, it can be used to traverse the container just once.
+
+
+
+
+
+
+
+iterable = [1, 2, 3, 4, 5]
+print("Traditional for loop: ")
+for item in iterable:
+    print(item, end=", ")
+iterator = iter(iterable)
+print("\nUsing while loop: ")
+item = next(iterator, None)
+while item is not None:
+    print(item, end=", ")
+    item = next(iterator, None)
+print("\nUsing while loop with exception handler: ")
+iterator = iter(iterable)
+while True:
+    try:
+        item = next(iterator)
+    except StopIteration:
+        break
+    except Exception as e:
+        raise e
+    print(item, end=", ")
+
 
 
 
