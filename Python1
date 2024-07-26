@@ -149,6 +149,115 @@ Hello World
 
 
 
+i=10
+j=20.4
+k="Hello World"
+print("Int : %d \nFloat : %f  \nString : %s" % (i,j,k))
+Int : 10 
+Float : 20.400000  
+String : Hello World
+print("Hello")
+Hello
+print("Hello");print("World")
+Hello
+World
+print("Hello", end=" ");print("World")
+Hello World
+"Hello" + "World"
+'HelloWorld'
+"Hello" * 10
+'HelloHelloHelloHelloHelloHelloHelloHelloHelloHello'
+x="Hello World"
+len(x)
+11
+x[0]
+'H'
+x[-2]
+'l'
+x[0:-3]
+'Hello Wo'
+x[:4]
+'Hell'
+x[6:]
+'World'
+x[3:5]
+'lo'
+x.lower()
+'hello world'
+x.upper()
+'HELLO WORLD'
+x.proper()
+Traceback (most recent call last):
+  File "<pyshell#19>", line 1, in <module>
+    x.proper()
+AttributeError: 'str' object has no attribute 'proper'
+x.title()
+'Hello World'
+x(0).upper()+x[1:].lower()
+Traceback (most recent call last):
+  File "<pyshell#21>", line 1, in <module>
+    x(0).upper()+x[1:].lower()
+TypeError: 'str' object is not callable
+x[0].upper()+x[1:].lower()
+'Hello world'
+len(x)
+11
+"bat" < "cat"
+True
+"bat" == "cat"
+False
+"catalina" < "cat"
+False
+x
+'Hello World'
+"o" in x
+True
+"O" in x
+False
+y="""line1 data
+is continued in line 2
+and line 3"""
+z="Hello
+SyntaxError: unterminated string literal (detected at line 1)
+y
+'line1 data\nis continued in line 2\nand line 3'
+print(y)
+line1 data
+is continued in line 2
+and line 3
+x
+'Hello World'
+x.replace("World","Python Coders")
+'Hello Python Coders'
+x
+'Hello World'
+y = x.replace("World","Python Coders")
+y
+'Hello Python Coders'
+x="24"
+x.isDigit()
+Traceback (most recent call last):
+  File "<pyshell#42>", line 1, in <module>
+    x.isDigit()
+AttributeError: 'str' object has no attribute 'isDigit'. Did you mean: 'isdigit'?
+x.isdigit()
+True
+x="24.56"
+x.isdigit()
+False
+ord("A")
+65
+chr(65)
+'A'
+
+
+
+
+
+
+
+
+
 
 
 
