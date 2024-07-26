@@ -279,6 +279,34 @@ floor(8.9)
 
 
 
+x=10
+def fn():
+    print(x)
+
+fn()
+10
+def fn():
+    x=20
+    print(x)
+
+    
+fn()
+20
+x
+10
+def fn():
+    global x
+    x=20
+    print(x)
+
+    
+fn()
+20
+x
+20
+
+
+
 
 
 
