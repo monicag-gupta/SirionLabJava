@@ -17,3 +17,10 @@ print(HelloWorld22.a)
 
 a
 
+
+
+
+import py_compile
+py_compile.compile('HelloWorld.py')
+
+
