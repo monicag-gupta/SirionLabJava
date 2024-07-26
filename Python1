@@ -753,6 +753,21 @@ print(frozen_set)
 
 
 
+grade=input("Enter grade")
+if grade == "A":
+    print ("Congratulations!")
+elif grade == "B":
+    print ("That's pretty good.")
+elif grade == "C":
+    print ("Well, it's passing, anyway.")
+else:
+    print ("You really blew it this time!")
+
+
+
+
+
+
 
 
 
