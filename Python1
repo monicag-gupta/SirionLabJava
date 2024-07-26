@@ -3,3 +3,8 @@ os.getcwd()
 
 print("Hello World")
 
+
+exec(open("./script.py").read())
+
+
+
