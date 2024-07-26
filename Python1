@@ -257,6 +257,20 @@ chr(65)
 
 
 
+from math import *
+abs(-90)
+90
+min(8,7,4,9)
+4
+sqrt(9)
+3.0
+ceil(8.9)
+9
+floor(8.9)
+8
+
+
+
 
 
 
