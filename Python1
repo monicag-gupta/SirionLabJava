@@ -73,6 +73,11 @@ c+"Hello"
 
 
 
+Create a constant.py:
+PI = 3.14
+GRAVITY = 9.8
+
+
 
 
 import constant
