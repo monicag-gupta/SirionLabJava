@@ -87,3 +87,24 @@ print(constant.GRAVITY)
 
 
 
+
+
+x=10
+y=x
+x
+10
+y
+10
+x=80
+y
+10
+x=[1,2,3]
+y=x
+x.append(4)
+x
+[1, 2, 3, 4]
+y
+[1, 2, 3, 4]
+
+
+
