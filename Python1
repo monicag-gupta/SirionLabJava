@@ -124,3 +124,14 @@ y
 5%2
 1
 
+
+
+
+i=10
+j=20.4
+k="Hello World"
+print("Int : %d \nFloat : %f  \nString : %s" % (i,j,k))
+Int : 10 
+Float : 20.400000  
+String : Hello World
+
