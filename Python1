@@ -372,3 +372,14 @@ print("sys.getsizeof({1: 'a', 2: 'b', 3: 'c', 4: 'd'}):", f)
 
 
 
+sys.getsizeof(12): 28
+sys.getsizeof('John'): 53
+sys.getsizeof('J'): 50
+sys.getsizeof(''): 49
+sys.getsizeof(('J', 'O', 'H', 'N', 'S')): 80
+sys.getsizeof(()): 40
+sys.getsizeof(['J', 'O', 'H', 'N', 'S']): 104
+sys.getsizeof([]): 56
+sys.getsizeof({1, 2, 3, 4}): 216
+sys.getsizeof({}): 64
+sys.getsizeof({1: 'a', 2: 'b', 3: 'c', 4: 'd'}): 232
