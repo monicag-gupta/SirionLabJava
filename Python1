@@ -411,3 +411,31 @@ mylist[1:3]
 
 
 
+mylist=[5,2,8,"Hi","Python","Java",9]
+mylist.pop()
+9
+mylist
+[5, 2, 8, 'Hi', 'Python', 'Java']
+mylist.reverse()
+mylist
+['Java', 'Python', 'Hi', 8, 2, 5]
+mylist.sort()
+Traceback (most recent call last):
+  File "<pyshell#22>", line 1, in <module>
+    mylist.sort()
+TypeError: '<' not supported between instances of 'int' and 'str'
+mylist.insert(2,89)
+mylist
+['Hi', 'Java', 89, 'Python', 8, 2, 5]
+mylist[0]=23
+mylist[1]=9
+mylist[3]=34
+mylist.sort()
+mylist
+[2, 5, 8, 9, 23, 34, 89]
+
+
+
+
+
+
