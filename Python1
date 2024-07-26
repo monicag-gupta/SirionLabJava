@@ -8,3 +8,12 @@ exec(open("./script.py").read())
 
 
 
+
+
+#from HelloWorld22 import a
+import HelloWorld22
+print(HelloWorld22.a)
+
+
+a
+
