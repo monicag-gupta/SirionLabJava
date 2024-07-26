@@ -35,3 +35,28 @@ import py_compile
 py_compile.compile('HelloWorld.py')
 
 
+
+
+
+
+
+a=90
+print(type(a))
+<class 'int'>
+a=90.45
+print(type(a))
+<class 'float'>
+a='Hello'
+print(type(a))
+<class 'str'>
+a='24'
+print(type(a))
+<class 'str'>
+b=int(a)
+b+8
+32
+print(type(b))
+<class 'int'>
+
+
+
