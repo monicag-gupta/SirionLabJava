@@ -663,6 +663,48 @@ Output:
 
 
 
+Days1 = {"Monday",  "Tuesday", "Wednesday", "Thursday"}    
+Days2 = {"Monday", "Tuesday", "Sunday"}    
+print(Days1-Days2) #{"Wednesday", "Thursday" will be printed}    
+Output:
+{'Thursday', 'Wednesday'}
+
+
+
+
+
+Days1 = {"Monday",  "Tuesday", "Wednesday", "Thursday"}    
+Days2 = {"Monday", "Tuesday", "Sunday"}    
+print(Days1.difference(Days2)) # prints the difference of the two sets Days1 and Days2    
+Output:
+{'Thursday', 'Wednesday'}
+
+
+
+
+
+a = {1,2,3,4,5,6}  
+b = {1,2,9,8,10}  
+c = a^b  
+print(c)  
+Output:
+{3, 4, 5, 6, 8, 9, 10}
+
+
+
+
+
+
+a = {1,2,3,4,5,6}  
+b = {1,2,9,8,10}  
+c = a.symmetric_difference(b)  
+print(c)  
+Output:
+{3, 4, 5, 6, 8, 9, 10}
+
+
+
+
 
 
 
