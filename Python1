@@ -135,3 +135,28 @@ Int : 10
 Float : 20.400000  
 String : Hello World
 
+
+
+
+print("Hello");print("World")
+Hello
+World
+print("Hello", end=" ");print("World")
+Hello World
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
