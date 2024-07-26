@@ -58,5 +58,16 @@ b+8
 print(type(b))
 <class 'int'>
 
-
+print(type(b))
+<class 'int'>
+c=str(b)
+print(type(c))
+<class 'str'>
+c+9
+Traceback (most recent call last):
+  File "<pyshell#38>", line 1, in <module>
+    c+9
+TypeError: can only concatenate str (not "int") to str
+c+"Hello"
+'24Hello'
 
