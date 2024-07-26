@@ -71,3 +71,14 @@ TypeError: can only concatenate str (not "int") to str
 c+"Hello"
 '24Hello'
 
+
+
+
+
+import constant
+
+print(constant.PI)
+print(constant.GRAVITY)
+
+
+
