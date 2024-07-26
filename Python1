@@ -556,6 +556,13 @@ print(months)
 
 
 
+Months = set(["January","February", "March", "April", "May", "June"])    
+print(months)    
+Months.add("July");   
+print("\nprinting the modified set ... ")   
+print(Months)   
+
+
 
 
 
