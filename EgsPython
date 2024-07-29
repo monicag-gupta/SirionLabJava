@@ -357,6 +357,90 @@ print(f"Accuracy: {accuracy:.2f}")
 
 
 
+Go to C:\Users\monica\AppData\Local\Programs\Python\Python312\Scripts
+
+Open cmd/Terminal
+Sudo or type:
+
+> pip3 install pandas
+
+A lot of packages will be downloaded.. 
+
+
+
+
+
+
+
+
+
+
+import pandas as pd
+data = [1, 2, 3, 4, 5]
+series = pd.Series(data)
+print("pd.Series([1, 2, 3, 4, 5]): "); print(series)
+# Create a DataFrame
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Edward','John Doe'],
+    'Age': [25, 30, 35, 40, 32, 20],
+    'Salary': [50000, 60000, 70000, 80000, 90000, 20000],
+    'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix','Chicago']
+}
+df = pd.DataFrame(data)
+print("\npd.DataFrame({..})"); print(df)
+# Display the first few rows: 5 by default
+print("\nDisplay the first five rows: df.head() : "); print(df.head())
+print("\nDisplay the first 3 rows: df.head(3) : "); print(df.head(3))
+# Calculate basic statistics
+print("\nCalculate basic statistics: df.describe(): "); print(df.describe())
+# Selecting Columns:
+names = df['Name']
+print("\nSelecting Columns: df['Name'] : "); print(names)
+# Selecting Rows by Index:
+first_row = df.iloc[0]
+print("\nSelecting Rows by Index: df.iloc[0] : "); print(first_row)
+# Selecting Rows by Condition:
+age_30 = df.loc[df['Age'] == 30]
+print("\nSelecting Rows by Condition:df.loc[df['Age'] == 30]: "); print(age_30)
+# Filter rows where Age is greater than 30
+filtered_df = df[df['Age'] > 30]
+print("\nFilter rows where Age>30: df[df['Age'] > 30]: "); print(filtered_df)
+# Group By:
+grouped = df.groupby('City')['City'].count()
+print("\nGroupBy City&find count:df.groupby('City').['City'].count(): "); print(grouped)
+# Group by City and calculate mean Salary
+grouped = df.groupby('City')['Salary'].mean()
+print("\nGroupBy City &find mean Salary:df.groupby('City')['Salary'].mean(): ")
+print(grouped)
+# Add a new column
+df['Tax'] = df['Salary'] * 0.2
+print("\nAdd a new Column: df['Tax'] = df['Salary'] * 0.2: Now df: ");print(df)
+# Aggregation Functions:
+summary = df.agg({
+    'Age': ['min', 'max', 'mean'],
+    'City': ['count']
+})
+print("\nAggregate Age by min, max, mean and City by count : "); print(summary)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
