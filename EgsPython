@@ -73,3 +73,40 @@ print ("The original elements after shallow copying")
 for i in range(0,len( li1)):
 	print (li1[i],end=" ")
 
+
+
+
+
+
+
+import binascii
+x = b"Bytes objects are immutable sequences of single bytes"
+print(x)
+#return an integer representing the Unicode code point of that character.
+x = ord(b'm')
+print(x)
+#create a bytes object
+y = b'Python bytes'
+#generates a list of codes from the characters of bytes
+z = list(y)
+print(z)
+b_table = bytes.maketrans(b'abcdef', b'uvwxyz')
+str = 'Write a Python function to find product of integer values.'
+b_new = str.translate(b_table)
+print(b_new)
+x=binascii.hexlify("Python".encode("utf8"))
+print(x)
+y=binascii.unhexlify(x).decode("utf8")
+print(y)
+
+
+
+
+
+b'Bytes objects are immutable sequences of single bytes'
+109
+[80, 121, 116, 104, 111, 110, 32, 98, 121, 116, 101, 115]
+Writy u Python zunwtion to zinx proxuwt oz intygyr vuluys.
+b'507974686f6e'
+Python
+
