@@ -231,6 +231,18 @@ sqsm(2)
 
 
 
+Go to C:\Users\monica\AppData\Local\Programs\Python\Python312\Scripts
+
+Open cmd/Terminal
+Sudo or type:
+
+> pip3 install numpy
+
+A lot of packages will be downloaded.. 
+
+
+
+
 
 
 
