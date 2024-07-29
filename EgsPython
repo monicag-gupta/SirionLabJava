@@ -308,6 +308,60 @@ print("\nnumpy Examples ends")
 
 
 
+Go to C:\Users\monica\AppData\Local\Programs\Python\Python312\Scripts
+
+Open cmd/Terminal
+Sudo or type:
+
+> pip3 install scikit-learn
+
+A lot of packages will be downloaded.. 
+
+
+
+
+
+
+
+
+# Importing Scikit-learn
+import sklearn
+#Loading Data : Scikit-learn provides various datasets to work with.Here, we use the Iris dataset.
+from sklearn.datasets import load_iris
+iris = load_iris()
+X = iris.data  # Features
+y = iris.target  # Labels
+print("iris.data:");print(X);print("iris.target:");print(y)
+# Splitting the Data: It's important to split the data into training and testing sets.
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+print("X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)")
+print("X_train:");print(X_train);print("X_test:");print(X_test)
+print("y_train:");print(y_train);print("y_test");print(y_test)
+# Training a Model: Let's train a simple K-Nearest Neighbors (KNN) classifier.
+from sklearn.neighbors import KNeighborsClassifier
+knn = KNeighborsClassifier(n_neighbors=3)
+knn.fit(X_train, y_train)
+print("KNeighborsClassifier(n_neighbors=3).fit(X_train, y_train)")
+print(knn)
+# Making Predictions: Use the trained model to make predictions on the test set.
+y_pred = knn.predict(X_test)
+print("knn.predict(X_test): "); print(y_pred)
+# Evaluating the Model : Evaluate the model's performance using accuracy score.
+from sklearn.metrics import accuracy_score
+accuracy = accuracy_score(y_test, y_pred)
+print(f"Accuracy: {accuracy:.2f}")
+
+
+
+
+
+
+
+
+
+
+
 
 
 
