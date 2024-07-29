@@ -1,0 +1,21 @@
+# python3 code to illustrate the difference between
+# == and is operator. Here, [] is an empty list
+list1 = []; list2 = []; list3=list1
+print(id(list1)); print(id(list2)); print(id(list3))
+if (list1 == list2):
+	print("(list1 == list2) is True")
+else:
+	print("(list1 == list2) is False")
+if (list1 is list2):
+	print("(list1 is list2) is True")
+else:
+	print("(list1 is list2) is False")
+if (list1 is list3):
+	print("(list1 is list3) is True")
+else:
+	print("(list1 is list3) is False")
+list3 = list3 + list2
+if (list1 is list3):
+	print("(now list1 is list3) is True")
+else:
+	print("(now list1 is list3) is False")
