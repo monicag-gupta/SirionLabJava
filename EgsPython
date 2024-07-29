@@ -543,6 +543,25 @@ Hello John
 
 
 
+class Student:
+        # Constructor – parameterized
+        def __init__(self, name, id, address):
+              print("This is parametrized constructor")
+              self.name = name
+              self.id=id
+              self.add=address
+        def show(self):
+              print("Hello",self.name,self.id,self.add)
+
+student = Student("John",102,"Delhi")
+student.show()
+
+
+
+
+
+
+
 
 
 
