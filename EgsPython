@@ -520,6 +520,31 @@ Every function in python classes have the first parameter as self, if they are i
 
 
 
+The parameterized constructor has multiple parameters along with the self. Consider the following example.
+
+class Student:
+        # Constructor – parameterized
+        def __init__(self, name):
+              print("This is parametrized constructor")
+              self.name = name
+        def show(self):
+              print("Hello",self.name)
+
+student = Student("John")
+student.show()
+
+Output:
+This is parametrized constructor
+Hello John
+
+
+
+
+
+
+
+
+
 
 
 
