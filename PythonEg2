@@ -402,6 +402,12 @@ Vector(7,8)
 
 
 
+public:
+   Vector operator +(Vector v2){
+      return new Vector(this.a + v2.a, this.b + v2.b);
+   }
+
+
 
 https://www.programiz.com/python-programming/operator-overloading
 
