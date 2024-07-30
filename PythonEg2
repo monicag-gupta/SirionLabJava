@@ -176,6 +176,27 @@ Animal Speaking
 
 
 
+class Employee:
+    def stName(self,name):
+        self.name=name
+    def disp(self):  
+        print("Employee: ", self.name)  
+
+class Sal_Emp(Employee):
+    def stNameSal(self, name,sal):
+        self.sal=sal
+        Employee.stName(Employee,name)
+    def prnt(self):  
+        print("Salaried Employee: ", self.name, self.sal)  
+
+e=Sal_Emp()
+e.stNameSal("Jarom",102)
+e.disp() # using disp() from parent class
+e.prnt()
+print(e.name, e.sal)
+
+
+
 
 
 
