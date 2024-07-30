@@ -740,6 +740,110 @@ AssertionError: Colder than absolute zero!
 
 
 
+To work with files, you need to open them using the open() function. This function returns a file object, which provides methods and attributes to interact with the file.
+file = open('filename.txt', 'mode')
+Modes:
+'r': Read (default mode). Opens a file for reading.
+'w': Write. Opens a file for writing (creates a new file or truncates an existing file).
+'a': Append. Opens a file for appending (creates a new file if it does not exist).
+'b': Binary mode. Opens the file in binary mode (e.g., 'rb' or 'wb').
+'x': Exclusive creation. Fails if the file already exists.
+'t': Text mode (default). Opens the file in text mode.
+
+
+
+
+
+
+To write data to a file, you can use the write() or writelines() methods.
+Example: Writing to a File
+# Open a file for writing
+with open('example.txt', 'w') as file:
+    file.write('Hello, World!\n')
+    file.write('This is a test file.\n')
+print("Data written to example.txt")
+
+
+
+
+
+
+
+To read data from a file, you can use the read(), readline(), or readlines() methods.
+Example: Reading from a File
+# Open a file for reading
+with open('example.txt', 'r') as file:
+    content = file.read()  # Read the entire file
+    print("File content:")
+    print(content)
+
+# Alternatively, read line by line
+with open('example.txt', 'r') as file:
+    for line in file:
+        print(line.strip())  # Print each line without extra newline characters
+
+
+
+
+
+
+
+To add data to the end of a file without truncating it, you can open the file in append mode.
+Example: Appending to a File
+# Open a file for appending
+with open('example.txt', 'a') as file:
+    file.write('This line will be appended to the file.\n')
+print("Data appended to example.txt")
+
+
+
+
+
+
+
+To read and write binary files (e.g., images, audio), use the binary mode.
+Example: Writing and Reading a Binary File
+
+# Writing a binary file
+data = bytes([0, 255, 127, 64])
+with open('example.bin', 'wb') as file:
+    file.write(data)
+print("Binary data written to example.bin")
+
+# Reading a binary file
+with open('example.bin', 'rb') as file:
+    binary_data = file.read()
+    print("Binary data read from example.bin:", binary_data)
+
+
+
+
+
+
+When performing file I/O, it’s a good practice to handle exceptions, such as file not found or permission errors.
+Example: Handling Exceptions
+try:
+    with open('nonexistent.txt', 'r') as file:
+        content = file.read()
+except FileNotFoundError:
+    print("The file does not exist.")
+except PermissionError:
+    print("You do not have permission to access this file.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
