@@ -843,6 +843,123 @@ except PermissionError:
 
 
 
+import os
+
+def display_menu():
+    print("\nMenu:")
+    print("1. Write to file")
+    print("2. Read from file")
+    print("3. Update content of file")
+    print("4. Delete content of file")
+    print("5. Delete specific employee record")
+    print("6. Delete file")
+    print("7. Exit")
+
+def write_to_file(filename):
+    employee_id = input("Enter Employee ID: ")
+    employee_name = input("Enter Employee Name: ")
+    with open(filename, 'a') as file:
+        file.write(f"{employee_id},{employee_name}\n")
+    print("Data written to file.")
+
+def read_from_file(filename):
+    if os.path.exists(filename):
+        with open(filename, 'r') as file:
+            content = file.read()
+            print(content if content else "File is empty.")
+    else:
+        print("File does not exist.")
+
+def update_content_of_file(filename):
+    if os.path.exists(filename):
+        employee_id = input("Enter Employee ID to update: ")
+        found = False
+        new_content = []
+        with open(filename, 'r') as file:
+            lines = file.readlines()
+            for line in lines:
+                emp_id, emp_name = line.strip().split(',')
+                if emp_id == employee_id:
+                    new_name = input(f"Enter new name for Employee ID {employee_id}: ")
+                    new_content.append(f"{emp_id},{new_name}\n")
+                    found = True
+                else:
+                    new_content.append(line)
+        
+        if found:
+            with open(filename, 'w') as file:
+                file.writelines(new_content)
+            print("Data updated.")
+        else:
+            print("Employee ID not found.")
+    else:
+        print("File does not exist.")
+
+def delete_content_of_file(filename):
+    if os.path.exists(filename):
+        open(filename, 'w').close()
+        print("Content of the file deleted.")
+    else:
+        print("File does not exist.")
+
+def delete_employee_record(filename):
+    if os.path.exists(filename):
+        employee_id = input("Enter Employee ID to delete: ")
+        found = False
+        new_content = []
+        with open(filename, 'r') as file:
+            lines = file.readlines()
+            for line in lines:
+                emp_id, emp_name = line.strip().split(',')
+                if emp_id != employee_id:
+                    new_content.append(line)
+                else:
+                    found = True
+        
+        if found:
+            with open(filename, 'w') as file:
+                file.writelines(new_content)
+            print(f"Employee ID {employee_id} deleted.")
+        else:
+            print("Employee ID not found.")
+    else:
+        print("File does not exist.")
+
+def delete_file(filename):
+    if os.path.exists(filename):
+        os.remove(filename)
+        print("File deleted.")
+    else:
+        print("File does not exist.")
+
+def main():
+    filename = "employees.txt"
+    
+    while True:
+        display_menu()
+        choice = input("Enter your choice: ")
+        
+        if choice == '1':
+            write_to_file(filename)
+        elif choice == '2':
+            read_from_file(filename)
+        elif choice == '3':
+            update_content_of_file(filename)
+        elif choice == '4':
+            delete_content_of_file(filename)
+        elif choice == '5':
+            delete_employee_record(filename)
+        elif choice == '6':
+            delete_file(filename)
+        elif choice == '7':
+            print("Exiting the program.")
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == "__main__":
+    main()
+
 
 
 
