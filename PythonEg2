@@ -127,3 +127,43 @@ print ("Employee.__bases__:", Employee.__bases__)
 
 print ("Employee.__dict__:", Employee.__dict__)
 # Employee.__dict__: {'__module__': 'EmployeeClass', '__doc__': 'Common base class for all employees', 'empCount': 2, '__init__': <function Employee.__init__ at 0x02E3ADF0>, 'displayCount': <function Employee.displayCount at 0x02E3ADA8>, 'displayEmployee': <function Employee.displayEmployee at 0x02E3AD60>, '__dict__': <attribute '__dict__' of 'Employee' objects>, '__weakref__': <attribute '__weakref__' of 'Employee' objects>}
+
+
+
+
+
+
+class Point:
+   def __init__( self, x=0, y=0):
+      self.x = x
+      self.y = y
+   def __del__(self):
+      class_name = self.__class__.__name__
+      print (class_name, "destroyed")
+
+pt1 = Point()
+pt2=pt1
+print ("id(pt1):",id(pt1)) # prints the ids of the objects
+print ("id(pt2)", id(pt2)) # prints the ids of the objects
+del pt1
+print("pt1 destroyed, but pt2 with same id lives")
+del pt2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
