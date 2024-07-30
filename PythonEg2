@@ -442,6 +442,13 @@ AttributeError: 'Employee' object has no attribute '__count'
 
 
 
+Python protects those members by internally changing the name to include the class name. You can access such attributes as object._className__attrName. 
+If you would replace your last line as following, then it works for you −
+
+print(emp._Employee__count)
+2
+
+
 
 
 
