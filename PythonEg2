@@ -991,6 +991,15 @@ Install pycharm with all defaults
 
 
 
+Run in Terminal:
+sudo apt update
+sudo apt install snapd
+sudo snap install pycharm-community --classic  
+# For Community Edition
+pycharm-community  # Launch Community Edition
+
+
+
 
 
 
