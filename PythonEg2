@@ -454,4 +454,32 @@ print(emp._Employee__count)
 
 
 
+The class method in Python is a method, which is bound to the class but not the object of that class. 
+The static methods are also same but there are some basic differences. 
+For class methods, we need to specify @classmethod decorator, and for static method @staticmethod decorator is used.
+
+Syntax for Class Method.
+class my_class:
+   @classmethod
+  def function_name(cls, arguments):
+      #Function Body
+      return value
+
+Syntax for Static Method.
+class my_class:
+   @staticmethod
+   def function_name(arguments):
+      #Function Body
+      return value
+
+
+
+
+
+
+
+
+
+
+
 
