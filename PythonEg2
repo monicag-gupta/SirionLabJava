@@ -702,14 +702,41 @@ In the try block, the user-defined exception is raised and caught in the except 
 class Networkerror(RuntimeError):
    def __init__(self, arg):
       self.args = arg
-So once you defined above class, you can raise the exception as follows −
+# So once you defined above class, you can raise the exception as follows −
 try:
    raise Networkerror("Bad hostname")
 except Networkerror as e:
    print(e.args)
 
-Output:   
-('B', 'a', 'd', ' ', 'h', 'o', 's', 't', 'n', 'a', 'm', 'e')
+# Output:   
+# ('B', 'a', 'd', ' ', 'h', 'o', 's', 't', 'n', 'a', 'm', 'e')
+
+
+
+
+
+
+def KelvinToFahrenheit(Temperature):
+   assert (Temperature >= 0),"Colder than absolute zero!"
+   return ((Temperature-273)*1.8)+32
+
+print(KelvinToFahrenheit(273))
+# 32.0
+print(int(KelvinToFahrenheit(505.78)))
+# 451
+print(KelvinToFahrenheit(-5))
+
+
+
+
+
+Traceback (most recent call last):
+  File "<pyshell#34>", line 1, in <module>
+    print(KelvinToFahrenheit(-5))
+  File "<pyshell#31>", line 2, in KelvinToFahrenheit
+    assert (Temperature >= 0),"Colder than absolute zero!"
+AssertionError: Colder than absolute zero!
+>>> 
 
 
 
