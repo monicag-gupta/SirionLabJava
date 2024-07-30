@@ -419,6 +419,28 @@ https://www.programiz.com/python-programming/operator-overloading
 
 
 
+Abstraction is an important aspect of object-oriented programming. 
+In python, we can also perform data hiding by adding the double underscore (__) as a prefix to the attribute which is to be hidden. 
+After this, the attribute will not be visible outside of the class through the object.
+
+Example:
+class Employee:  
+    __count = 0;  
+    def __init__(self):  
+        Employee.__count = Employee.__count+1  
+    def display(self):  
+        print("The number of employees",Employee.__count)  
+
+emp = Employee()  
+emp2 = Employee()  
+#print(emp.__count)  
+emp.display()  
+
+Output:
+The number of employees 2
+AttributeError: 'Employee' object has no attribute '__count'
+
+
 
 
 
