@@ -54,4 +54,6 @@ print(hasattr(s, 'id'))
 delattr(s, 'age')  
   
 # this will give an error since the attribute age has been deleted  
-print(s.age)  
+# this will give an error since the attribute age has been deleted  
+# print(s.age)
+print(hasattr(s, 'age'))  
