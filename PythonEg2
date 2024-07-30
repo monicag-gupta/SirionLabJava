@@ -569,6 +569,24 @@ Raised when an abstract method that still needs to be implemented in an inherite
 
 
 
+The try-expect statement
+If the Python program contains suspicious code that may throw the exception, we must place that code in the try block. 
+The try block must be followed with the except statement, which contains a block of code that will be executed if there is some exception in the try block.
+Syntax
+try:
+   You do your operations here;
+except ExceptionI:
+   If there is ExceptionI, then execute this block.
+[except ExceptionII:
+   If there is ExceptionII, then execute this block……]
+else:
+   If there is no exception then execute this block. 
+
+
+
+
+
+
 
 
 
