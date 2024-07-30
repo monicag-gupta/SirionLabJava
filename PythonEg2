@@ -57,3 +57,73 @@ delattr(s, 'age')
 # this will give an error since the attribute age has been deleted  
 # print(s.age)
 print(hasattr(s, 'age'))  
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Student:
+    "This is a student class" # This is not a doc comment
+    def __init__(self, name, id, age):  
+        self.name = name  
+        self.id = id  
+        self.age = age
+    def display(self):
+        print("ID : " , self.id, "Name: ", self.name, "Age : ",self.age)
+        
+     
+# creates the object of the class Student  
+s = Student("John", 101, 22)
+s.display()
+
+# prints the attribute name of the object s  
+print(getattr(s, 'name'))  
+  
+# reset the value of attribute age to 23  
+setattr(s, "age", 23)  
+  
+# prints the modified value of age  
+print(getattr(s, 'age'))  
+  
+# prints true if the student contains the attribute with name id  
+  
+print(hasattr(s, 'id'))  
+# deletes the attribute age  
+delattr(s, 'age')  
+  
+# this will give an error since the attribute age has been deleted  
+# print(s.age)
+print(hasattr(s, 'age'))
+s.display()
+
+
+
+
+
+
+
+
+from EmployeeClass import Employee
+
+print ("Employee.__doc__:", Employee.__doc__)
+# Employee.__doc__: Common base class for all employees
+
+print ("Employee.__name__:", Employee.__name__)
+# Employee.__name__: Employee
+
+print ("Employee.__module__:", Employee.__module__)
+# Employee.__module__: EmployeeClass
+
+print ("Employee.__bases__:", Employee.__bases__)
+# Employee.__bases__: (<class 'object'>,)
+
+print ("Employee.__dict__:", Employee.__dict__)
+# Employee.__dict__: {'__module__': 'EmployeeClass', '__doc__': 'Common base class for all employees', 'empCount': 2, '__init__': <function Employee.__init__ at 0x02E3ADF0>, 'displayCount': <function Employee.displayCount at 0x02E3ADA8>, 'displayEmployee': <function Employee.displayEmployee at 0x02E3AD60>, '__dict__': <attribute '__dict__' of 'Employee' objects>, '__weakref__': <attribute '__weakref__' of 'Employee' objects>}
