@@ -442,6 +442,35 @@ main()
 
 
 
+Using Python Async Features in Practice
+
+# Fetching data from two sources asynchronously
+import asyncio
+
+async def fetch_data_from_source_1():
+    print("Fetching data from source 1...")
+    await asyncio.sleep(2)  # Simulate I/O operation
+    print("Data from source 1 received")
+
+async def fetch_data_from_source_2():
+    print("Fetching data from source 2...")
+    await asyncio.sleep(3)  # Simulate I/O operation
+    print("Data from source 2 received")
+
+async def main():
+    await asyncio.gather(fetch_data_from_source_1(), fetch_data_from_source_2())
+
+asyncio.run(main())
+
+
+
+
+
+
+
+
+
+
 
 
 
