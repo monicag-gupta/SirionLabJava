@@ -64,3 +64,34 @@ if __name__ == "__main__":
 
 
 
+
+import threading; import time
+class myThread (threading.Thread):
+   def __init__(self, threadID, name, counter):
+      threading.Thread.__init__(self)
+      self.threadID = threadID; self.name = name; self.counter = counter
+   def run(self):
+      print ("Starting " + self.name)
+      threadLock.acquire() # Get lock to synchronize threads
+      print_time(self.name, self.counter, 3)
+      threadLock.release() # Free lock to release next thread
+
+def print_time(threadName, delay, counter):
+   while counter:
+      time.sleep(delay); counter -= 1
+      print ("%s: %s" % (threadName, time.ctime(time.time())))
+threadLock = threading.Lock()
+threads = []
+# Create new threads
+thread1 = myThread(1, "Thread-1", 1);thread2 = myThread(2, "Thread-2", 2)
+thread1.start(); thread2.start()
+threads.append(thread1); threads.append(thread2) # Add threads to thread list
+for t in threads: # Wait for all threads to complete
+   t.join()
+print ("Exiting Main Thread")
+
+
+
+
+
+
