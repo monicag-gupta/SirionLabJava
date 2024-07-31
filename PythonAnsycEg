@@ -487,6 +487,27 @@ main()
 
 
 
+Simple Cooperative Concurrency
+
+# Fetching data using cooperative concurrency
+import asyncio
+
+async def async_task(name, delay):
+    print(f"{name} started")
+    await asyncio.sleep(delay)
+    print(f"{name} done")
+
+async def main():
+    await asyncio.gather(
+        async_task("Responding to emails", 2),
+        async_task("Attending meeting", 2),
+        async_task("Writing report", 2)
+    )
+
+asyncio.run(main())
+
+
+
 
 
 
