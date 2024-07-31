@@ -133,3 +133,23 @@ print ("Exiting Main Thread")
 
 
 
+
+Synchronous vs. Asynchronous: Allows running multiple tasks concurrently, improving efficiency and responsiveness.
+Synchronous: Tasks are performed one after another. If one task takes a long time (e.g., waiting for a network response), the entire program waits.
+Asynchronous: Tasks can be performed concurrently. While one task is waiting (e.g., for a network response), other tasks can continue running.
+Coroutines: Special functions that can be paused and resumed, defined with async def.
+Special functions defined with async def that can be paused and resumed. They are the building blocks of asynchronous code.
+Event Loop: Manages the execution of coroutines and tasks.
+The core of an asynchronous program. It runs and manages the execution of coroutines and tasks.
+Tasks and Futures: Tasks are wrappers around coroutines, and futures represent results of asynchronous computations.
+Tasks: Wrappers around coroutines that can be scheduled to run on the event loop.
+Futures: Objects that represent a result that is initially unknown but will be computed asynchronously.
+
+
+
+
+
+
+
+
+
