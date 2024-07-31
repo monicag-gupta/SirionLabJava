@@ -152,4 +152,44 @@ Futures: Objects that represent a result that is initially unknown but will be c
 
 
 
+import asyncio
+
+async def say_hello1():
+    print("Hello1")
+    await asyncio.sleep(1)
+    print("World1")
+
+async def say_hello2():
+    print("Hello2")
+    await asyncio.sleep(1)
+    print("World2")
+
+# To run the coroutine
+asyncio.run(say_hello1())
+asyncio.run(say_hello2())
+
+async def main():
+  await asyncio.gather(
+        say_hello1(),
+        say_hello2()
+    )
+
+asyncio.run(main())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
