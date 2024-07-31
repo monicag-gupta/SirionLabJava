@@ -264,6 +264,43 @@ http://localhost:8000/
 
 
 
+Post Request:
+Open Postman
+Send a post request to: http://localhost:8000/
+With body-> raw->json->
+{ "name": "Alice", "age": 30 }
+Press Send to get the response as:
+POST request received: {
+"name": "Alice",
+"age": 30
+}
+
+For Get Request:
+Open Browser/Postman :
+Type the get request:
+http://localhost:8000/
+Get the output as:
+Hello, world!
+
+
+
+
+
+
+
+BaseHTTPRequestHandler: A base class for request handlers. We subclass this to define our custom behavior for handling HTTP requests.
+do_GET: Handles GET requests. It sends a 200 response code, sets the content type to text/html, and writes "Hello, world!" to the response.
+do_POST: Handles POST requests. It reads the length of the incoming data, reads the data itself, sends a 200 response code, and writes a response indicating the data received.
+HTTPServer: A basic HTTP server class. We instantiate this with the server address and our custom request handler.
+serve_forever: Starts the server and runs it indefinitely, handling incoming requests.
+Running the Server
+Save the script to a file, for example, server.py, and run it from the command line:
+python server.py
+Alternatively Run the Code in IDLE
+This will start the server on port 8000. 
+You can access it by navigating to http://localhost:8000 in your web browser. It will respond with "Hello, world!" to GET requests and echo back any data sent in POST requests.
+Press Ctrl + C to end the server.
+
 
 
 
