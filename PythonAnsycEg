@@ -305,3 +305,52 @@ Press Ctrl + C to end the server.
 
 
 
+
+
+Different programming models:
+Synchronous Programming: Tasks are handled one at a time.
+Polling: Periodically checking the status of tasks.
+Threading: Running tasks in separate threads for concurrent execution.
+Asyncio: Using Python's asynchronous features for efficient I/O-bound task management.
+Cooperative Concurrency With Non-Blocking Calls: Uses asyncio to simulate non-blocking tasks where employees fetch reports without blocking each other.
+Synchronous (Blocking) HTTP Calls: Uses the requests library to make HTTP calls sequentially, blocking each employee until the previous task completes.
+Asynchronous (Non-Blocking) HTTP Calls: Uses the aiohttp library to make HTTP calls concurrently, allowing employees to perform other tasks while waiting for HTTP responses.
+These paradigms demonstrate how different programming models handle multiple tasks, each with its own advantages and use cases. 
+Using the employee analogy can help visualize how these concepts apply to real-world scenarios.
+
+
+
+
+
+Thought Experiment #1: The Synchronous Employee
+
+import time
+
+def respond_to_emails():
+    print("Responding to emails...")
+    time.sleep(2)
+    print("Finished responding to emails")
+
+def attend_meeting():
+    print("Attending meeting...")
+    time.sleep(2)
+    print("Finished attending meeting")
+
+def write_report():
+    print("Writing report...")
+    time.sleep(2)
+    print("Finished writing report")
+
+def main():
+    respond_to_emails()
+    attend_meeting()
+    write_report()
+
+main()
+
+
+
+
+
+
+
