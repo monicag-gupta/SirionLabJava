@@ -397,3 +397,64 @@ main()
 
 
 
+
+
+
+
+Thought Experiment #3: The Threading Employee
+
+import threading
+import time
+
+def respond_to_emails():
+    print("Responding to emails...")
+    time.sleep(2)
+    print("Finished responding to emails")
+
+def attend_meeting():
+    print("Attending meeting...")
+    time.sleep(2)
+    print("Finished attending meeting")
+
+def write_report():
+    print("Writing report...")
+    time.sleep(2)
+    print("Finished writing report")
+
+def main():
+    threads = []
+    for task in [respond_to_emails, attend_meeting, write_report]:
+        thread = threading.Thread(target=task)
+        threads.append(thread)
+        thread.start()
+    
+    for thread in threads:
+        thread.join()
+    
+    print("All tasks completed")
+
+main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
