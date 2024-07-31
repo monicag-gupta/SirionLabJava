@@ -181,6 +181,24 @@ asyncio.run(main())
 
 
 
+import asyncio
+
+async def say(name, msg, delay):
+    await asyncio.sleep(delay)
+    for i in range(3):
+        print(name, ":", msg, str(i), "iteration")
+
+async def main():
+    task1 = asyncio.create_task(say("Th1","Hello", 1))
+    task2 = asyncio.create_task(say("Th2","World", 2))
+    await task1
+    await task2
+
+asyncio.run(main())
+
+
+
+
 
 
 
