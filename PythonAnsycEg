@@ -465,7 +465,22 @@ asyncio.run(main())
 
 
 
+Synchronous Programming
 
+# Fetching data from two sources synchronously
+import time
+
+def sync_task(name, delay):
+    print(f"{name} started")
+    time.sleep(delay)
+    print(f"{name} done")
+
+def main():
+    sync_task("Responding to emails", 2)
+    sync_task("Attending meeting", 2)
+    sync_task("Writing report", 2)
+
+main()
 
 
 
