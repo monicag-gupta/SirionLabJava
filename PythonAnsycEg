@@ -354,3 +354,46 @@ main()
 
 
 
+
+
+
+
+Thought Experiment #2: The Polling Employee
+
+import time
+
+tasks = ["respond_to_emails", "attend_meeting", "write_report"]
+task_status = {task: False for task in tasks}
+
+def respond_to_emails():
+    print("Responding to emails...")
+    time.sleep(2)
+    print("Finished responding to emails")
+    task_status["respond_to_emails"] = True
+
+def attend_meeting():
+    print("Attending meeting...")
+    time.sleep(2)
+    print("Finished attending meeting")
+    task_status["attend_meeting"] = True
+
+def write_report():
+    print("Writing report...")
+    time.sleep(2)
+    print("Finished writing report")
+    task_status["write_report"] = True
+
+def main():
+    start_time = time.time()
+    while not all(task_status.values()):
+        for task in tasks:
+            if not task_status[task]:
+                globals()[task]()
+        print("Polling...")
+        time.sleep(0.5)
+    print(f"All tasks completed in {time.time() - start_time:.2f} seconds")
+
+main()
+
+
+
