@@ -1,0 +1,15 @@
+Here’s a comprehensive coding task in Python that involves multiple concepts, including file I/O, data manipulation, asynchronous programming, and working with APIs. 
+Task: Create a Simple Employee Management System
+Objectives:
+Create a class to represent an employee.
+Allow adding new employees and saving them to a CSV file.
+Load existing employees from a CSV file.
+Fetch employee data asynchronously from a public API.
+Display employee information.
+This task combines several important concepts in Python:
+Class Definition: Using classes to model data.
+File I/O: Reading and writing CSV files.
+Asynchronous Programming: Fetching data from an API using aiohttp.
+Data Manipulation: Adding and displaying employee data
+
+
