@@ -5,6 +5,10 @@ Create a class to represent an employee.
 Allow adding new employees and saving them to a CSV file.
 Load existing employees from a CSV file.
 Fetch employee data asynchronously from a public API.
+
+Eg:
+https://dummyjson.com/users
+
 Display employee information.
 This task combines several important concepts in Python:
 Class Definition: Using classes to model data.
