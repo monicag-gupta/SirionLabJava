@@ -13,3 +13,29 @@ Asynchronous Programming: Fetching data from an API using aiohttp.
 Data Manipulation: Adding and displaying employee data
 
 
+
+
+
+
+Project: Predicting Housing Prices
+Objectives:
+Load and preprocess a housing dataset.
+Train a machine learning model to predict housing prices.
+Evaluate the model's performance.
+Visualize the predictions vs. actual values using Matplotlib.
+Exploring different models (e.g., decision trees, random forests).
+Performing feature engineering.
+Tuning hyperparameters for better performance.
+Trying different datasets for practice.
+USE:
+numpy 
+pandas 
+scikit-learn 
+matplotlib 
+seaborn (Study)
+
+
+
+
+
+
